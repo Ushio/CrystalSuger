@@ -15,6 +15,13 @@
 #import "UIImage+PDF.h"
 #import "NSManagedObject+Helper.h"
 
+#import "USKPhysicsWorld.h"
+#import "USKPhysicsStaticMesh.h"
+#import "USKPhysicsSphere.h"
+#import "USKPhialCollisionVertices.h"
+#import "USKUtility.h"
+#import "USKCamera.h"
+
 //http://iosfonts.com/
 
 static const int HEADER_SIZE = 30;
@@ -34,12 +41,23 @@ static UIImage *rmImage = nil;
     
     USKPage *_page;
     USKModelManager *_modelManager;
+    USKPagesContext *_pagesContext;
     
-    NSDate *_begin;
+    USKPhysicsWorld *_physicsWorld;
+    
+    USKCamera *_camera;
+    
+    NSDate *_beginTime;
+    double _lastUpdateTime;
+    double _integralTime;
     
     BOOL _isRemoved;
 }
-- (id)initWithSize:(CGSize)size glcontext:(EAGLContext *)glcontext page:(USKPage *)page modelManager:(USKModelManager *)modelManager
+- (id)initWithSize:(CGSize)size
+         glcontext:(EAGLContext *)glcontext
+              page:(USKPage *)page
+      modelManager:(USKModelManager *)modelManager
+      pagesContext:(USKPagesContext *)pagesContext
 {
     if(self = [super init])
     {
@@ -47,6 +65,7 @@ static UIImage *rmImage = nil;
         _glcontext = glcontext;
         _page = page;
         _modelManager = modelManager;
+        _pagesContext = pagesContext;
         
         //ベース
         _view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _size.width, _size.height)];
@@ -83,6 +102,17 @@ static UIImage *rmImage = nil;
         _countLabel.text = [NSString stringWithFormat:@"%d", _page.count.intValue];
         [self.view addSubview:_countLabel];
         
+        //物理エンジン
+        _physicsWorld = [[USKPhysicsWorld alloc] init];
+        
+        //テスト瓶
+        USKPhysicsStaticMesh *mesh = [[USKPhysicsStaticMesh alloc] initWithTriMesh:kPhialCollisionVertices numberOfVertices:ARRAY_SIZE(kPhialCollisionVertices)];
+        [_physicsWorld addPhysicsObject:mesh];
+        
+        //カメラ
+        _camera = [[USKCamera alloc] init];
+        
+        
         //タップ
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                                action:@selector(onTap:)];
@@ -92,7 +122,9 @@ static UIImage *rmImage = nil;
                                                                                                                  action:@selector(onLongPress:)];
         [_glview addGestureRecognizer:longPressGestureRecognizer];
         
-        _begin = [NSDate date];
+        _beginTime = [NSDate date];
+        _lastUpdateTime = 0.0;
+        _integralTime = 0.0;
     }
     return self;
 }
@@ -132,6 +164,13 @@ static UIImage *rmImage = nil;
     _page.count = @(_page.count.intValue + 1);
     [_modelManager save];
     [self updateCountLabel];
+    
+    USKPhysicsSphere *sphere = [[USKPhysicsSphere alloc] init];
+    sphere.position = GLKVector3Make(0.0f, 0.3f, 0.0f);
+    
+    [_pagesContext.queue addOperationWithBlock:^{
+        [_physicsWorld addPhysicsObject:sphere];
+    }];
 }
 - (void)onLongPress:(UILongPressGestureRecognizer *)recognizer
 {
@@ -163,15 +202,51 @@ static UIImage *rmImage = nil;
 }
 - (void)update
 {
-    double elapsed = [[NSDate date] timeIntervalSinceDate:_begin];
+    double elapsed = [[NSDate date] timeIntervalSinceDate:_beginTime];
+    double delta = elapsed - _lastUpdateTime;
+    _lastUpdateTime = elapsed;
     
+    float aspect = _size.width / _size.height;
+    
+    //時間が進みすぎないようにセーブする
+    delta = MIN(delta, 1.0 / 30.0);
+    
+    _integralTime += delta;
+    
+    //カメラ
+    GLKVector3 p = GLKVector3Make(0, 1, 2);
+    GLKMatrix3 m = GLKMatrix3MakeYRotation(_integralTime * 0.1f);
+    _camera.aspect = aspect;
+    _camera.position = GLKMatrix3MultiplyVector3(m, p);
+    _camera.lookAt = GLKVector3Make(0, 0, 0);
+    
+    //レンダリング
     glBindFramebuffer(GL_FRAMEBUFFER, _glview.framebuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, _glview.colorRenderbuffer);
     
-    float b = sin(elapsed) * 0.5 + 0.5;
-    glClearColor(b * 0.5f, b * 0.5f, b * 0.5f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glViewport(0, 0, _glview.glBufferWidth, _glview.glBufferHeight);
+    GStateManager *sm = _pagesContext.stateManager;
+    sm.currentState = nil;
+    sm.clearColor = GLKVector4Make(0.0f, 0.0f, 0.0f, 1.0);
+    glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
     
+    [_pagesContext.postEffectFbo bind:^{
+        glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+        
+        [_pagesContext.backgroundRenderer renderWithAspect:aspect sm:sm];
+        [_pagesContext.starRenderer renderAtTime:_integralTime aspect:aspect sm:sm];
+        
+        [_pagesContext.queue waitUntilAllOperationsAreFinished];
+        {
+            [_physicsWorld renderForDebug:sm camera:_camera];
+            
+        }
+        [_pagesContext.queue addOperationWithBlock:^{
+            [_physicsWorld stepWithDeltaTime:delta];
+        }];
+    }];
+
+    [_pagesContext.postEffect renderWithTexture:_pagesContext.postEffectFbo.texture sm:sm];
     [_glcontext presentRenderbuffer:GL_RENDERBUFFER];
 }
 - (void)closeKeyboard

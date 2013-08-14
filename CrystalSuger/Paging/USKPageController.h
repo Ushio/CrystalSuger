@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "USKPage.h"
 #import "USKModelManager.h"
+#import "USKPagesContext.h"
 
 @interface USKPageController : NSObject<UITextFieldDelegate, UIActionSheetDelegate>
-- (id)initWithSize:(CGSize)size glcontext:(EAGLContext *)glcontext page:(USKPage *)page modelManager:(USKModelManager *)modelManager;
+- (id)initWithSize:(CGSize)size
+         glcontext:(EAGLContext *)glcontext
+              page:(USKPage *)page
+      modelManager:(USKModelManager *)modelManager
+      pagesContext:(USKPagesContext *)pagesContext;
+
 @property (strong, nonatomic, readonly) UIView *view;
 
 @property (nonatomic, assign) BOOL isActivated;

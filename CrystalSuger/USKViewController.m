@@ -11,6 +11,7 @@
 #import "USKPageController.h"
 #import "USKModelManager.h"
 #import "USKFactoryPageController.h"
+#import "USKPagesContext.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -26,6 +27,8 @@
     USKFactoryPageController *_factoryPageController;
     
     NSFetchedResultsController *_fetchedResultsController;
+    
+    USKPagesContext *_pagesContext;
 }
 - (void)viewDidLoad
 {
@@ -37,6 +40,7 @@
     _modelManager = [[USKModelManager alloc] init];
     
     _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    [EAGLContext setCurrentContext:_context];
     
     _baseScrollView.delegate = self;
     
@@ -63,7 +67,11 @@
     for(int i = 0 ; i < fetchedObjects.count ; ++i)
     {
         USKPage *page = fetchedObjects[i];
-        USKPageController *pageController = [[USKPageController alloc] initWithSize:blocksize glcontext:_context page:page modelManager:_modelManager];
+        USKPageController *pageController = [[USKPageController alloc] initWithSize:blocksize
+                                                                          glcontext:_context
+                                                                               page:page
+                                                                       modelManager:_modelManager
+                                                                       pagesContext:_pagesContext];
         [_pageControllers addObject:pageController];
         pageController.view.frame = CGRectMake(blocksize.width * i, 0, blocksize.width, blocksize.height);
         [_baseScrollView addSubview:pageController.view];
@@ -78,6 +86,8 @@
     //全体幅
     _baseScrollView.contentSize = CGSizeMake(blocksize.width * (_pageControllers.count + 1), blocksize.height);
 
+    //描画コンテキスト
+    _pagesContext = [[USKPagesContext alloc] initWithSize:blocksize];
 }
 - (void)onUpdate:(CADisplayLink *)sender
 {
@@ -115,7 +125,11 @@
         case NSFetchedResultsChangeInsert:
         {
             int newIndex = newIndexPath.row;
-            USKPageController *pageController = [[USKPageController alloc] initWithSize:blocksize glcontext:_context page:anObject modelManager:_modelManager];
+            USKPageController *pageController = [[USKPageController alloc] initWithSize:blocksize
+                                                                              glcontext:_context
+                                                                                   page:anObject
+                                                                           modelManager:_modelManager
+                                                                           pagesContext:_pagesContext];
             [_pageControllers insertObject:pageController atIndex:newIndex];
             
             pageController.view.frame = CGRectMake(blocksize.width * (_pageControllers.count - 1), 0, blocksize.width, blocksize.height);

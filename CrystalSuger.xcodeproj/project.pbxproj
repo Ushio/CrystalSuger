@@ -34,6 +34,32 @@
 		A656BF6917BB1AF000DFE175 /* USKOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF6417BB1AF000DFE175 /* USKOpenGLView.m */; };
 		A656BF6A17BB1AF000DFE175 /* USKPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF6617BB1AF000DFE175 /* USKPageController.m */; };
 		A656BF6D17BB1B1C00DFE175 /* RemoveButton.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A656BF6C17BB1B1C00DFE175 /* RemoveButton.pdf */; };
+		A656BF7817BB1C3D00DFE175 /* USKPhysicsObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = A656BF7117BB1C3D00DFE175 /* USKPhysicsObject.mm */; };
+		A656BF7917BB1C3D00DFE175 /* USKPhysicsSphere.mm in Sources */ = {isa = PBXBuildFile; fileRef = A656BF7317BB1C3D00DFE175 /* USKPhysicsSphere.mm */; };
+		A656BF7A17BB1C3D00DFE175 /* USKPhysicsStaticMesh.mm in Sources */ = {isa = PBXBuildFile; fileRef = A656BF7517BB1C3D00DFE175 /* USKPhysicsStaticMesh.mm */; };
+		A656BF7B17BB1C3D00DFE175 /* USKPhysicsWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = A656BF7717BB1C3D00DFE175 /* USKPhysicsWorld.mm */; };
+		A656BFA317BB1C8600DFE175 /* GFbo.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF7F17BB1C8600DFE175 /* GFbo.m */; };
+		A656BFA417BB1C8600DFE175 /* GMutableVbo.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF8217BB1C8600DFE175 /* GMutableVbo.m */; };
+		A656BFA517BB1C8600DFE175 /* GShader.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF8417BB1C8600DFE175 /* GShader.m */; };
+		A656BFA617BB1C8600DFE175 /* GState.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF8617BB1C8600DFE175 /* GState.m */; };
+		A656BFA717BB1C8600DFE175 /* GStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF8817BB1C8600DFE175 /* GStateManager.m */; };
+		A656BFA817BB1C8600DFE175 /* GTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF8A17BB1C8600DFE175 /* GTexture.m */; };
+		A656BFA917BB1C8600DFE175 /* GVao.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF8C17BB1C8600DFE175 /* GVao.m */; };
+		A656BFAA17BB1C8600DFE175 /* GVbo.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF8E17BB1C8600DFE175 /* GVbo.m */; };
+		A656BFAB17BB1C8600DFE175 /* USKAddEffectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9017BB1C8600DFE175 /* USKAddEffectGroup.m */; };
+		A656BFAC17BB1C8600DFE175 /* USKAddEffectRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9217BB1C8600DFE175 /* USKAddEffectRenderer.m */; };
+		A656BFAD17BB1C8600DFE175 /* USKBackgroundRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9417BB1C8600DFE175 /* USKBackgroundRenderer.m */; };
+		A656BFAE17BB1C8600DFE175 /* USKCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9617BB1C8600DFE175 /* USKCamera.m */; };
+		A656BFAF17BB1C8600DFE175 /* USKKompeitoRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9917BB1C8600DFE175 /* USKKompeitoRenderer.m */; };
+		A656BFB017BB1C8600DFE175 /* USKPhysicsDebugRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9C17BB1C8600DFE175 /* USKPhysicsDebugRenderer.mm */; };
+		A656BFB117BB1C8600DFE175 /* USKPostEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9E17BB1C8600DFE175 /* USKPostEffect.m */; };
+		A656BFB217BB1C8600DFE175 /* USKStarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BFA217BB1C8600DFE175 /* USKStarRenderer.m */; };
+		A656BFB517BB1CA100DFE175 /* USKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BFB417BB1CA100DFE175 /* USKUtility.m */; };
+		A656BFBB17BB1D1000DFE175 /* USKKompeitoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BFB817BB1D1000DFE175 /* USKKompeitoController.m */; };
+		A656BFBC17BB1D1000DFE175 /* USKKompeitoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BFBA17BB1D1000DFE175 /* USKKompeitoEntity.m */; };
+		A656BFBF17BB1D4900DFE175 /* USKPagesContext.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BFBE17BB1D4900DFE175 /* USKPagesContext.m */; };
+		A656BFC117BB258500DFE175 /* background.pvrtc in Resources */ = {isa = PBXBuildFile; fileRef = A656BFC017BB255100DFE175 /* background.pvrtc */; };
+		A656BFC317BB263D00DFE175 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A656BFC217BB263D00DFE175 /* star.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +104,62 @@
 		A656BF6517BB1AF000DFE175 /* USKPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPageController.h; sourceTree = "<group>"; };
 		A656BF6617BB1AF000DFE175 /* USKPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKPageController.m; sourceTree = "<group>"; };
 		A656BF6C17BB1B1C00DFE175 /* RemoveButton.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = RemoveButton.pdf; sourceTree = "<group>"; };
+		A656BF6F17BB1C3D00DFE175 /* USKPhialCollisionVertices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPhialCollisionVertices.h; sourceTree = "<group>"; };
+		A656BF7017BB1C3D00DFE175 /* USKPhysicsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPhysicsObject.h; sourceTree = "<group>"; };
+		A656BF7117BB1C3D00DFE175 /* USKPhysicsObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = USKPhysicsObject.mm; sourceTree = "<group>"; };
+		A656BF7217BB1C3D00DFE175 /* USKPhysicsSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPhysicsSphere.h; sourceTree = "<group>"; };
+		A656BF7317BB1C3D00DFE175 /* USKPhysicsSphere.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = USKPhysicsSphere.mm; sourceTree = "<group>"; };
+		A656BF7417BB1C3D00DFE175 /* USKPhysicsStaticMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPhysicsStaticMesh.h; sourceTree = "<group>"; };
+		A656BF7517BB1C3D00DFE175 /* USKPhysicsStaticMesh.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = USKPhysicsStaticMesh.mm; sourceTree = "<group>"; };
+		A656BF7617BB1C3D00DFE175 /* USKPhysicsWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPhysicsWorld.h; sourceTree = "<group>"; };
+		A656BF7717BB1C3D00DFE175 /* USKPhysicsWorld.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = USKPhysicsWorld.mm; sourceTree = "<group>"; };
+		A656BF7E17BB1C8600DFE175 /* GFbo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFbo.h; sourceTree = "<group>"; };
+		A656BF7F17BB1C8600DFE175 /* GFbo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFbo.m; sourceTree = "<group>"; };
+		A656BF8017BB1C8600DFE175 /* GMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMacros.h; sourceTree = "<group>"; };
+		A656BF8117BB1C8600DFE175 /* GMutableVbo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMutableVbo.h; sourceTree = "<group>"; };
+		A656BF8217BB1C8600DFE175 /* GMutableVbo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMutableVbo.m; sourceTree = "<group>"; };
+		A656BF8317BB1C8600DFE175 /* GShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GShader.h; sourceTree = "<group>"; };
+		A656BF8417BB1C8600DFE175 /* GShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GShader.m; sourceTree = "<group>"; };
+		A656BF8517BB1C8600DFE175 /* GState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GState.h; sourceTree = "<group>"; };
+		A656BF8617BB1C8600DFE175 /* GState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GState.m; sourceTree = "<group>"; };
+		A656BF8717BB1C8600DFE175 /* GStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GStateManager.h; sourceTree = "<group>"; };
+		A656BF8817BB1C8600DFE175 /* GStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GStateManager.m; sourceTree = "<group>"; };
+		A656BF8917BB1C8600DFE175 /* GTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTexture.h; sourceTree = "<group>"; };
+		A656BF8A17BB1C8600DFE175 /* GTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTexture.m; sourceTree = "<group>"; };
+		A656BF8B17BB1C8600DFE175 /* GVao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVao.h; sourceTree = "<group>"; };
+		A656BF8C17BB1C8600DFE175 /* GVao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVao.m; sourceTree = "<group>"; };
+		A656BF8D17BB1C8600DFE175 /* GVbo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVbo.h; sourceTree = "<group>"; };
+		A656BF8E17BB1C8600DFE175 /* GVbo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVbo.m; sourceTree = "<group>"; };
+		A656BF8F17BB1C8600DFE175 /* USKAddEffectGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKAddEffectGroup.h; sourceTree = "<group>"; };
+		A656BF9017BB1C8600DFE175 /* USKAddEffectGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKAddEffectGroup.m; sourceTree = "<group>"; };
+		A656BF9117BB1C8600DFE175 /* USKAddEffectRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKAddEffectRenderer.h; sourceTree = "<group>"; };
+		A656BF9217BB1C8600DFE175 /* USKAddEffectRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKAddEffectRenderer.m; sourceTree = "<group>"; };
+		A656BF9317BB1C8600DFE175 /* USKBackgroundRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKBackgroundRenderer.h; sourceTree = "<group>"; };
+		A656BF9417BB1C8600DFE175 /* USKBackgroundRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKBackgroundRenderer.m; sourceTree = "<group>"; };
+		A656BF9517BB1C8600DFE175 /* USKCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKCamera.h; sourceTree = "<group>"; };
+		A656BF9617BB1C8600DFE175 /* USKCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKCamera.m; sourceTree = "<group>"; };
+		A656BF9717BB1C8600DFE175 /* USKCameraProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKCameraProtocol.h; sourceTree = "<group>"; };
+		A656BF9817BB1C8600DFE175 /* USKKompeitoRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKKompeitoRenderer.h; sourceTree = "<group>"; };
+		A656BF9917BB1C8600DFE175 /* USKKompeitoRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKKompeitoRenderer.m; sourceTree = "<group>"; };
+		A656BF9A17BB1C8600DFE175 /* USKKompeitoVertices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKKompeitoVertices.h; sourceTree = "<group>"; };
+		A656BF9B17BB1C8600DFE175 /* USKPhysicsDebugRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPhysicsDebugRenderer.h; sourceTree = "<group>"; };
+		A656BF9C17BB1C8600DFE175 /* USKPhysicsDebugRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = USKPhysicsDebugRenderer.mm; sourceTree = "<group>"; };
+		A656BF9D17BB1C8600DFE175 /* USKPostEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPostEffect.h; sourceTree = "<group>"; };
+		A656BF9E17BB1C8600DFE175 /* USKPostEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKPostEffect.m; sourceTree = "<group>"; };
+		A656BF9F17BB1C8600DFE175 /* USKSpliteShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKSpliteShader.h; sourceTree = "<group>"; };
+		A656BFA017BB1C8600DFE175 /* USKSpliteVertices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKSpliteVertices.h; sourceTree = "<group>"; };
+		A656BFA117BB1C8600DFE175 /* USKStarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKStarRenderer.h; sourceTree = "<group>"; };
+		A656BFA217BB1C8600DFE175 /* USKStarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKStarRenderer.m; sourceTree = "<group>"; };
+		A656BFB317BB1CA100DFE175 /* USKUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKUtility.h; sourceTree = "<group>"; };
+		A656BFB417BB1CA100DFE175 /* USKUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKUtility.m; sourceTree = "<group>"; };
+		A656BFB717BB1D1000DFE175 /* USKKompeitoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKKompeitoController.h; sourceTree = "<group>"; };
+		A656BFB817BB1D1000DFE175 /* USKKompeitoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKKompeitoController.m; sourceTree = "<group>"; };
+		A656BFB917BB1D1000DFE175 /* USKKompeitoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKKompeitoEntity.h; sourceTree = "<group>"; };
+		A656BFBA17BB1D1000DFE175 /* USKKompeitoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKKompeitoEntity.m; sourceTree = "<group>"; };
+		A656BFBD17BB1D4900DFE175 /* USKPagesContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPagesContext.h; sourceTree = "<group>"; };
+		A656BFBE17BB1D4900DFE175 /* USKPagesContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKPagesContext.m; sourceTree = "<group>"; };
+		A656BFC017BB255100DFE175 /* background.pvrtc */ = {isa = PBXFileReference; lastKnownFileType = file; path = background.pvrtc; sourceTree = "<group>"; };
+		A656BFC217BB263D00DFE175 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +216,9 @@
 		A656BF2317BB188300DFE175 /* CrystalSuger */ = {
 			isa = PBXGroup;
 			children = (
+				A656BFB617BB1D1000DFE175 /* KompeitoControll */,
+				A656BF7C17BB1C8600DFE175 /* Graphics */,
+				A656BF6E17BB1C3D00DFE175 /* Physics */,
 				A656BF6B17BB1B1C00DFE175 /* Resource */,
 				A656BF5E17BB1AF000DFE175 /* Paging */,
 				A656BF5217BB1A1B00DFE175 /* Misc */,
@@ -181,6 +266,8 @@
 		A656BF5217BB1A1B00DFE175 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				A656BFB317BB1CA100DFE175 /* USKUtility.h */,
+				A656BFB417BB1CA100DFE175 /* USKUtility.m */,
 				A656BF5317BB1A1B00DFE175 /* UIImage+PDF.h */,
 				A656BF5417BB1A1B00DFE175 /* UIImage+PDF.m */,
 			);
@@ -198,6 +285,8 @@
 				A656BF6417BB1AF000DFE175 /* USKOpenGLView.m */,
 				A656BF6517BB1AF000DFE175 /* USKPageController.h */,
 				A656BF6617BB1AF000DFE175 /* USKPageController.m */,
+				A656BFBD17BB1D4900DFE175 /* USKPagesContext.h */,
+				A656BFBE17BB1D4900DFE175 /* USKPagesContext.m */,
 			);
 			path = Paging;
 			sourceTree = "<group>";
@@ -205,9 +294,90 @@
 		A656BF6B17BB1B1C00DFE175 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A656BFC217BB263D00DFE175 /* star.png */,
+				A656BFC017BB255100DFE175 /* background.pvrtc */,
 				A656BF6C17BB1B1C00DFE175 /* RemoveButton.pdf */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A656BF6E17BB1C3D00DFE175 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				A656BF6F17BB1C3D00DFE175 /* USKPhialCollisionVertices.h */,
+				A656BF7017BB1C3D00DFE175 /* USKPhysicsObject.h */,
+				A656BF7117BB1C3D00DFE175 /* USKPhysicsObject.mm */,
+				A656BF7217BB1C3D00DFE175 /* USKPhysicsSphere.h */,
+				A656BF7317BB1C3D00DFE175 /* USKPhysicsSphere.mm */,
+				A656BF7417BB1C3D00DFE175 /* USKPhysicsStaticMesh.h */,
+				A656BF7517BB1C3D00DFE175 /* USKPhysicsStaticMesh.mm */,
+				A656BF7617BB1C3D00DFE175 /* USKPhysicsWorld.h */,
+				A656BF7717BB1C3D00DFE175 /* USKPhysicsWorld.mm */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		A656BF7C17BB1C8600DFE175 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				A656BF7D17BB1C8600DFE175 /* G */,
+				A656BF8F17BB1C8600DFE175 /* USKAddEffectGroup.h */,
+				A656BF9017BB1C8600DFE175 /* USKAddEffectGroup.m */,
+				A656BF9117BB1C8600DFE175 /* USKAddEffectRenderer.h */,
+				A656BF9217BB1C8600DFE175 /* USKAddEffectRenderer.m */,
+				A656BF9317BB1C8600DFE175 /* USKBackgroundRenderer.h */,
+				A656BF9417BB1C8600DFE175 /* USKBackgroundRenderer.m */,
+				A656BF9517BB1C8600DFE175 /* USKCamera.h */,
+				A656BF9617BB1C8600DFE175 /* USKCamera.m */,
+				A656BF9717BB1C8600DFE175 /* USKCameraProtocol.h */,
+				A656BF9817BB1C8600DFE175 /* USKKompeitoRenderer.h */,
+				A656BF9917BB1C8600DFE175 /* USKKompeitoRenderer.m */,
+				A656BF9A17BB1C8600DFE175 /* USKKompeitoVertices.h */,
+				A656BF9B17BB1C8600DFE175 /* USKPhysicsDebugRenderer.h */,
+				A656BF9C17BB1C8600DFE175 /* USKPhysicsDebugRenderer.mm */,
+				A656BF9D17BB1C8600DFE175 /* USKPostEffect.h */,
+				A656BF9E17BB1C8600DFE175 /* USKPostEffect.m */,
+				A656BF9F17BB1C8600DFE175 /* USKSpliteShader.h */,
+				A656BFA017BB1C8600DFE175 /* USKSpliteVertices.h */,
+				A656BFA117BB1C8600DFE175 /* USKStarRenderer.h */,
+				A656BFA217BB1C8600DFE175 /* USKStarRenderer.m */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
+		A656BF7D17BB1C8600DFE175 /* G */ = {
+			isa = PBXGroup;
+			children = (
+				A656BF7E17BB1C8600DFE175 /* GFbo.h */,
+				A656BF7F17BB1C8600DFE175 /* GFbo.m */,
+				A656BF8017BB1C8600DFE175 /* GMacros.h */,
+				A656BF8117BB1C8600DFE175 /* GMutableVbo.h */,
+				A656BF8217BB1C8600DFE175 /* GMutableVbo.m */,
+				A656BF8317BB1C8600DFE175 /* GShader.h */,
+				A656BF8417BB1C8600DFE175 /* GShader.m */,
+				A656BF8517BB1C8600DFE175 /* GState.h */,
+				A656BF8617BB1C8600DFE175 /* GState.m */,
+				A656BF8717BB1C8600DFE175 /* GStateManager.h */,
+				A656BF8817BB1C8600DFE175 /* GStateManager.m */,
+				A656BF8917BB1C8600DFE175 /* GTexture.h */,
+				A656BF8A17BB1C8600DFE175 /* GTexture.m */,
+				A656BF8B17BB1C8600DFE175 /* GVao.h */,
+				A656BF8C17BB1C8600DFE175 /* GVao.m */,
+				A656BF8D17BB1C8600DFE175 /* GVbo.h */,
+				A656BF8E17BB1C8600DFE175 /* GVbo.m */,
+			);
+			path = G;
+			sourceTree = "<group>";
+		};
+		A656BFB617BB1D1000DFE175 /* KompeitoControll */ = {
+			isa = PBXGroup;
+			children = (
+				A656BFB717BB1D1000DFE175 /* USKKompeitoController.h */,
+				A656BFB817BB1D1000DFE175 /* USKKompeitoController.m */,
+				A656BFB917BB1D1000DFE175 /* USKKompeitoEntity.h */,
+				A656BFBA17BB1D1000DFE175 /* USKKompeitoEntity.m */,
+			);
+			path = KompeitoControll;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +438,8 @@
 				A656BF3417BB188500DFE175 /* Default-568h@2x.png in Resources */,
 				A656BF3717BB188600DFE175 /* MainStoryboard.storyboard in Resources */,
 				A656BF6D17BB1B1C00DFE175 /* RemoveButton.pdf in Resources */,
+				A656BFC117BB258500DFE175 /* background.pvrtc in Resources */,
+				A656BFC317BB263D00DFE175 /* star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +463,30 @@
 				A656BF6817BB1AF000DFE175 /* USKNameField.m in Sources */,
 				A656BF6917BB1AF000DFE175 /* USKOpenGLView.m in Sources */,
 				A656BF6A17BB1AF000DFE175 /* USKPageController.m in Sources */,
+				A656BF7817BB1C3D00DFE175 /* USKPhysicsObject.mm in Sources */,
+				A656BF7917BB1C3D00DFE175 /* USKPhysicsSphere.mm in Sources */,
+				A656BF7A17BB1C3D00DFE175 /* USKPhysicsStaticMesh.mm in Sources */,
+				A656BF7B17BB1C3D00DFE175 /* USKPhysicsWorld.mm in Sources */,
+				A656BFA317BB1C8600DFE175 /* GFbo.m in Sources */,
+				A656BFA417BB1C8600DFE175 /* GMutableVbo.m in Sources */,
+				A656BFA517BB1C8600DFE175 /* GShader.m in Sources */,
+				A656BFA617BB1C8600DFE175 /* GState.m in Sources */,
+				A656BFA717BB1C8600DFE175 /* GStateManager.m in Sources */,
+				A656BFA817BB1C8600DFE175 /* GTexture.m in Sources */,
+				A656BFA917BB1C8600DFE175 /* GVao.m in Sources */,
+				A656BFAA17BB1C8600DFE175 /* GVbo.m in Sources */,
+				A656BFAB17BB1C8600DFE175 /* USKAddEffectGroup.m in Sources */,
+				A656BFAC17BB1C8600DFE175 /* USKAddEffectRenderer.m in Sources */,
+				A656BFAD17BB1C8600DFE175 /* USKBackgroundRenderer.m in Sources */,
+				A656BFAE17BB1C8600DFE175 /* USKCamera.m in Sources */,
+				A656BFAF17BB1C8600DFE175 /* USKKompeitoRenderer.m in Sources */,
+				A656BFB017BB1C8600DFE175 /* USKPhysicsDebugRenderer.mm in Sources */,
+				A656BFB117BB1C8600DFE175 /* USKPostEffect.m in Sources */,
+				A656BFB217BB1C8600DFE175 /* USKStarRenderer.m in Sources */,
+				A656BFB517BB1CA100DFE175 /* USKUtility.m in Sources */,
+				A656BFBB17BB1D1000DFE175 /* USKKompeitoController.m in Sources */,
+				A656BFBC17BB1D1000DFE175 /* USKKompeitoEntity.m in Sources */,
+				A656BFBF17BB1D4900DFE175 /* USKPagesContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +619,7 @@
 				A656BF3F17BB188600DFE175 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
