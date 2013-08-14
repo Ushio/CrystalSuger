@@ -18,6 +18,22 @@
 		A656BF3417BB188500DFE175 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A656BF3317BB188500DFE175 /* Default-568h@2x.png */; };
 		A656BF3717BB188600DFE175 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A656BF3517BB188600DFE175 /* MainStoryboard.storyboard */; };
 		A656BF3A17BB188600DFE175 /* USKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF3917BB188600DFE175 /* USKViewController.m */; };
+		A656BF4117BB18C600DFE175 /* libBulletPhysics-universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF4017BB18C600DFE175 /* libBulletPhysics-universal.a */; };
+		A656BF4D17BB19DA00DFE175 /* NSManagedObject+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF4417BB19DA00DFE175 /* NSManagedObject+Helper.m */; };
+		A656BF4E17BB19DA00DFE175 /* USKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A656BF4517BB19DA00DFE175 /* USKModel.xcdatamodeld */; };
+		A656BF4F17BB19DA00DFE175 /* USKModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF4817BB19DA00DFE175 /* USKModelManager.m */; };
+		A656BF5017BB19DA00DFE175 /* USKPage.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF4A17BB19DA00DFE175 /* USKPage.m */; };
+		A656BF5117BB19DA00DFE175 /* USKRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF4C17BB19DA00DFE175 /* USKRoot.m */; };
+		A656BF5517BB1A1B00DFE175 /* UIImage+PDF.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF5417BB1A1B00DFE175 /* UIImage+PDF.m */; };
+		A656BF5717BB1A8800DFE175 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF5617BB1A8800DFE175 /* CoreData.framework */; };
+		A656BF5917BB1A9200DFE175 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF5817BB1A9200DFE175 /* QuartzCore.framework */; };
+		A656BF5B17BB1A9800DFE175 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF5A17BB1A9800DFE175 /* OpenGLES.framework */; };
+		A656BF5D17BB1A9F00DFE175 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF5C17BB1A9F00DFE175 /* GLKit.framework */; };
+		A656BF6717BB1AF000DFE175 /* USKFactoryPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF6017BB1AF000DFE175 /* USKFactoryPageController.m */; };
+		A656BF6817BB1AF000DFE175 /* USKNameField.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF6217BB1AF000DFE175 /* USKNameField.m */; };
+		A656BF6917BB1AF000DFE175 /* USKOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF6417BB1AF000DFE175 /* USKOpenGLView.m */; };
+		A656BF6A17BB1AF000DFE175 /* USKPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF6617BB1AF000DFE175 /* USKPageController.m */; };
+		A656BF6D17BB1B1C00DFE175 /* RemoveButton.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A656BF6C17BB1B1C00DFE175 /* RemoveButton.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +53,31 @@
 		A656BF3617BB188600DFE175 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A656BF3817BB188600DFE175 /* USKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USKViewController.h; sourceTree = "<group>"; };
 		A656BF3917BB188600DFE175 /* USKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USKViewController.m; sourceTree = "<group>"; };
+		A656BF4017BB18C600DFE175 /* libBulletPhysics-universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libBulletPhysics-universal.a"; path = "bullet2.81/lib/libBulletPhysics-universal.a"; sourceTree = "<group>"; };
+		A656BF4317BB19DA00DFE175 /* NSManagedObject+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Helper.h"; sourceTree = "<group>"; };
+		A656BF4417BB19DA00DFE175 /* NSManagedObject+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Helper.m"; sourceTree = "<group>"; };
+		A656BF4617BB19DA00DFE175 /* USKModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = USKModel.xcdatamodel; sourceTree = "<group>"; };
+		A656BF4717BB19DA00DFE175 /* USKModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKModelManager.h; sourceTree = "<group>"; };
+		A656BF4817BB19DA00DFE175 /* USKModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKModelManager.m; sourceTree = "<group>"; };
+		A656BF4917BB19DA00DFE175 /* USKPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPage.h; sourceTree = "<group>"; };
+		A656BF4A17BB19DA00DFE175 /* USKPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKPage.m; sourceTree = "<group>"; };
+		A656BF4B17BB19DA00DFE175 /* USKRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKRoot.h; sourceTree = "<group>"; };
+		A656BF4C17BB19DA00DFE175 /* USKRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKRoot.m; sourceTree = "<group>"; };
+		A656BF5317BB1A1B00DFE175 /* UIImage+PDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PDF.h"; sourceTree = "<group>"; };
+		A656BF5417BB1A1B00DFE175 /* UIImage+PDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PDF.m"; sourceTree = "<group>"; };
+		A656BF5617BB1A8800DFE175 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A656BF5817BB1A9200DFE175 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A656BF5A17BB1A9800DFE175 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		A656BF5C17BB1A9F00DFE175 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		A656BF5F17BB1AF000DFE175 /* USKFactoryPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKFactoryPageController.h; sourceTree = "<group>"; };
+		A656BF6017BB1AF000DFE175 /* USKFactoryPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKFactoryPageController.m; sourceTree = "<group>"; };
+		A656BF6117BB1AF000DFE175 /* USKNameField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKNameField.h; sourceTree = "<group>"; };
+		A656BF6217BB1AF000DFE175 /* USKNameField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKNameField.m; sourceTree = "<group>"; };
+		A656BF6317BB1AF000DFE175 /* USKOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKOpenGLView.h; sourceTree = "<group>"; };
+		A656BF6417BB1AF000DFE175 /* USKOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKOpenGLView.m; sourceTree = "<group>"; };
+		A656BF6517BB1AF000DFE175 /* USKPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPageController.h; sourceTree = "<group>"; };
+		A656BF6617BB1AF000DFE175 /* USKPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKPageController.m; sourceTree = "<group>"; };
+		A656BF6C17BB1B1C00DFE175 /* RemoveButton.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = RemoveButton.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,9 +85,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A656BF5D17BB1A9F00DFE175 /* GLKit.framework in Frameworks */,
+				A656BF5B17BB1A9800DFE175 /* OpenGLES.framework in Frameworks */,
+				A656BF5917BB1A9200DFE175 /* QuartzCore.framework in Frameworks */,
+				A656BF5717BB1A8800DFE175 /* CoreData.framework in Frameworks */,
 				A656BF1E17BB188300DFE175 /* UIKit.framework in Frameworks */,
 				A656BF2017BB188300DFE175 /* Foundation.framework in Frameworks */,
 				A656BF2217BB188300DFE175 /* CoreGraphics.framework in Frameworks */,
+				A656BF4117BB18C600DFE175 /* libBulletPhysics-universal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +102,10 @@
 		A656BF1117BB188200DFE175 = {
 			isa = PBXGroup;
 			children = (
+				A656BF5C17BB1A9F00DFE175 /* GLKit.framework */,
+				A656BF5A17BB1A9800DFE175 /* OpenGLES.framework */,
+				A656BF5817BB1A9200DFE175 /* QuartzCore.framework */,
+				A656BF5617BB1A8800DFE175 /* CoreData.framework */,
 				A656BF2317BB188300DFE175 /* CrystalSuger */,
 				A656BF1C17BB188300DFE175 /* Frameworks */,
 				A656BF1B17BB188300DFE175 /* Products */,
@@ -73,6 +123,7 @@
 		A656BF1C17BB188300DFE175 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A656BF4017BB18C600DFE175 /* libBulletPhysics-universal.a */,
 				A656BF1D17BB188300DFE175 /* UIKit.framework */,
 				A656BF1F17BB188300DFE175 /* Foundation.framework */,
 				A656BF2117BB188300DFE175 /* CoreGraphics.framework */,
@@ -83,6 +134,10 @@
 		A656BF2317BB188300DFE175 /* CrystalSuger */ = {
 			isa = PBXGroup;
 			children = (
+				A656BF6B17BB1B1C00DFE175 /* Resource */,
+				A656BF5E17BB1AF000DFE175 /* Paging */,
+				A656BF5217BB1A1B00DFE175 /* Misc */,
+				A656BF4217BB19DA00DFE175 /* Model */,
 				A656BF2C17BB188400DFE175 /* USKAppDelegate.h */,
 				A656BF2D17BB188400DFE175 /* USKAppDelegate.m */,
 				A656BF3517BB188600DFE175 /* MainStoryboard.storyboard */,
@@ -105,6 +160,54 @@
 				A656BF3317BB188500DFE175 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A656BF4217BB19DA00DFE175 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A656BF4317BB19DA00DFE175 /* NSManagedObject+Helper.h */,
+				A656BF4417BB19DA00DFE175 /* NSManagedObject+Helper.m */,
+				A656BF4517BB19DA00DFE175 /* USKModel.xcdatamodeld */,
+				A656BF4717BB19DA00DFE175 /* USKModelManager.h */,
+				A656BF4817BB19DA00DFE175 /* USKModelManager.m */,
+				A656BF4917BB19DA00DFE175 /* USKPage.h */,
+				A656BF4A17BB19DA00DFE175 /* USKPage.m */,
+				A656BF4B17BB19DA00DFE175 /* USKRoot.h */,
+				A656BF4C17BB19DA00DFE175 /* USKRoot.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A656BF5217BB1A1B00DFE175 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				A656BF5317BB1A1B00DFE175 /* UIImage+PDF.h */,
+				A656BF5417BB1A1B00DFE175 /* UIImage+PDF.m */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		A656BF5E17BB1AF000DFE175 /* Paging */ = {
+			isa = PBXGroup;
+			children = (
+				A656BF5F17BB1AF000DFE175 /* USKFactoryPageController.h */,
+				A656BF6017BB1AF000DFE175 /* USKFactoryPageController.m */,
+				A656BF6117BB1AF000DFE175 /* USKNameField.h */,
+				A656BF6217BB1AF000DFE175 /* USKNameField.m */,
+				A656BF6317BB1AF000DFE175 /* USKOpenGLView.h */,
+				A656BF6417BB1AF000DFE175 /* USKOpenGLView.m */,
+				A656BF6517BB1AF000DFE175 /* USKPageController.h */,
+				A656BF6617BB1AF000DFE175 /* USKPageController.m */,
+			);
+			path = Paging;
+			sourceTree = "<group>";
+		};
+		A656BF6B17BB1B1C00DFE175 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A656BF6C17BB1B1C00DFE175 /* RemoveButton.pdf */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +267,7 @@
 				A656BF3217BB188500DFE175 /* Default@2x.png in Resources */,
 				A656BF3417BB188500DFE175 /* Default-568h@2x.png in Resources */,
 				A656BF3717BB188600DFE175 /* MainStoryboard.storyboard in Resources */,
+				A656BF6D17BB1B1C00DFE175 /* RemoveButton.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +281,16 @@
 				A656BF2A17BB188400DFE175 /* main.m in Sources */,
 				A656BF2E17BB188400DFE175 /* USKAppDelegate.m in Sources */,
 				A656BF3A17BB188600DFE175 /* USKViewController.m in Sources */,
+				A656BF4D17BB19DA00DFE175 /* NSManagedObject+Helper.m in Sources */,
+				A656BF4E17BB19DA00DFE175 /* USKModel.xcdatamodeld in Sources */,
+				A656BF4F17BB19DA00DFE175 /* USKModelManager.m in Sources */,
+				A656BF5017BB19DA00DFE175 /* USKPage.m in Sources */,
+				A656BF5117BB19DA00DFE175 /* USKRoot.m in Sources */,
+				A656BF5517BB1A1B00DFE175 /* UIImage+PDF.m in Sources */,
+				A656BF6717BB1AF000DFE175 /* USKFactoryPageController.m in Sources */,
+				A656BF6817BB1AF000DFE175 /* USKNameField.m in Sources */,
+				A656BF6917BB1AF000DFE175 /* USKOpenGLView.m in Sources */,
+				A656BF6A17BB1AF000DFE175 /* USKPageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +377,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrystalSuger/CrystalSuger-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/bullet2.81/header";
 				INFOPLIST_FILE = "CrystalSuger/CrystalSuger-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/bullet2.81/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -274,7 +393,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrystalSuger/CrystalSuger-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/bullet2.81/header";
 				INFOPLIST_FILE = "CrystalSuger/CrystalSuger-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/bullet2.81/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -301,6 +425,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A656BF4517BB19DA00DFE175 /* USKModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A656BF4617BB19DA00DFE175 /* USKModel.xcdatamodel */,
+			);
+			currentVersion = A656BF4617BB19DA00DFE175 /* USKModel.xcdatamodel */;
+			path = USKModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A656BF1217BB188200DFE175 /* Project object */;
 }

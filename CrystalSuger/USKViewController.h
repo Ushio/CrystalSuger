@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface USKViewController : UIViewController
+#import <CoreData/CoreData.h>
+@interface USKViewController : UIViewController<UIScrollViewDelegate, NSFetchedResultsControllerDelegate>
 
 @end
