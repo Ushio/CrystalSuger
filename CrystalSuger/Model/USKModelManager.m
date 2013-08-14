@@ -42,7 +42,7 @@ static BOOL isExistDatabase()
 {
     if(self = [super init])
     {
-        [self deleteDatabase];
+//        [self deleteDatabase];
         BOOL isExist = isExistDatabase();
         [self openDatabase];
         

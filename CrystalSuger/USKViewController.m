@@ -8,9 +8,9 @@
 
 #import "USKViewController.h"
 
-#import "USKPageController.h"
+#import "USKPageViewController.h"
 #import "USKModelManager.h"
-#import "USKFactoryPageController.h"
+#import "USKFactoryPageViewController.h"
 #import "USKPagesContext.h"
 
 #import <QuartzCore/QuartzCore.h>
@@ -23,8 +23,8 @@
     
     USKModelManager *_modelManager;
     
-    NSMutableArray *_pageControllers;
-    USKFactoryPageController *_factoryPageController;
+    NSMutableArray *_pageViewControllers;
+    USKFactoryPageViewController *_factoryPageViewController;
     
     NSFetchedResultsController *_fetchedResultsController;
     
@@ -41,6 +41,9 @@
     
     _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     [EAGLContext setCurrentContext:_context];
+    
+    //描画コンテキスト
+    _pagesContext = [[USKPagesContext alloc] initWithSize:blocksize];
     
     _baseScrollView.delegate = self;
     
@@ -62,32 +65,29 @@
     [_fetchedResultsController performFetch:&error];
     NSAssert(error == nil, @"");
     
-    _pageControllers = [NSMutableArray array];
+    _pageViewControllers = [NSMutableArray array];
     NSArray *fetchedObjects = _fetchedResultsController.fetchedObjects;
     for(int i = 0 ; i < fetchedObjects.count ; ++i)
     {
         USKPage *page = fetchedObjects[i];
-        USKPageController *pageController = [[USKPageController alloc] initWithSize:blocksize
+        USKPageViewController *pageController = [[USKPageViewController alloc] initWithSize:blocksize
                                                                           glcontext:_context
                                                                                page:page
                                                                        modelManager:_modelManager
                                                                        pagesContext:_pagesContext];
-        [_pageControllers addObject:pageController];
+        [_pageViewControllers addObject:pageController];
         pageController.view.frame = CGRectMake(blocksize.width * i, 0, blocksize.width, blocksize.height);
         [_baseScrollView addSubview:pageController.view];
     }
     
     //最後のページ
-    _factoryPageController = [[USKFactoryPageController alloc] initWithSize:blocksize
+    _factoryPageViewController = [[USKFactoryPageViewController alloc] initWithSize:blocksize
                                                                modelManager:_modelManager];
-    _factoryPageController.view.frame = CGRectMake(blocksize.width * _pageControllers.count, 0, blocksize.width, blocksize.height);
-    [_baseScrollView addSubview:_factoryPageController.view];
+    _factoryPageViewController.view.frame = CGRectMake(blocksize.width * _pageViewControllers.count, 0, blocksize.width, blocksize.height);
+    [_baseScrollView addSubview:_factoryPageViewController.view];
     
     //全体幅
-    _baseScrollView.contentSize = CGSizeMake(blocksize.width * (_pageControllers.count + 1), blocksize.height);
-
-    //描画コンテキスト
-    _pagesContext = [[USKPagesContext alloc] initWithSize:blocksize];
+    _baseScrollView.contentSize = CGSizeMake(blocksize.width * (_pageViewControllers.count + 1), blocksize.height);
 }
 - (void)onUpdate:(CADisplayLink *)sender
 {
@@ -97,10 +97,10 @@
     visibleRect.size = _baseScrollView.bounds.size;
     
     float maxVisibly = 0;
-    USKPageController *maxVisiblyPageController = nil;
-    for(int i = 0 ; i < _pageControllers.count ; ++i)
+    USKPageViewController *maxVisiblyPageController = nil;
+    for(int i = 0 ; i < _pageViewControllers.count ; ++i)
     {
-        USKPageController *pageController = _pageControllers[i];
+        USKPageViewController *pageController = _pageViewControllers[i];
         CGRect visible = CGRectIntersection(visibleRect, pageController.view.frame);
         
         if(maxVisibly < visible.size.width)
@@ -125,24 +125,24 @@
         case NSFetchedResultsChangeInsert:
         {
             int newIndex = newIndexPath.row;
-            USKPageController *pageController = [[USKPageController alloc] initWithSize:blocksize
+            USKPageViewController *pageController = [[USKPageViewController alloc] initWithSize:blocksize
                                                                               glcontext:_context
                                                                                    page:anObject
                                                                            modelManager:_modelManager
                                                                            pagesContext:_pagesContext];
-            [_pageControllers insertObject:pageController atIndex:newIndex];
+            [_pageViewControllers insertObject:pageController atIndex:newIndex];
             
-            pageController.view.frame = CGRectMake(blocksize.width * (_pageControllers.count - 1), 0, blocksize.width, blocksize.height);
+            pageController.view.frame = CGRectMake(blocksize.width * (_pageViewControllers.count - 1), 0, blocksize.width, blocksize.height);
             [_baseScrollView addSubview:pageController.view];
             
             //常に最後だけずらせばいい
             [UIView animateWithDuration:0.5 animations:^{
-                _factoryPageController.view.frame = CGRectMake(blocksize.width * _pageControllers.count, 0, blocksize.width, blocksize.height);
+                _factoryPageViewController.view.frame = CGRectMake(blocksize.width * _pageViewControllers.count, 0, blocksize.width, blocksize.height);
             }];
-            _baseScrollView.contentSize = CGSizeMake(blocksize.width * (_pageControllers.count + 1), blocksize.height);
+            _baseScrollView.contentSize = CGSizeMake(blocksize.width * (_pageViewControllers.count + 1), blocksize.height);
             
             //これ必須？
-            [_baseScrollView bringSubviewToFront:_factoryPageController.view];
+            [_baseScrollView bringSubviewToFront:_factoryPageViewController.view];
             
             break;
         }
@@ -151,23 +151,23 @@
             int rmIndex = indexPath.row;
             
             //先に表示オブジェクトを消す
-            USKPageController *rmPageController = _pageControllers[rmIndex];
+            USKPageViewController *rmPageController = _pageViewControllers[rmIndex];
             [_baseScrollView sendSubviewToBack:rmPageController.view];
-            [_pageControllers removeObjectAtIndex:rmIndex];
+            [_pageViewControllers removeObjectAtIndex:rmIndex];
             
             //右のやつはすべて再配置
             [UIView animateWithDuration:.5 animations:^{
-                for(int i = rmIndex ; i < _pageControllers.count ; ++i)
+                for(int i = rmIndex ; i < _pageViewControllers.count ; ++i)
                 {
-                    USKPageController *replacePageController = _pageControllers[i];
+                    USKPageViewController *replacePageController = _pageViewControllers[i];
                     replacePageController.view.frame = CGRectMake(blocksize.width * i, 0, blocksize.width, blocksize.height);
                 }
-                _factoryPageController.view.frame = CGRectMake(blocksize.width * _pageControllers.count, 0, blocksize.width, blocksize.height);
+                _factoryPageViewController.view.frame = CGRectMake(blocksize.width * _pageViewControllers.count, 0, blocksize.width, blocksize.height);
             } completion:^(BOOL finished) {
                 //移動が終わってから消す
                 [rmPageController.view removeFromSuperview];
             }];
-            _baseScrollView.contentSize = CGSizeMake(blocksize.width * (_pageControllers.count + 1), blocksize.height);
+            _baseScrollView.contentSize = CGSizeMake(blocksize.width * (_pageViewControllers.count + 1), blocksize.height);
             
             break;
         }
@@ -181,9 +181,10 @@
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    for(USKPageController *pageController in _pageControllers)
+    for(USKPageViewController *pageController in _pageViewControllers)
     {
         [pageController closeKeyboard];
     }
 }
+
 @end

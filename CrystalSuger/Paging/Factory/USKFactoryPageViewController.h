@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "USKModelManager.h"
 
-@interface USKFactoryPageController : NSObject
-@property (strong, nonatomic, readonly) UIView *view;
+@interface USKFactoryPageViewController : UIViewController
 - (id)initWithSize:(CGSize)size modelManager:(USKModelManager *)modelManager;
 @end

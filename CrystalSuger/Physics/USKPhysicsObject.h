@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GLKit/GLKit.h>
 
 @class USKPhysicsWorld;
 @interface USKPhysicsObject : NSObject
@@ -18,6 +19,6 @@
 }
 
 - (void)removeFromWorld;
+- (void)aabbMin:(GLKVector3 *)min max:(GLKVector3 *)max;
 @property (weak, nonatomic) USKPhysicsWorld *world;
-@property (strong, nonatomic) NSMutableDictionary *userInfo;
 @end

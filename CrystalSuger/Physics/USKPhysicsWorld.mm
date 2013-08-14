@@ -17,6 +17,8 @@
 #import "USKPhysicsSphere.h"
 #import "USKPhysicsStaticMesh.h"
 
+#include <string>
+
 @implementation USKPhysicsWorld
 {
     btDefaultCollisionConfiguration *_configration;
@@ -37,10 +39,10 @@
         _dispatcher = new btCollisionDispatcher(_configration);
         _solver = new btSequentialImpulseConstraintSolver();
         
-        const float size = 0.7;
+        const float size = 1.0f;
         btVector3 aabbMin(-size, -size, -size);
         btVector3 aabbMax(size, size, size);
-        _broadphase = new btAxisSweep3(aabbMin, aabbMax, 200);
+        _broadphase = new btAxisSweep3(aabbMin, aabbMax, 101);
         _world = new btDiscreteDynamicsWorld(_dispatcher, _broadphase,_solver, _configration);
         
         _world->setGravity(btVector3(0, -9.8f, 0));

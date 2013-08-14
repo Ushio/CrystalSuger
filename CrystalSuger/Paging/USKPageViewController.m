@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 Ushio. All rights reserved.
 //
 
-#import "USKPageController.h"
+#import "USKPageViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -17,20 +17,21 @@
 
 #import "USKPhysicsWorld.h"
 #import "USKPhysicsStaticMesh.h"
-#import "USKPhysicsSphere.h"
+#import "USKKompeitoSphere.h"
+#import "USKKompeitoSphere.h"
 #import "USKPhialCollisionVertices.h"
 #import "USKUtility.h"
 #import "USKCamera.h"
 
+#import "USKKompeito.h"
+
+//TODO 最大数
 //http://iosfonts.com/
 
 static const int HEADER_SIZE = 30;
 static UIImage *rmImage = nil;
 
-@interface USKPageController()
-@property (strong, nonatomic) UIView *view;
-@end
-@implementation USKPageController
+@implementation USKPageViewController
 {
     CGSize _size;
     
@@ -39,11 +40,13 @@ static UIImage *rmImage = nil;
     USKNameField *_nameField;
     UILabel *_countLabel;
     
+    int _count;
     USKPage *_page;
     USKModelManager *_modelManager;
     USKPagesContext *_pagesContext;
     
     USKPhysicsWorld *_physicsWorld;
+    NSMutableArray *_kompeitoSpheres;
     
     USKCamera *_camera;
     
@@ -67,8 +70,13 @@ static UIImage *rmImage = nil;
         _modelManager = modelManager;
         _pagesContext = pagesContext;
         
+        NSAssert(glcontext, @"");
+        NSAssert(page, @"");
+        NSAssert(modelManager, @"");
+        NSAssert(pagesContext, @"");
+        
         //ベース
-        _view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _size.width, _size.height)];
+        self.view.frame = CGRectMake(0, 0, _size.width, _size.height);
         
         _glview = [[USKOpenGLView alloc] initWithFrame:self.view.bounds
                                                context:_glcontext];
@@ -83,7 +91,7 @@ static UIImage *rmImage = nil;
         //ボタン
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            NSString *rmImagePath = [[NSBundle mainBundle] pathForResource:@"RemoveButton.pdf" ofType:@""];
+            NSString *rmImagePath = [[NSBundle mainBundle] pathForResource:@"RemoveIcon.pdf" ofType:@""];
             rmImage = [UIImage imageWithContentsOfPDF:rmImagePath height:HEADER_SIZE];
         });
 
@@ -99,19 +107,34 @@ static UIImage *rmImage = nil;
         _countLabel.textColor = [UIColor whiteColor];
         _countLabel.font = [UIFont fontWithName:@"Futura-MediumItalic" size:25];
         _countLabel.frame = CGRectMake(10, HEADER_SIZE + 4, 50, 30);
-        _countLabel.text = [NSString stringWithFormat:@"%d", _page.count.intValue];
+        _countLabel.text = [NSString stringWithFormat:@"%d", _page.kompeitos.count];
         [self.view addSubview:_countLabel];
         
         //物理エンジン
         _physicsWorld = [[USKPhysicsWorld alloc] init];
+        _kompeitoSpheres = [NSMutableArray array];
         
         //テスト瓶
         USKPhysicsStaticMesh *mesh = [[USKPhysicsStaticMesh alloc] initWithTriMesh:kPhialCollisionVertices numberOfVertices:ARRAY_SIZE(kPhialCollisionVertices)];
         [_physicsWorld addPhysicsObject:mesh];
+//        GLKVector3 aabbMin, aabbMax;
+//        [mesh aabbMin:&aabbMin max:&aabbMax];
+        
+        //リストア
+        for(USKKompeito *kompeito in _page.kompeitos)
+        {
+            //物理エンジンに反映
+            USKKompeitoSphere *ksphere = [[USKKompeitoSphere alloc] init];
+            ksphere.position = GLKVector3Make(kompeito.x.floatValue, kompeito.y.floatValue, kompeito.z.floatValue);
+            ksphere.color = kompeito.color.intValue;
+            
+            [_physicsWorld addPhysicsObject:ksphere];
+            [_kompeitoSpheres addObject:ksphere];
+        }
+        _count = _page.kompeitos.count;
         
         //カメラ
         _camera = [[USKCamera alloc] init];
-        
         
         //タップ
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -125,10 +148,24 @@ static UIImage *rmImage = nil;
         _beginTime = [NSDate date];
         _lastUpdateTime = 0.0;
         _integralTime = 0.0;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(applicationWillResignActive:)
+                                                     name:UIApplicationWillResignActiveNotification
+                                                   object:nil];
     }
     return self;
 }
-
+- (void)dealloc
+{
+    [_pagesContext.queue waitUntilAllOperationsAreFinished];
+    for(USKKompeitoSphere *ksphere in _kompeitoSpheres)
+    {
+        [ksphere removeFromWorld];
+    }
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillResignActiveNotification object:nil];
+}
 //ちょっと後で
 - (void)setIsActivated:(BOOL)isActivated
 {
@@ -155,35 +192,35 @@ static UIImage *rmImage = nil;
 - (void)updateCountLabel
 {
     [UIView transitionWithView:_countLabel duration:0.2 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
-        _countLabel.text = [NSString stringWithFormat:@"%d", _page.count.intValue];
+        _countLabel.text = [NSString stringWithFormat:@"%d", _count];
     } completion:^(BOOL finished) {}];
 }
 
 - (void)onTap:(UITapGestureRecognizer *)recognizer
 {
-    _page.count = @(_page.count.intValue + 1);
-    [_modelManager save];
+    _count++;
     [self updateCountLabel];
     
-    USKPhysicsSphere *sphere = [[USKPhysicsSphere alloc] init];
-    sphere.position = GLKVector3Make(0.0f, 0.3f, 0.0f);
+    USKKompeitoSphere *ksphere = [[USKKompeitoSphere alloc] init];
+    ksphere.position = GLKVector3Make(0.0f, 0.3f, 0.0f);
+    ksphere.color = 0;
     
-    [_pagesContext.queue addOperationWithBlock:^{
-        [_physicsWorld addPhysicsObject:sphere];
-    }];
+    [_pagesContext.queue waitUntilAllOperationsAreFinished];
+    [_physicsWorld addPhysicsObject:ksphere];
+    [_kompeitoSpheres addObject:ksphere];
 }
 - (void)onLongPress:(UILongPressGestureRecognizer *)recognizer
 {
     if(recognizer.state == UIGestureRecognizerStateBegan)
     {
-        if(_page.count.intValue > 0)
+        if(_count > 0)
         {
             UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@""
                                                                      delegate:self
                                                             cancelButtonTitle:@"キャンセル"
                                                        destructiveButtonTitle:@"すべて削除"
                                                             otherButtonTitles:@"１つ削除", nil];
-            [actionSheet showInView:_view];
+            [actionSheet showInView:self.view];
         }
     }
 }
@@ -192,11 +229,25 @@ static UIImage *rmImage = nil;
     if(buttonIndex == actionSheet.destructiveButtonIndex)
     {
         //すべて削除
-        _page.count = @0;
+        _count = 0;
+        
+        [_pagesContext.queue waitUntilAllOperationsAreFinished];
+        for(USKKompeitoSphere *ksphere in _kompeitoSpheres)
+        {
+            [ksphere removeFromWorld];
+        }
+        [_kompeitoSpheres removeAllObjects];
     }
-    else
+    else if(buttonIndex != actionSheet.cancelButtonIndex)
     {
-        _page.count = @(_page.count.intValue - 1);
+        //一つ削除
+        _count--;
+        
+        USKKompeitoSphere *ksphere = _kompeitoSpheres.lastObject;
+        
+        [_pagesContext.queue waitUntilAllOperationsAreFinished];
+        [ksphere removeFromWorld];
+        [_kompeitoSpheres removeLastObject];
     }
     [self updateCountLabel];
 }
@@ -239,7 +290,6 @@ static UIImage *rmImage = nil;
         [_pagesContext.queue waitUntilAllOperationsAreFinished];
         {
             [_physicsWorld renderForDebug:sm camera:_camera];
-            
         }
         [_pagesContext.queue addOperationWithBlock:^{
             [_physicsWorld stepWithDeltaTime:delta];
@@ -254,5 +304,31 @@ static UIImage *rmImage = nil;
     [_nameField resignFirstResponder];
     _page.name = _nameField.text;
     [_modelManager save];
+}
+- (void)save
+{
+    //一度クリア
+    for(USKKompeito *kompeito in _page.kompeitos)
+    {
+        [kompeito destroyInstance];
+    }
+    
+    //再構成
+    for(USKKompeitoSphere *ksphere in _kompeitoSpheres)
+    {
+        USKKompeito *kompeito = [USKKompeito createInstanceWithContext:_modelManager.context];
+        GLKVector3 position = ksphere.position;
+        kompeito.x = @(position.x);
+        kompeito.y = @(position.y);
+        kompeito.z = @(position.z);
+        kompeito.color = @(ksphere.color);
+        kompeito.page = _page;
+    }
+    
+    [_modelManager save];
+}
+- (void)applicationWillResignActive:(NSNotification *)notification
+{
+    [self save];
 }
 @end

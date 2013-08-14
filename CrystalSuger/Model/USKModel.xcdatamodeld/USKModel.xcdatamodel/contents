@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="USKKompeito" syncable="YES">
+    <entity name="USKKompeito" representedClassName="USKKompeito" syncable="YES">
         <attribute name="color" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -8,7 +8,6 @@
         <relationship name="page" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="USKPage" inverseName="kompeitos" inverseEntity="USKPage" syncable="YES"/>
     </entity>
     <entity name="USKPage" representedClassName="USKPage" syncable="YES">
-        <attribute name="count" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="kompeitos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="USKKompeito" inverseName="page" inverseEntity="USKKompeito" syncable="YES"/>
@@ -18,8 +17,8 @@
         <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="USKPage" inverseName="root" inverseEntity="USKPage" syncable="YES"/>
     </entity>
     <elements>
-        <element name="USKPage" positionX="160" positionY="192" width="128" height="118"/>
-        <element name="USKRoot" positionX="394" positionY="93" width="128" height="60"/>
         <element name="USKKompeito" positionX="-0" positionY="353" width="128" height="118"/>
+        <element name="USKPage" positionX="196" positionY="210" width="128" height="105"/>
+        <element name="USKRoot" positionX="394" positionY="93" width="128" height="60"/>
     </elements>
 </model>

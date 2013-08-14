@@ -16,7 +16,8 @@
 #import "USKUtility.h"
 
 #import "USKKompeitoVertices.h"
-#import "USKKompeitoEntity.h"
+#import "USKKompeitoSphere.h"
+#import "USKKompeitoConstants.h"
 
 @implementation USKKompeitoRenderer
 {
@@ -108,12 +109,12 @@
                 {
                     [_shader setVector4:kKompeitoColorValues[i] forUniformKey:@"u_color"];
                     
-                    for(USKKompeitoEntity *kompeito in kompeitos)
+                    for(USKKompeitoSphere *kompeito in kompeitos)
                     {
                         if(kompeito.color == i)
                         {
-                            GLKVector3 position = kompeito.USKPhysicsSphere.position;
-                            GLKQuaternion rotation = kompeito.USKPhysicsSphere.rotation;
+                            GLKVector3 position = kompeito.position;
+                            GLKQuaternion rotation = kompeito.rotation;
                             
                             GLKMatrix4 world = GLKMatrix4MakeTranslation(position.x, position.y, position.z);
                             world = GLKMatrix4Multiply(world, GLKMatrix4MakeWithQuaternion(rotation));

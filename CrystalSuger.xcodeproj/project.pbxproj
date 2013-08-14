@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A615A90417BB7AB0006114DC /* USKKompeito.m in Sources */ = {isa = PBXBuildFile; fileRef = A615A90317BB7AB0006114DC /* USKKompeito.m */; };
+		A615A90717BB7AB1006114DC /* USKPage.m in Sources */ = {isa = PBXBuildFile; fileRef = A615A90617BB7AB1006114DC /* USKPage.m */; };
+		A615A90A17BB7AB1006114DC /* USKRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = A615A90917BB7AB1006114DC /* USKRoot.m */; };
+		A615A90D17BB7E07006114DC /* USKKompeitoSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = A615A90C17BB7E07006114DC /* USKKompeitoSphere.m */; };
+		A615A91417BB9258006114DC /* USKFactoryPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A615A91317BB9258006114DC /* USKFactoryPageViewController.m */; };
+		A615A91617BB9295006114DC /* USKFactoryPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = A615A91517BB9295006114DC /* USKFactoryPage.xib */; };
 		A656BF1E17BB188300DFE175 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF1D17BB188300DFE175 /* UIKit.framework */; };
 		A656BF2017BB188300DFE175 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF1F17BB188300DFE175 /* Foundation.framework */; };
 		A656BF2217BB188300DFE175 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF2117BB188300DFE175 /* CoreGraphics.framework */; };
@@ -22,18 +28,15 @@
 		A656BF4D17BB19DA00DFE175 /* NSManagedObject+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF4417BB19DA00DFE175 /* NSManagedObject+Helper.m */; };
 		A656BF4E17BB19DA00DFE175 /* USKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A656BF4517BB19DA00DFE175 /* USKModel.xcdatamodeld */; };
 		A656BF4F17BB19DA00DFE175 /* USKModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF4817BB19DA00DFE175 /* USKModelManager.m */; };
-		A656BF5017BB19DA00DFE175 /* USKPage.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF4A17BB19DA00DFE175 /* USKPage.m */; };
-		A656BF5117BB19DA00DFE175 /* USKRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF4C17BB19DA00DFE175 /* USKRoot.m */; };
 		A656BF5517BB1A1B00DFE175 /* UIImage+PDF.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF5417BB1A1B00DFE175 /* UIImage+PDF.m */; };
 		A656BF5717BB1A8800DFE175 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF5617BB1A8800DFE175 /* CoreData.framework */; };
 		A656BF5917BB1A9200DFE175 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF5817BB1A9200DFE175 /* QuartzCore.framework */; };
 		A656BF5B17BB1A9800DFE175 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF5A17BB1A9800DFE175 /* OpenGLES.framework */; };
 		A656BF5D17BB1A9F00DFE175 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF5C17BB1A9F00DFE175 /* GLKit.framework */; };
-		A656BF6717BB1AF000DFE175 /* USKFactoryPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF6017BB1AF000DFE175 /* USKFactoryPageController.m */; };
 		A656BF6817BB1AF000DFE175 /* USKNameField.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF6217BB1AF000DFE175 /* USKNameField.m */; };
 		A656BF6917BB1AF000DFE175 /* USKOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF6417BB1AF000DFE175 /* USKOpenGLView.m */; };
-		A656BF6A17BB1AF000DFE175 /* USKPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF6617BB1AF000DFE175 /* USKPageController.m */; };
-		A656BF6D17BB1B1C00DFE175 /* RemoveButton.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A656BF6C17BB1B1C00DFE175 /* RemoveButton.pdf */; };
+		A656BF6A17BB1AF000DFE175 /* USKPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF6617BB1AF000DFE175 /* USKPageViewController.m */; };
+		A656BF6D17BB1B1C00DFE175 /* RemoveIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A656BF6C17BB1B1C00DFE175 /* RemoveIcon.pdf */; };
 		A656BF7817BB1C3D00DFE175 /* USKPhysicsObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = A656BF7117BB1C3D00DFE175 /* USKPhysicsObject.mm */; };
 		A656BF7917BB1C3D00DFE175 /* USKPhysicsSphere.mm in Sources */ = {isa = PBXBuildFile; fileRef = A656BF7317BB1C3D00DFE175 /* USKPhysicsSphere.mm */; };
 		A656BF7A17BB1C3D00DFE175 /* USKPhysicsStaticMesh.mm in Sources */ = {isa = PBXBuildFile; fileRef = A656BF7517BB1C3D00DFE175 /* USKPhysicsStaticMesh.mm */; };
@@ -55,14 +58,27 @@
 		A656BFB117BB1C8600DFE175 /* USKPostEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9E17BB1C8600DFE175 /* USKPostEffect.m */; };
 		A656BFB217BB1C8600DFE175 /* USKStarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BFA217BB1C8600DFE175 /* USKStarRenderer.m */; };
 		A656BFB517BB1CA100DFE175 /* USKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BFB417BB1CA100DFE175 /* USKUtility.m */; };
-		A656BFBB17BB1D1000DFE175 /* USKKompeitoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BFB817BB1D1000DFE175 /* USKKompeitoController.m */; };
-		A656BFBC17BB1D1000DFE175 /* USKKompeitoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BFBA17BB1D1000DFE175 /* USKKompeitoEntity.m */; };
 		A656BFBF17BB1D4900DFE175 /* USKPagesContext.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BFBE17BB1D4900DFE175 /* USKPagesContext.m */; };
 		A656BFC117BB258500DFE175 /* background.pvrtc in Resources */ = {isa = PBXBuildFile; fileRef = A656BFC017BB255100DFE175 /* background.pvrtc */; };
 		A656BFC317BB263D00DFE175 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A656BFC217BB263D00DFE175 /* star.png */; };
+		A66B6CED17BBA6DF00C1BE46 /* Add.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A66B6CEA17BBA6DF00C1BE46 /* Add.pdf */; };
+		A66B6CEE17BBA6DF00C1BE46 /* Copyleft.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A66B6CEB17BBA6DF00C1BE46 /* Copyleft.pdf */; };
+		A66B6CEF17BBA6DF00C1BE46 /* Wikipedia.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A66B6CEC17BBA6DF00C1BE46 /* Wikipedia.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A615A90217BB7AB0006114DC /* USKKompeito.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKKompeito.h; sourceTree = "<group>"; };
+		A615A90317BB7AB0006114DC /* USKKompeito.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKKompeito.m; sourceTree = "<group>"; };
+		A615A90517BB7AB1006114DC /* USKPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPage.h; sourceTree = "<group>"; };
+		A615A90617BB7AB1006114DC /* USKPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKPage.m; sourceTree = "<group>"; };
+		A615A90817BB7AB1006114DC /* USKRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKRoot.h; sourceTree = "<group>"; };
+		A615A90917BB7AB1006114DC /* USKRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKRoot.m; sourceTree = "<group>"; };
+		A615A90B17BB7E07006114DC /* USKKompeitoSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKKompeitoSphere.h; sourceTree = "<group>"; };
+		A615A90C17BB7E07006114DC /* USKKompeitoSphere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKKompeitoSphere.m; sourceTree = "<group>"; };
+		A615A90E17BB7E3E006114DC /* USKKompeitoConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USKKompeitoConstants.h; sourceTree = "<group>"; };
+		A615A91217BB9258006114DC /* USKFactoryPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKFactoryPageViewController.h; sourceTree = "<group>"; };
+		A615A91317BB9258006114DC /* USKFactoryPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKFactoryPageViewController.m; sourceTree = "<group>"; };
+		A615A91517BB9295006114DC /* USKFactoryPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USKFactoryPage.xib; sourceTree = "<group>"; };
 		A656BF1A17BB188300DFE175 /* CrystalSuger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrystalSuger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A656BF1D17BB188300DFE175 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A656BF1F17BB188300DFE175 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,25 +101,19 @@
 		A656BF4617BB19DA00DFE175 /* USKModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = USKModel.xcdatamodel; sourceTree = "<group>"; };
 		A656BF4717BB19DA00DFE175 /* USKModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKModelManager.h; sourceTree = "<group>"; };
 		A656BF4817BB19DA00DFE175 /* USKModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKModelManager.m; sourceTree = "<group>"; };
-		A656BF4917BB19DA00DFE175 /* USKPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPage.h; sourceTree = "<group>"; };
-		A656BF4A17BB19DA00DFE175 /* USKPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKPage.m; sourceTree = "<group>"; };
-		A656BF4B17BB19DA00DFE175 /* USKRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKRoot.h; sourceTree = "<group>"; };
-		A656BF4C17BB19DA00DFE175 /* USKRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKRoot.m; sourceTree = "<group>"; };
 		A656BF5317BB1A1B00DFE175 /* UIImage+PDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PDF.h"; sourceTree = "<group>"; };
 		A656BF5417BB1A1B00DFE175 /* UIImage+PDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PDF.m"; sourceTree = "<group>"; };
 		A656BF5617BB1A8800DFE175 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A656BF5817BB1A9200DFE175 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A656BF5A17BB1A9800DFE175 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		A656BF5C17BB1A9F00DFE175 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		A656BF5F17BB1AF000DFE175 /* USKFactoryPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKFactoryPageController.h; sourceTree = "<group>"; };
-		A656BF6017BB1AF000DFE175 /* USKFactoryPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKFactoryPageController.m; sourceTree = "<group>"; };
 		A656BF6117BB1AF000DFE175 /* USKNameField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKNameField.h; sourceTree = "<group>"; };
 		A656BF6217BB1AF000DFE175 /* USKNameField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKNameField.m; sourceTree = "<group>"; };
 		A656BF6317BB1AF000DFE175 /* USKOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKOpenGLView.h; sourceTree = "<group>"; };
 		A656BF6417BB1AF000DFE175 /* USKOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKOpenGLView.m; sourceTree = "<group>"; };
-		A656BF6517BB1AF000DFE175 /* USKPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPageController.h; sourceTree = "<group>"; };
-		A656BF6617BB1AF000DFE175 /* USKPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKPageController.m; sourceTree = "<group>"; };
-		A656BF6C17BB1B1C00DFE175 /* RemoveButton.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = RemoveButton.pdf; sourceTree = "<group>"; };
+		A656BF6517BB1AF000DFE175 /* USKPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPageViewController.h; sourceTree = "<group>"; };
+		A656BF6617BB1AF000DFE175 /* USKPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKPageViewController.m; sourceTree = "<group>"; };
+		A656BF6C17BB1B1C00DFE175 /* RemoveIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = RemoveIcon.pdf; sourceTree = "<group>"; };
 		A656BF6F17BB1C3D00DFE175 /* USKPhialCollisionVertices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPhialCollisionVertices.h; sourceTree = "<group>"; };
 		A656BF7017BB1C3D00DFE175 /* USKPhysicsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPhysicsObject.h; sourceTree = "<group>"; };
 		A656BF7117BB1C3D00DFE175 /* USKPhysicsObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = USKPhysicsObject.mm; sourceTree = "<group>"; };
@@ -152,14 +162,13 @@
 		A656BFA217BB1C8600DFE175 /* USKStarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKStarRenderer.m; sourceTree = "<group>"; };
 		A656BFB317BB1CA100DFE175 /* USKUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKUtility.h; sourceTree = "<group>"; };
 		A656BFB417BB1CA100DFE175 /* USKUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKUtility.m; sourceTree = "<group>"; };
-		A656BFB717BB1D1000DFE175 /* USKKompeitoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKKompeitoController.h; sourceTree = "<group>"; };
-		A656BFB817BB1D1000DFE175 /* USKKompeitoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKKompeitoController.m; sourceTree = "<group>"; };
-		A656BFB917BB1D1000DFE175 /* USKKompeitoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKKompeitoEntity.h; sourceTree = "<group>"; };
-		A656BFBA17BB1D1000DFE175 /* USKKompeitoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKKompeitoEntity.m; sourceTree = "<group>"; };
 		A656BFBD17BB1D4900DFE175 /* USKPagesContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPagesContext.h; sourceTree = "<group>"; };
 		A656BFBE17BB1D4900DFE175 /* USKPagesContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKPagesContext.m; sourceTree = "<group>"; };
 		A656BFC017BB255100DFE175 /* background.pvrtc */ = {isa = PBXFileReference; lastKnownFileType = file; path = background.pvrtc; sourceTree = "<group>"; };
 		A656BFC217BB263D00DFE175 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		A66B6CEA17BBA6DF00C1BE46 /* Add.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Add.pdf; sourceTree = "<group>"; };
+		A66B6CEB17BBA6DF00C1BE46 /* Copyleft.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Copyleft.pdf; sourceTree = "<group>"; };
+		A66B6CEC17BBA6DF00C1BE46 /* Wikipedia.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Wikipedia.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +190,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A615A91117BB9258006114DC /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A615A91217BB9258006114DC /* USKFactoryPageViewController.h */,
+				A615A91317BB9258006114DC /* USKFactoryPageViewController.m */,
+				A615A91517BB9295006114DC /* USKFactoryPage.xib */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		A656BF1117BB188200DFE175 = {
 			isa = PBXGroup;
 			children = (
@@ -216,7 +235,6 @@
 		A656BF2317BB188300DFE175 /* CrystalSuger */ = {
 			isa = PBXGroup;
 			children = (
-				A656BFB617BB1D1000DFE175 /* KompeitoControll */,
 				A656BF7C17BB1C8600DFE175 /* Graphics */,
 				A656BF6E17BB1C3D00DFE175 /* Physics */,
 				A656BF6B17BB1B1C00DFE175 /* Resource */,
@@ -253,12 +271,14 @@
 				A656BF4317BB19DA00DFE175 /* NSManagedObject+Helper.h */,
 				A656BF4417BB19DA00DFE175 /* NSManagedObject+Helper.m */,
 				A656BF4517BB19DA00DFE175 /* USKModel.xcdatamodeld */,
+				A615A90817BB7AB1006114DC /* USKRoot.h */,
+				A615A90917BB7AB1006114DC /* USKRoot.m */,
+				A615A90517BB7AB1006114DC /* USKPage.h */,
+				A615A90617BB7AB1006114DC /* USKPage.m */,
+				A615A90217BB7AB0006114DC /* USKKompeito.h */,
+				A615A90317BB7AB0006114DC /* USKKompeito.m */,
 				A656BF4717BB19DA00DFE175 /* USKModelManager.h */,
 				A656BF4817BB19DA00DFE175 /* USKModelManager.m */,
-				A656BF4917BB19DA00DFE175 /* USKPage.h */,
-				A656BF4A17BB19DA00DFE175 /* USKPage.m */,
-				A656BF4B17BB19DA00DFE175 /* USKRoot.h */,
-				A656BF4C17BB19DA00DFE175 /* USKRoot.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,16 +297,18 @@
 		A656BF5E17BB1AF000DFE175 /* Paging */ = {
 			isa = PBXGroup;
 			children = (
-				A656BF5F17BB1AF000DFE175 /* USKFactoryPageController.h */,
-				A656BF6017BB1AF000DFE175 /* USKFactoryPageController.m */,
+				A615A91117BB9258006114DC /* Factory */,
 				A656BF6117BB1AF000DFE175 /* USKNameField.h */,
 				A656BF6217BB1AF000DFE175 /* USKNameField.m */,
 				A656BF6317BB1AF000DFE175 /* USKOpenGLView.h */,
 				A656BF6417BB1AF000DFE175 /* USKOpenGLView.m */,
-				A656BF6517BB1AF000DFE175 /* USKPageController.h */,
-				A656BF6617BB1AF000DFE175 /* USKPageController.m */,
+				A656BF6517BB1AF000DFE175 /* USKPageViewController.h */,
+				A656BF6617BB1AF000DFE175 /* USKPageViewController.m */,
 				A656BFBD17BB1D4900DFE175 /* USKPagesContext.h */,
 				A656BFBE17BB1D4900DFE175 /* USKPagesContext.m */,
+				A615A90B17BB7E07006114DC /* USKKompeitoSphere.h */,
+				A615A90C17BB7E07006114DC /* USKKompeitoSphere.m */,
+				A615A90E17BB7E3E006114DC /* USKKompeitoConstants.h */,
 			);
 			path = Paging;
 			sourceTree = "<group>";
@@ -296,7 +318,10 @@
 			children = (
 				A656BFC217BB263D00DFE175 /* star.png */,
 				A656BFC017BB255100DFE175 /* background.pvrtc */,
-				A656BF6C17BB1B1C00DFE175 /* RemoveButton.pdf */,
+				A656BF6C17BB1B1C00DFE175 /* RemoveIcon.pdf */,
+				A66B6CEA17BBA6DF00C1BE46 /* Add.pdf */,
+				A66B6CEB17BBA6DF00C1BE46 /* Copyleft.pdf */,
+				A66B6CEC17BBA6DF00C1BE46 /* Wikipedia.pdf */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -369,17 +394,6 @@
 			path = G;
 			sourceTree = "<group>";
 		};
-		A656BFB617BB1D1000DFE175 /* KompeitoControll */ = {
-			isa = PBXGroup;
-			children = (
-				A656BFB717BB1D1000DFE175 /* USKKompeitoController.h */,
-				A656BFB817BB1D1000DFE175 /* USKKompeitoController.m */,
-				A656BFB917BB1D1000DFE175 /* USKKompeitoEntity.h */,
-				A656BFBA17BB1D1000DFE175 /* USKKompeitoEntity.m */,
-			);
-			path = KompeitoControll;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -437,9 +451,13 @@
 				A656BF3217BB188500DFE175 /* Default@2x.png in Resources */,
 				A656BF3417BB188500DFE175 /* Default-568h@2x.png in Resources */,
 				A656BF3717BB188600DFE175 /* MainStoryboard.storyboard in Resources */,
-				A656BF6D17BB1B1C00DFE175 /* RemoveButton.pdf in Resources */,
+				A656BF6D17BB1B1C00DFE175 /* RemoveIcon.pdf in Resources */,
 				A656BFC117BB258500DFE175 /* background.pvrtc in Resources */,
 				A656BFC317BB263D00DFE175 /* star.png in Resources */,
+				A615A91617BB9295006114DC /* USKFactoryPage.xib in Resources */,
+				A66B6CED17BBA6DF00C1BE46 /* Add.pdf in Resources */,
+				A66B6CEE17BBA6DF00C1BE46 /* Copyleft.pdf in Resources */,
+				A66B6CEF17BBA6DF00C1BE46 /* Wikipedia.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,13 +474,10 @@
 				A656BF4D17BB19DA00DFE175 /* NSManagedObject+Helper.m in Sources */,
 				A656BF4E17BB19DA00DFE175 /* USKModel.xcdatamodeld in Sources */,
 				A656BF4F17BB19DA00DFE175 /* USKModelManager.m in Sources */,
-				A656BF5017BB19DA00DFE175 /* USKPage.m in Sources */,
-				A656BF5117BB19DA00DFE175 /* USKRoot.m in Sources */,
 				A656BF5517BB1A1B00DFE175 /* UIImage+PDF.m in Sources */,
-				A656BF6717BB1AF000DFE175 /* USKFactoryPageController.m in Sources */,
 				A656BF6817BB1AF000DFE175 /* USKNameField.m in Sources */,
 				A656BF6917BB1AF000DFE175 /* USKOpenGLView.m in Sources */,
-				A656BF6A17BB1AF000DFE175 /* USKPageController.m in Sources */,
+				A656BF6A17BB1AF000DFE175 /* USKPageViewController.m in Sources */,
 				A656BF7817BB1C3D00DFE175 /* USKPhysicsObject.mm in Sources */,
 				A656BF7917BB1C3D00DFE175 /* USKPhysicsSphere.mm in Sources */,
 				A656BF7A17BB1C3D00DFE175 /* USKPhysicsStaticMesh.mm in Sources */,
@@ -484,9 +499,12 @@
 				A656BFB117BB1C8600DFE175 /* USKPostEffect.m in Sources */,
 				A656BFB217BB1C8600DFE175 /* USKStarRenderer.m in Sources */,
 				A656BFB517BB1CA100DFE175 /* USKUtility.m in Sources */,
-				A656BFBB17BB1D1000DFE175 /* USKKompeitoController.m in Sources */,
-				A656BFBC17BB1D1000DFE175 /* USKKompeitoEntity.m in Sources */,
 				A656BFBF17BB1D4900DFE175 /* USKPagesContext.m in Sources */,
+				A615A90417BB7AB0006114DC /* USKKompeito.m in Sources */,
+				A615A90717BB7AB1006114DC /* USKPage.m in Sources */,
+				A615A90A17BB7AB1006114DC /* USKRoot.m in Sources */,
+				A615A90D17BB7E07006114DC /* USKKompeitoSphere.m in Sources */,
+				A615A91417BB9258006114DC /* USKFactoryPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

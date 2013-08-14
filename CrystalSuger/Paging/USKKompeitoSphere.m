@@ -1,17 +1,13 @@
 //
-//  USKRoot.m
+//  USKKompeitoSphere.m
 //  CrystalSuger
 //
 //  Created by ushiostarfish on 2013/08/14.
 //  Copyright (c) 2013年 Ushio. All rights reserved.
 //
 
-#import "USKRoot.h"
-#import "USKPage.h"
+#import "USKKompeitoSphere.h"
 
-
-@implementation USKRoot
-
-@dynamic pages;
+@implementation USKKompeitoSphere
 
 @end
