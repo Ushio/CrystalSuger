@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A656BF1E17BB188300DFE175 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF1D17BB188300DFE175 /* UIKit.framework */; };
+		A656BF2017BB188300DFE175 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF1F17BB188300DFE175 /* Foundation.framework */; };
+		A656BF2217BB188300DFE175 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF2117BB188300DFE175 /* CoreGraphics.framework */; };
+		A656BF2817BB188300DFE175 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A656BF2617BB188300DFE175 /* InfoPlist.strings */; };
+		A656BF2A17BB188400DFE175 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF2917BB188400DFE175 /* main.m */; };
+		A656BF2E17BB188400DFE175 /* USKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF2D17BB188400DFE175 /* USKAppDelegate.m */; };
+		A656BF3017BB188500DFE175 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A656BF2F17BB188500DFE175 /* Default.png */; };
+		A656BF3217BB188500DFE175 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A656BF3117BB188500DFE175 /* Default@2x.png */; };
+		A656BF3417BB188500DFE175 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A656BF3317BB188500DFE175 /* Default-568h@2x.png */; };
+		A656BF3717BB188600DFE175 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A656BF3517BB188600DFE175 /* MainStoryboard.storyboard */; };
+		A656BF3A17BB188600DFE175 /* USKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF3917BB188600DFE175 /* USKViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A656BF1A17BB188300DFE175 /* CrystalSuger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrystalSuger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A656BF1D17BB188300DFE175 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A656BF1F17BB188300DFE175 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A656BF2117BB188300DFE175 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A656BF2517BB188300DFE175 /* CrystalSuger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrystalSuger-Info.plist"; sourceTree = "<group>"; };
+		A656BF2717BB188300DFE175 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A656BF2917BB188400DFE175 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A656BF2B17BB188400DFE175 /* CrystalSuger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrystalSuger-Prefix.pch"; sourceTree = "<group>"; };
+		A656BF2C17BB188400DFE175 /* USKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USKAppDelegate.h; sourceTree = "<group>"; };
+		A656BF2D17BB188400DFE175 /* USKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USKAppDelegate.m; sourceTree = "<group>"; };
+		A656BF2F17BB188500DFE175 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A656BF3117BB188500DFE175 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A656BF3317BB188500DFE175 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A656BF3617BB188600DFE175 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		A656BF3817BB188600DFE175 /* USKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USKViewController.h; sourceTree = "<group>"; };
+		A656BF3917BB188600DFE175 /* USKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USKViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A656BF1717BB188300DFE175 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A656BF1E17BB188300DFE175 /* UIKit.framework in Frameworks */,
+				A656BF2017BB188300DFE175 /* Foundation.framework in Frameworks */,
+				A656BF2217BB188300DFE175 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A656BF1117BB188200DFE175 = {
+			isa = PBXGroup;
+			children = (
+				A656BF2317BB188300DFE175 /* CrystalSuger */,
+				A656BF1C17BB188300DFE175 /* Frameworks */,
+				A656BF1B17BB188300DFE175 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A656BF1B17BB188300DFE175 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A656BF1A17BB188300DFE175 /* CrystalSuger.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A656BF1C17BB188300DFE175 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A656BF1D17BB188300DFE175 /* UIKit.framework */,
+				A656BF1F17BB188300DFE175 /* Foundation.framework */,
+				A656BF2117BB188300DFE175 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A656BF2317BB188300DFE175 /* CrystalSuger */ = {
+			isa = PBXGroup;
+			children = (
+				A656BF2C17BB188400DFE175 /* USKAppDelegate.h */,
+				A656BF2D17BB188400DFE175 /* USKAppDelegate.m */,
+				A656BF3517BB188600DFE175 /* MainStoryboard.storyboard */,
+				A656BF3817BB188600DFE175 /* USKViewController.h */,
+				A656BF3917BB188600DFE175 /* USKViewController.m */,
+				A656BF2417BB188300DFE175 /* Supporting Files */,
+			);
+			path = CrystalSuger;
+			sourceTree = "<group>";
+		};
+		A656BF2417BB188300DFE175 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A656BF2517BB188300DFE175 /* CrystalSuger-Info.plist */,
+				A656BF2617BB188300DFE175 /* InfoPlist.strings */,
+				A656BF2917BB188400DFE175 /* main.m */,
+				A656BF2B17BB188400DFE175 /* CrystalSuger-Prefix.pch */,
+				A656BF2F17BB188500DFE175 /* Default.png */,
+				A656BF3117BB188500DFE175 /* Default@2x.png */,
+				A656BF3317BB188500DFE175 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A656BF1917BB188300DFE175 /* CrystalSuger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A656BF3D17BB188600DFE175 /* Build configuration list for PBXNativeTarget "CrystalSuger" */;
+			buildPhases = (
+				A656BF1617BB188300DFE175 /* Sources */,
+				A656BF1717BB188300DFE175 /* Frameworks */,
+				A656BF1817BB188300DFE175 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CrystalSuger;
+			productName = CrystalSuger;
+			productReference = A656BF1A17BB188300DFE175 /* CrystalSuger.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A656BF1217BB188200DFE175 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = USK;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Ushio;
+			};
+			buildConfigurationList = A656BF1517BB188200DFE175 /* Build configuration list for PBXProject "CrystalSuger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A656BF1117BB188200DFE175;
+			productRefGroup = A656BF1B17BB188300DFE175 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A656BF1917BB188300DFE175 /* CrystalSuger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A656BF1817BB188300DFE175 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A656BF2817BB188300DFE175 /* InfoPlist.strings in Resources */,
+				A656BF3017BB188500DFE175 /* Default.png in Resources */,
+				A656BF3217BB188500DFE175 /* Default@2x.png in Resources */,
+				A656BF3417BB188500DFE175 /* Default-568h@2x.png in Resources */,
+				A656BF3717BB188600DFE175 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A656BF1617BB188300DFE175 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A656BF2A17BB188400DFE175 /* main.m in Sources */,
+				A656BF2E17BB188400DFE175 /* USKAppDelegate.m in Sources */,
+				A656BF3A17BB188600DFE175 /* USKViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A656BF2617BB188300DFE175 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A656BF2717BB188300DFE175 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A656BF3517BB188600DFE175 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A656BF3617BB188600DFE175 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A656BF3B17BB188600DFE175 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A656BF3C17BB188600DFE175 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A656BF3E17BB188600DFE175 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CrystalSuger/CrystalSuger-Prefix.pch";
+				INFOPLIST_FILE = "CrystalSuger/CrystalSuger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A656BF3F17BB188600DFE175 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CrystalSuger/CrystalSuger-Prefix.pch";
+				INFOPLIST_FILE = "CrystalSuger/CrystalSuger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A656BF1517BB188200DFE175 /* Build configuration list for PBXProject "CrystalSuger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A656BF3B17BB188600DFE175 /* Debug */,
+				A656BF3C17BB188600DFE175 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A656BF3D17BB188600DFE175 /* Build configuration list for PBXNativeTarget "CrystalSuger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A656BF3E17BB188600DFE175 /* Debug */,
+				A656BF3F17BB188600DFE175 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A656BF1217BB188200DFE175 /* Project object */;
+}
