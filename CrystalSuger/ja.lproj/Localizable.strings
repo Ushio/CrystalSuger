@@ -1,0 +1,14 @@
+/* 
+  Localizable.string.strings
+  SugerTimer
+
+  Created by 吉村 篤 on 2013/03/31.
+  Copyright (c) 2013年 吉村 篤. All rights reserved.
+*/
+"CrystalSuger" = "金平糖";
+
+"wikipedia" = "http://ja.wikipedia.org/wiki/%E9%87%91%E5%B9%B3%E7%B3%96";
+
+"Open in Safari" = "Safariで開く";
+
+"Cancel" = "キャンセル";

@@ -14,6 +14,8 @@
 #import "UIImage+PDF.h"
 #import "USKUtility.h"
 
+#import "USKBrowserViewController.h"
+
 @implementation USKFactoryPageViewController
 {
     IBOutlet UIButton *_buttonWikipedia;
@@ -64,7 +66,7 @@
         }
         
         NSString *versionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-        NSString *line1 = [NSString stringWithFormat:@"CrystalSuger ver%@\n", versionString];
+        NSString *line1 = [NSString stringWithFormat:@"%@ ver%@\n", NSLocalizedString(@"CrystalSuger", @"") ,versionString];
         NSString *line2 = @"Copyright (C) 2013 ushio All Rights Reserved.";
         
         NSMutableAttributedString *copyright = [[NSMutableAttributedString alloc] init];
@@ -117,8 +119,37 @@
         _lastCreate = [NSDate date];
     }
 }
+
+static UIScrollView *searchScrollView(UIView *seachView)
+{
+    if([seachView isKindOfClass:[UIScrollView class]])
+    {
+        return (UIScrollView *)seachView;
+    }
+    else if(seachView.superview)
+    {
+        return searchScrollView(seachView.superview);
+    }
+    return nil;
+}
 - (IBAction)onButtonWikipedia:(id)sender {
+    NSString *wikpediaString = NSLocalizedString(@"wikipedia", @"");
+    NSURL *wikipediaURL = [NSURL URLWithString:wikpediaString];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"USKBrowser" bundle:nil];
+    USKBrowserViewController *browserViewController = [storyboard instantiateInitialViewController];
+    browserViewController.openURL = wikipediaURL;
+    browserViewController.head = @"wikipedia";
+    
+    UIScrollView *scrollView = searchScrollView(self.view);
+    NSAssert(scrollView, @"");
+    scrollView.scrollEnabled = NO;
+    browserViewController.onClosed = ^{
+        scrollView.scrollEnabled = YES;
+    };
+    [self presentViewController:browserViewController animated:YES completion:^{}];
 }
 - (IBAction)onButtonCopyleft:(id)sender {
+    
 }
 @end

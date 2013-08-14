@@ -64,6 +64,15 @@
 		A66B6CED17BBA6DF00C1BE46 /* Add.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A66B6CEA17BBA6DF00C1BE46 /* Add.pdf */; };
 		A66B6CEE17BBA6DF00C1BE46 /* Copyleft.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A66B6CEB17BBA6DF00C1BE46 /* Copyleft.pdf */; };
 		A66B6CEF17BBA6DF00C1BE46 /* Wikipedia.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A66B6CEC17BBA6DF00C1BE46 /* Wikipedia.pdf */; };
+		A66B6D0717BBCEEB00C1BE46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A66B6D0917BBCEEB00C1BE46 /* Localizable.strings */; };
+		A66B6D0C17BBCF6F00C1BE46 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A66B6D0B17BBCF6F00C1BE46 /* MessageUI.framework */; };
+		A66B6D5A17BBD88A00C1BE46 /* USKBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66B6D5917BBD88A00C1BE46 /* USKBrowserViewController.m */; };
+		A66B6D5C17BBDA1900C1BE46 /* USKBrowser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66B6D5B17BBDA1900C1BE46 /* USKBrowser.storyboard */; };
+		A66B6D6B17BBDD6E00C1BE46 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = A66B6D6717BBDD6C00C1BE46 /* back.png */; };
+		A66B6D6C17BBDD6E00C1BE46 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A66B6D6817BBDD6C00C1BE46 /* back@2x.png */; };
+		A66B6D6D17BBDD6E00C1BE46 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = A66B6D6917BBDD6D00C1BE46 /* forward.png */; };
+		A66B6D6E17BBDD6E00C1BE46 /* forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A66B6D6A17BBDD6D00C1BE46 /* forward@2x.png */; };
+		A66B6D7017BBF41D00C1BE46 /* loading in Resources */ = {isa = PBXBuildFile; fileRef = A66B6D6F17BBF41D00C1BE46 /* loading */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,6 +178,18 @@
 		A66B6CEA17BBA6DF00C1BE46 /* Add.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Add.pdf; sourceTree = "<group>"; };
 		A66B6CEB17BBA6DF00C1BE46 /* Copyleft.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Copyleft.pdf; sourceTree = "<group>"; };
 		A66B6CEC17BBA6DF00C1BE46 /* Wikipedia.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Wikipedia.pdf; sourceTree = "<group>"; };
+		A66B6D0317BBCCDD00C1BE46 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A66B6D0817BBCEEB00C1BE46 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A66B6D0A17BBCEEF00C1BE46 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A66B6D0B17BBCF6F00C1BE46 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A66B6D5817BBD88A00C1BE46 /* USKBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKBrowserViewController.h; sourceTree = "<group>"; };
+		A66B6D5917BBD88A00C1BE46 /* USKBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKBrowserViewController.m; sourceTree = "<group>"; };
+		A66B6D5B17BBDA1900C1BE46 /* USKBrowser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = USKBrowser.storyboard; sourceTree = "<group>"; };
+		A66B6D6717BBDD6C00C1BE46 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		A66B6D6817BBDD6C00C1BE46 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		A66B6D6917BBDD6D00C1BE46 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		A66B6D6A17BBDD6D00C1BE46 /* forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward@2x.png"; sourceTree = "<group>"; };
+		A66B6D6F17BBF41D00C1BE46 /* loading */ = {isa = PBXFileReference; lastKnownFileType = folder; path = loading; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A66B6D0C17BBCF6F00C1BE46 /* MessageUI.framework in Frameworks */,
 				A656BF5D17BB1A9F00DFE175 /* GLKit.framework in Frameworks */,
 				A656BF5B17BB1A9800DFE175 /* OpenGLES.framework in Frameworks */,
 				A656BF5917BB1A9200DFE175 /* QuartzCore.framework in Frameworks */,
@@ -193,6 +215,7 @@
 		A615A91117BB9258006114DC /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				A66B6D5517BBD85600C1BE46 /* USKBrowser */,
 				A615A91217BB9258006114DC /* USKFactoryPageViewController.h */,
 				A615A91317BB9258006114DC /* USKFactoryPageViewController.m */,
 				A615A91517BB9295006114DC /* USKFactoryPage.xib */,
@@ -203,6 +226,7 @@
 		A656BF1117BB188200DFE175 = {
 			isa = PBXGroup;
 			children = (
+				A66B6D0B17BBCF6F00C1BE46 /* MessageUI.framework */,
 				A656BF5C17BB1A9F00DFE175 /* GLKit.framework */,
 				A656BF5A17BB1A9800DFE175 /* OpenGLES.framework */,
 				A656BF5817BB1A9200DFE175 /* QuartzCore.framework */,
@@ -239,7 +263,6 @@
 				A656BF6E17BB1C3D00DFE175 /* Physics */,
 				A656BF6B17BB1B1C00DFE175 /* Resource */,
 				A656BF5E17BB1AF000DFE175 /* Paging */,
-				A656BF5217BB1A1B00DFE175 /* Misc */,
 				A656BF4217BB19DA00DFE175 /* Model */,
 				A656BF2C17BB188400DFE175 /* USKAppDelegate.h */,
 				A656BF2D17BB188400DFE175 /* USKAppDelegate.m */,
@@ -256,6 +279,7 @@
 			children = (
 				A656BF2517BB188300DFE175 /* CrystalSuger-Info.plist */,
 				A656BF2617BB188300DFE175 /* InfoPlist.strings */,
+				A66B6D0917BBCEEB00C1BE46 /* Localizable.strings */,
 				A656BF2917BB188400DFE175 /* main.m */,
 				A656BF2B17BB188400DFE175 /* CrystalSuger-Prefix.pch */,
 				A656BF2F17BB188500DFE175 /* Default.png */,
@@ -291,7 +315,8 @@
 				A656BF5317BB1A1B00DFE175 /* UIImage+PDF.h */,
 				A656BF5417BB1A1B00DFE175 /* UIImage+PDF.m */,
 			);
-			path = Misc;
+			name = Misc;
+			path = ../Misc;
 			sourceTree = "<group>";
 		};
 		A656BF5E17BB1AF000DFE175 /* Paging */ = {
@@ -299,6 +324,7 @@
 			children = (
 				A615A91117BB9258006114DC /* Factory */,
 				A656BF6117BB1AF000DFE175 /* USKNameField.h */,
+				A656BF5217BB1A1B00DFE175 /* Misc */,
 				A656BF6217BB1AF000DFE175 /* USKNameField.m */,
 				A656BF6317BB1AF000DFE175 /* USKOpenGLView.h */,
 				A656BF6417BB1AF000DFE175 /* USKOpenGLView.m */,
@@ -316,12 +342,17 @@
 		A656BF6B17BB1B1C00DFE175 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A66B6D6F17BBF41D00C1BE46 /* loading */,
 				A656BFC217BB263D00DFE175 /* star.png */,
 				A656BFC017BB255100DFE175 /* background.pvrtc */,
 				A656BF6C17BB1B1C00DFE175 /* RemoveIcon.pdf */,
 				A66B6CEA17BBA6DF00C1BE46 /* Add.pdf */,
 				A66B6CEB17BBA6DF00C1BE46 /* Copyleft.pdf */,
 				A66B6CEC17BBA6DF00C1BE46 /* Wikipedia.pdf */,
+				A66B6D6717BBDD6C00C1BE46 /* back.png */,
+				A66B6D6817BBDD6C00C1BE46 /* back@2x.png */,
+				A66B6D6917BBDD6D00C1BE46 /* forward.png */,
+				A66B6D6A17BBDD6D00C1BE46 /* forward@2x.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -394,6 +425,16 @@
 			path = G;
 			sourceTree = "<group>";
 		};
+		A66B6D5517BBD85600C1BE46 /* USKBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				A66B6D5B17BBDA1900C1BE46 /* USKBrowser.storyboard */,
+				A66B6D5817BBD88A00C1BE46 /* USKBrowserViewController.h */,
+				A66B6D5917BBD88A00C1BE46 /* USKBrowserViewController.m */,
+			);
+			path = USKBrowser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -430,6 +471,13 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				da,
+				"es-ES",
+				es,
+				fr,
+				"zh-Hans",
+				"zh-Hant",
+				ja,
 			);
 			mainGroup = A656BF1117BB188200DFE175;
 			productRefGroup = A656BF1B17BB188300DFE175 /* Products */;
@@ -458,6 +506,13 @@
 				A66B6CED17BBA6DF00C1BE46 /* Add.pdf in Resources */,
 				A66B6CEE17BBA6DF00C1BE46 /* Copyleft.pdf in Resources */,
 				A66B6CEF17BBA6DF00C1BE46 /* Wikipedia.pdf in Resources */,
+				A66B6D0717BBCEEB00C1BE46 /* Localizable.strings in Resources */,
+				A66B6D5C17BBDA1900C1BE46 /* USKBrowser.storyboard in Resources */,
+				A66B6D6B17BBDD6E00C1BE46 /* back.png in Resources */,
+				A66B6D6C17BBDD6E00C1BE46 /* back@2x.png in Resources */,
+				A66B6D6D17BBDD6E00C1BE46 /* forward.png in Resources */,
+				A66B6D6E17BBDD6E00C1BE46 /* forward@2x.png in Resources */,
+				A66B6D7017BBF41D00C1BE46 /* loading in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +560,7 @@
 				A615A90A17BB7AB1006114DC /* USKRoot.m in Sources */,
 				A615A90D17BB7E07006114DC /* USKKompeitoSphere.m in Sources */,
 				A615A91417BB9258006114DC /* USKFactoryPageViewController.m in Sources */,
+				A66B6D5A17BBD88A00C1BE46 /* USKBrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +571,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A656BF2717BB188300DFE175 /* en */,
+				A66B6D0317BBCCDD00C1BE46 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -525,6 +582,15 @@
 				A656BF3617BB188600DFE175 /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		A66B6D0917BBCEEB00C1BE46 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A66B6D0817BBCEEB00C1BE46 /* en */,
+				A66B6D0A17BBCEEF00C1BE46 /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

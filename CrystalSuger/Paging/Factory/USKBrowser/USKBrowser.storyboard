@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="W0z-2y-YhJ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Browser View Controller-->
+        <scene sceneID="g4e-px-quI">
+            <objects>
+                <viewController id="W0z-2y-YhJ" customClass="USKBrowserViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZWD-xG-jQB">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="UKb-T2-z4h">
+                                <rect key="frame" x="0.0" y="504" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem enabled="NO" image="back.png" style="plain" id="MtD-zn-XKR">
+                                        <connections>
+                                            <action selector="back:" destination="W0z-2y-YhJ" id="nlT-Zb-dXf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="14" style="plain" systemItem="fixedSpace" id="rWB-8Q-GWO"/>
+                                    <barButtonItem enabled="NO" image="forward.png" style="plain" id="VLL-0B-nPf">
+                                        <connections>
+                                            <action selector="forward:" destination="W0z-2y-YhJ" id="Wa4-Rj-GpP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="73" style="plain" systemItem="fixedSpace" id="O7H-4J-Spv"/>
+                                    <barButtonItem style="plain" systemItem="refresh" id="50V-M1-b5s">
+                                        <connections>
+                                            <action selector="refresh:" destination="W0z-2y-YhJ" id="KRW-9A-gDR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oKq-aV-uol"/>
+                                    <barButtonItem style="plain" systemItem="action" id="M5e-pg-8Tc">
+                                        <connections>
+                                            <action selector="action:" destination="W0z-2y-YhJ" id="f8F-74-2xd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="LwS-KK-X0q">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="w4n-Aq-EPX">
+                                        <barButtonItem key="leftBarButtonItem" title="done" style="done" id="i0t-MB-PAp">
+                                            <connections>
+                                                <action selector="done:" destination="W0z-2y-YhJ" id="dQi-Bw-g4Z"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" id="KPZ-QK-PS5">
+                                <rect key="frame" x="0.0" y="44" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="_backButton" destination="MtD-zn-XKR" id="785-mf-LdK"/>
+                        <outlet property="_forwardButton" destination="VLL-0B-nPf" id="r6S-3G-kMg"/>
+                        <outlet property="_titleItem" destination="w4n-Aq-EPX" id="3Ma-M4-zlA"/>
+                        <outlet property="_webView" destination="KPZ-QK-PS5" id="j3J-OJ-IFt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MsM-0d-kuk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654" y="36"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back.png" width="20" height="20"/>
+        <image name="forward.png" width="20" height="20"/>
+    </resources>
+    <classes>
+        <class className="USKBrowserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/USKBrowserViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

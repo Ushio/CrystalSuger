@@ -1,0 +1,15 @@
+/* 
+  Localizable.string.strings
+  SugerTimer
+
+  Created by 吉村 篤 on 2013/03/31.
+  Copyright (c) 2013年 吉村 篤. All rights reserved.
+*/
+
+"CrystalSuger" = "CrystalSuger";
+
+"wikipedia" = "http://en.wikipedia.org/wiki/Kompeito";
+
+"Open in Safari" = "Open in Safari";
+
+"Cancel" = "Cancel";
