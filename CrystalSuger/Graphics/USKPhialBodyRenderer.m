@@ -65,13 +65,13 @@
                                                 gl_Position = u_proj * u_view_world * a_position;
                                                 
                                                 vec3 n = normalize(u_normal * a_normal);
-                                                vec3 r = vec3(0.39, 0.39, 0.83);
+                                                vec3 r = normalize(vec3(0.39, 0.39, 0.83));
                                                 vec3 v = vec3(0.0, 0.0, 1.0) - 2.0 * n.z * n; /*reflect(vec3(0.0, 0.0, 1.0), normal);*/
-                                                float specular = pow(abs(clamp(dot(v, r), -1.0, 0.0)), 9.0);
-                                                float rim = clamp(pow(1.0 - abs(dot(n, v)) + 0.3, 3.0), 0.0, 1.0);
+                                                float specular = pow(abs(clamp(dot(v, r), -1.0, 0.0)), 9.0) * 1.2;
+                                                float rim = clamp(pow(1.0 - abs(dot(n, v)) + 0.1, 4.0), 0.0, 1.0);
                                                 float intencity = specular + rim;
                                                 
-                                                v_color = vec4(intencity, intencity, intencity, intencity + 0.05);
+                                                v_color = vec4(intencity, intencity, intencity, intencity);
                                             }
                                             );
         NSString *const kFS = SHADER_STRING(

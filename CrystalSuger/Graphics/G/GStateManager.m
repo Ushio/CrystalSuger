@@ -73,6 +73,10 @@
             glDisable(GL_CULL_FACE);
         }
     }
+    if(_current.cullFaceMode != newState.cullFaceMode)
+    {
+        glCullFace(newState.cullFaceMode);
+    }
     
     _current = [newState copy];
 }

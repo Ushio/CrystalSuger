@@ -222,7 +222,7 @@ static UIImage *rmImage = nil;
                                                             cancelButtonTitle:@"キャンセル"
                                                        destructiveButtonTitle:@"すべて削除"
                                                             otherButtonTitles:@"１つ削除", nil];
-            [actionSheet showInView:self.view];
+            [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
         }
     }
 }
