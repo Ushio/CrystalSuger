@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-@interface USKViewController : UIViewController<UIScrollViewDelegate, NSFetchedResultsControllerDelegate>
+@interface USKViewController : UIViewController<UIScrollViewDelegate, NSFetchedResultsControllerDelegate, UIAccelerometerDelegate>
 
 @end

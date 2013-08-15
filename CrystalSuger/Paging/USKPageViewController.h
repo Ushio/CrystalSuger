@@ -21,4 +21,5 @@
 @property (nonatomic, assign) BOOL isActivated;
 - (void)update;
 - (void)closeKeyboard;
+- (void)setDeviceAccelerate:(GLKVector3)accelerate;
 @end

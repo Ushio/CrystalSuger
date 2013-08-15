@@ -47,6 +47,7 @@ static UIImage *rmImage = nil;
     
     USKPhysicsWorld *_physicsWorld;
     NSMutableArray *_kompeitoSpheres;
+    GLKVector3 _gravity;
     
     USKCamera *_camera;
     
@@ -291,7 +292,10 @@ static UIImage *rmImage = nil;
         {
             [_physicsWorld renderForDebug:sm camera:_camera];
         }
+        
+        GLKVector3 gravity = _gravity;
         [_pagesContext.queue addOperationWithBlock:^{
+            [_physicsWorld setGravity:gravity];
             [_physicsWorld stepWithDeltaTime:delta];
         }];
     }];
@@ -330,5 +334,22 @@ static UIImage *rmImage = nil;
 - (void)applicationWillResignActive:(NSNotification *)notification
 {
     [self save];
+}
+
+- (void)setDeviceAccelerate:(GLKVector3)accelerate
+{
+    const float THREASHOLD = 0.1f;
+    if(GLKVector3Length(accelerate) > THREASHOLD)
+    {
+        GLKVector3 x = GLKVector3MultiplyScalar(_camera.right, accelerate.x);
+        GLKVector3 y = GLKVector3MultiplyScalar(_camera.up, accelerate.y);
+        GLKVector3 z = GLKVector3MultiplyScalar(_camera.back, accelerate.z);
+        GLKVector3 direction = GLKVector3Normalize(GLKVector3Add(x, GLKVector3Add(y, z)));
+        _gravity = GLKVector3MultiplyScalar(direction, 9.8f);
+    }
+    else
+    {
+        _gravity = GLKVector3Make(0, 0, 0);
+    }
 }
 @end

@@ -70,24 +70,33 @@
     for(int i = 0 ; i < fetchedObjects.count ; ++i)
     {
         USKPage *page = fetchedObjects[i];
+        //normalize order
+        page.order = @(i);
+        
         USKPageViewController *pageController = [[USKPageViewController alloc] initWithSize:blocksize
-                                                                          glcontext:_context
-                                                                               page:page
-                                                                       modelManager:_modelManager
-                                                                       pagesContext:_pagesContext];
+                                                                                  glcontext:_context
+                                                                                       page:page
+                                                                               modelManager:_modelManager
+                                                                               pagesContext:_pagesContext];
         [_pageViewControllers addObject:pageController];
         pageController.view.frame = CGRectMake(blocksize.width * i, 0, blocksize.width, blocksize.height);
         [_baseScrollView addSubview:pageController.view];
     }
+    [_modelManager save];
+    
     
     //最後のページ
     _factoryPageViewController = [[USKFactoryPageViewController alloc] initWithSize:blocksize
-                                                               modelManager:_modelManager];
+                                                                       modelManager:_modelManager];
     _factoryPageViewController.view.frame = CGRectMake(blocksize.width * _pageViewControllers.count, 0, blocksize.width, blocksize.height);
     [_baseScrollView addSubview:_factoryPageViewController.view];
     
     //全体幅
     _baseScrollView.contentSize = CGSizeMake(blocksize.width * (_pageViewControllers.count + 1), blocksize.height);
+    
+    //加速度センサー
+    [UIAccelerometer sharedAccelerometer].delegate = self;
+    [UIAccelerometer sharedAccelerometer].updateInterval = 0.1;
 }
 - (void)onUpdate:(CADisplayLink *)sender
 {
@@ -186,5 +195,11 @@
         [pageController closeKeyboard];
     }
 }
-
+- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
+{
+    for(USKPageViewController *pageController in _pageViewControllers)
+    {
+        [pageController setDeviceAccelerate:GLKVector3Make(acceleration.x, acceleration.y, acceleration.z)];
+    }
+}
 @end
