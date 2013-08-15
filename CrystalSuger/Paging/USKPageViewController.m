@@ -291,7 +291,7 @@ static UIImage *rmImage = nil;
         
         [_pagesContext.queue waitUntilAllOperationsAreFinished];
         {
-            [_physicsWorld renderForDebug:sm camera:_camera];
+//            [_physicsWorld renderForDebug:sm camera:_camera];
             [_pagesContext.kompeitoRenderer renderWithKompeitos:_kompeitoSpheres camera:_camera sm:sm];
         }
         

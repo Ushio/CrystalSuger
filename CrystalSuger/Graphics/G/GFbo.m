@@ -60,8 +60,10 @@
         glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, _texture, 0);
         glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, _depthRenderBuffer);
                 
-        GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
-        NSAssert(status == GL_FRAMEBUFFER_COMPLETE, @"");
+        if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+        {
+            NSAssert(0, @"failed create framebuffer");
+        }
         
         //待避してたのを戻す
         glBindRenderbuffer(GL_RENDERBUFFER, currentRenderBuffer);
@@ -71,7 +73,9 @@
 }
 - (void)dealloc
 {
-    //TODO
+    glDeleteFramebuffers(1, &_frameBuffer);
+    glDeleteRenderbuffers(1, &_depthRenderBuffer);
+    glDeleteTextures(1, &_texture);
 }
 - (void)bind:(void(^)(void))drawing
 {

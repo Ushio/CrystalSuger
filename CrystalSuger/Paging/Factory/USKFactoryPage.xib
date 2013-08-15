@@ -42,7 +42,6 @@
 						<string key="NSFrame">{{69, 396}, {197, 71}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="320135397">
 							<int key="NSColorSpace">1</int>
@@ -127,7 +126,7 @@
 					<object class="IBUILabel" id="812985397">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 181}, {335, 100}}</string>
+						<string key="NSFrame">{{20, 181}, {295, 100}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="177655715"/>
@@ -157,7 +156,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-						<double key="preferredMaxLayoutWidth">335</double>
+						<double key="preferredMaxLayoutWidth">295</double>
 					</object>
 				</array>
 				<string key="NSFrameSize">{335, 526}</string>
@@ -322,49 +321,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">USKFactoryPageViewController</string>
 					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="onButtonCopyleft:">id</string>
-						<string key="onButtonCreate:">UIButton</string>
-						<string key="onButtonWikipedia:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="onButtonCopyleft:">
-							<string key="name">onButtonCopyleft:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="onButtonCreate:">
-							<string key="name">onButtonCreate:</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBActionInfo" key="onButtonWikipedia:">
-							<string key="name">onButtonWikipedia:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="_buttonCopyleft">UIButton</string>
-						<string key="_buttonPlus">UIButton</string>
-						<string key="_buttonWikipedia">UIButton</string>
-						<string key="_label">UILabel</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="_buttonCopyleft">
-							<string key="name">_buttonCopyleft</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="_buttonPlus">
-							<string key="name">_buttonPlus</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="_buttonWikipedia">
-							<string key="name">_buttonWikipedia</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="_label">
-							<string key="name">_label</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/USKFactoryPageViewController.h</string>

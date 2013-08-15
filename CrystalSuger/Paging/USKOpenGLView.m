@@ -77,8 +77,10 @@
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _colorRenderbuffer);
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, _depthRenderbuffer);
     
-    unsigned status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
-    NSAssert(status == GL_FRAMEBUFFER_COMPLETE, @"failed create framebuffer");
+    if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+    {
+        NSAssert(0, @"failed create framebuffer");
+    }
 }
 - (void)shutdownFrameBuffer
 {

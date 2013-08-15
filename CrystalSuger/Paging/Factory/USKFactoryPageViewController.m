@@ -57,14 +57,16 @@
         [_buttonPlus setImage:addImage forState:UIControlStateNormal];
         _buttonPlus.backgroundColor = [UIColor clearColor];
         
-        NSArray *shadowView = @[_buttonWikipedia, _buttonCopyleft, _buttonPlus];
-        for(UIView *v in shadowView)
-        {
-            v.layer.shadowRadius = 5.0f;
-            v.layer.shadowOpacity = 1.0f;
-            v.layer.shadowOffset = CGSizeMake(0, 3);
-        }
-        
+//        NSArray *shadowView = @[_buttonWikipedia];//, _buttonCopyleft, _buttonPlus
+//        for(UIView *v in shadowView)
+//        {
+//            v.layer.shadowRadius = 5.0f;
+//            v.layer.shadowOpacity = 1.0f;
+//            v.layer.shadowOffset = CGSizeMake(0, 3);
+//        }
+//        
+//        _buttonWikipedia.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:CGRectInset(_buttonWikipedia.bounds, 20, 20) cornerRadius:30.0].CGPath;
+//        
         NSString *versionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
         NSString *line1 = [NSString stringWithFormat:@"%@ ver%@\n", NSLocalizedString(@"CrystalSuger", @"") ,versionString];
         NSString *line2 = @"Copyright (C) 2013 ushio All Rights Reserved.";

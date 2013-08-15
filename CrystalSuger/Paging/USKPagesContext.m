@@ -8,6 +8,7 @@
 
 #import "USKPagesContext.h"
 
+#import "GMSAAFbo.h"
 @implementation USKPagesContext
 - (id)initWithSize:(CGSize)size
 {
@@ -20,7 +21,7 @@
         
         _phialBodyRenderer = [[USKPhialBodyRenderer alloc] init];
         
-        _postEffectFbo = [[GFbo alloc] initWithWidth:size.width height:size.height];
+        _postEffectFbo = [[GMSAAFbo alloc] initWithWidth:size.width height:size.height];
         _postEffect = [[USKPostEffect alloc] init];
         _queue = [[NSOperationQueue alloc] init];
         _queue.maxConcurrentOperationCount = 1;
