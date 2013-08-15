@@ -93,7 +93,7 @@
     }
     return self;
 }
-- (void)renderWithKompeitos:(NSArray *)kompeitos camera:(id<USKCameraProtocol>)camera time:(float)time sm:(GStateManager *)sm
+- (void)renderWithKompeitos:(NSArray *)kompeitos camera:(id<USKCameraProtocol>)camera sm:(GStateManager *)sm
 {
     sm.currentState = _state;
     

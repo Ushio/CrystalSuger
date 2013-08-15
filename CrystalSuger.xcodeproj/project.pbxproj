@@ -334,9 +334,9 @@
 				A656BF6617BB1AF000DFE175 /* USKPageViewController.m */,
 				A656BFBD17BB1D4900DFE175 /* USKPagesContext.h */,
 				A656BFBE17BB1D4900DFE175 /* USKPagesContext.m */,
+				A615A90E17BB7E3E006114DC /* USKKompeitoConstants.h */,
 				A615A90B17BB7E07006114DC /* USKKompeitoSphere.h */,
 				A615A90C17BB7E07006114DC /* USKKompeitoSphere.m */,
-				A615A90E17BB7E3E006114DC /* USKKompeitoConstants.h */,
 			);
 			path = Paging;
 			sourceTree = "<group>";

@@ -24,6 +24,7 @@
 #import "USKCamera.h"
 
 #import "USKKompeito.h"
+#import "USKKompeitoConstants.h"
 
 //TODO 最大数
 //http://iosfonts.com/
@@ -204,7 +205,7 @@ static UIImage *rmImage = nil;
     
     USKKompeitoSphere *ksphere = [[USKKompeitoSphere alloc] init];
     ksphere.position = GLKVector3Make(0.0f, 0.3f, 0.0f);
-    ksphere.color = 0;
+    ksphere.color = USK_KOMPEITO_COLOR_WHITE;
     
     [_pagesContext.queue waitUntilAllOperationsAreFinished];
     [_physicsWorld addPhysicsObject:ksphere];
@@ -291,6 +292,7 @@ static UIImage *rmImage = nil;
         [_pagesContext.queue waitUntilAllOperationsAreFinished];
         {
             [_physicsWorld renderForDebug:sm camera:_camera];
+            [_pagesContext.kompeitoRenderer renderWithKompeitos:_kompeitoSpheres camera:_camera sm:sm];
         }
         
         GLKVector3 gravity = _gravity;

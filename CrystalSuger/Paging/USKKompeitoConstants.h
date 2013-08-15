@@ -9,11 +9,11 @@
 #ifndef CrystalSuger_KompeitoConstants_h
 #define CrystalSuger_KompeitoConstants_h
 
-enum KompeitoColor
+enum USKKompeitoColor
 {
-    KOMPEITO_COLOR_YELLO = 0,
-    KOMPEITO_COLOR_WHITE,
-    KOMPEITO_COLOR_BLUE,
+    USK_KOMPEITO_COLOR_YELLO = 0,
+    USK_KOMPEITO_COLOR_WHITE,
+    USK_KOMPEITO_COLOR_BLUE,
 };
 
 static const GLKVector4 kKompeitoColorValues[] =

@@ -130,7 +130,6 @@
     CGSize blocksize = _baseScrollView.bounds.size;
     
     switch(type) {
-            
         case NSFetchedResultsChangeInsert:
         {
             int newIndex = newIndexPath.row;
