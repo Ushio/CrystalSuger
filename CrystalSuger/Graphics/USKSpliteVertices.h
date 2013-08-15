@@ -1,3 +1,5 @@
+#pragma once
+
 typedef struct{
     GLKVector2 position;
     GLKVector2 texcoord;

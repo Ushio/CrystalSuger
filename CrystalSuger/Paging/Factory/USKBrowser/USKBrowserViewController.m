@@ -57,6 +57,8 @@
 }
 - (IBAction)done:(id)sender
 {
+    [_webView stopLoading];
+    
     [self dismissViewControllerAnimated:YES completion:^{
         if(self.onClosed)
             self.onClosed();

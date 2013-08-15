@@ -17,6 +17,9 @@
         _backgroundRenderer = [[USKBackgroundRenderer alloc] init];
         _starRenderer = [[USKStarRenderer alloc] init];
         _kompeitoRenderer = [[USKKompeitoRenderer alloc] init];
+        
+        _phialBodyRenderer = [[USKPhialBodyRenderer alloc] init];
+        
         _postEffectFbo = [[GFbo alloc] initWithWidth:size.width height:size.height];
         _postEffect = [[USKPostEffect alloc] init];
         _queue = [[NSOperationQueue alloc] init];

@@ -267,11 +267,11 @@ static UIImage *rmImage = nil;
     _integralTime += delta;
     
     //カメラ
-    GLKVector3 p = GLKVector3Make(0, 1, 2);
+    GLKVector3 p = GLKVector3Make(0, 1.3, 2.2);
     GLKMatrix3 m = GLKMatrix3MakeYRotation(_integralTime * 0.1f);
     _camera.aspect = aspect;
     _camera.position = GLKMatrix3MultiplyVector3(m, p);
-    _camera.lookAt = GLKVector3Make(0, 0, 0);
+    _camera.lookAt = GLKVector3Make(0, 0.3, 0);
     
     //レンダリング
     glBindFramebuffer(GL_FRAMEBUFFER, _glview.framebuffer);
@@ -300,6 +300,8 @@ static UIImage *rmImage = nil;
             [_physicsWorld setGravity:gravity];
             [_physicsWorld stepWithDeltaTime:delta];
         }];
+        
+        [_pagesContext.phialBodyRenderer renderWithCamera:_camera sm:sm];
     }];
 
     [_pagesContext.postEffect renderWithTexture:_pagesContext.postEffectFbo.texture sm:sm];

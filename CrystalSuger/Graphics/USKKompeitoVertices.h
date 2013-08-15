@@ -1,3 +1,6 @@
+#pragma once
+
+#import <GLKit/GLKit.h>
 
 typedef struct
 {

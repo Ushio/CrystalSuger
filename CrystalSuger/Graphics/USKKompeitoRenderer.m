@@ -48,10 +48,12 @@
                                             {
                                                 gl_Position = u_proj * u_view_world * a_position;
                                                 
+                                                /*inner darkness*/
                                                 float pz = u_view_world[0][2] * a_position.x + u_view_world[1][2] * a_position.y + u_view_world[2][2] * a_position.z;
                                                 float factor = pz / (length(a_position) * u_scaling);
                                                 float darkness = mix(1.0, 0.8, factor * 2.0);
                                                 
+                                                /*specular*/
                                                 vec3 n = normalize(u_normal * a_normal);
                                                 vec3 r = vec3(0.57735026918963, 0.57735026918963, -0.57735026918963);
                                                 vec3 v = vec3(0.0, 0.0, 1.0) - 2.0 * n.z * n; /*reflect(vec3(0.0, 0.0, 1.0), normal);*/
@@ -61,7 +63,7 @@
                                             }
                                             );
         NSString *const kFS = SHADER_STRING(
-                                            precision highp float;
+                                            precision lowp float;
                                             varying vec4 v_color;
                                             void main()
                                             {
@@ -105,7 +107,7 @@
         
         [_vao bind:^{
             [_kompeitoIndices bind:^{
-                for(int i = 0 ; i < 3 ; ++i)
+                for(int i = 0 ; i < ARRAY_SIZE(kKompeitoColorValues) ; ++i)
                 {
                     [_shader setVector4:kKompeitoColorValues[i] forUniformKey:@"u_color"];
                     
