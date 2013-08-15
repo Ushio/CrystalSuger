@@ -150,6 +150,20 @@ static UIScrollView *searchScrollView(UIView *seachView)
     [self presentViewController:browserViewController animated:YES completion:^{}];
 }
 - (IBAction)onButtonCopyleft:(id)sender {
+    NSString *licencePath = [[NSBundle mainBundle] pathForResource:@"Licence.html" ofType:@""];
+    NSURL *licenceURL = [NSURL fileURLWithPath:licencePath];
     
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"USKBrowser" bundle:nil];
+    USKBrowserViewController *browserViewController = [storyboard instantiateInitialViewController];
+    browserViewController.openURL = licenceURL;
+    browserViewController.head = @"Licence";
+    
+    UIScrollView *scrollView = searchScrollView(self.view);
+    NSAssert(scrollView, @"");
+    scrollView.scrollEnabled = NO;
+    browserViewController.onClosed = ^{
+        scrollView.scrollEnabled = YES;
+    };
+    [self presentViewController:browserViewController animated:YES completion:^{}];
 }
 @end

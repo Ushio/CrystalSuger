@@ -46,8 +46,7 @@
     
     //webview
     _webView.delegate = self;
-    NSURL *wikipediaURL = [NSURL URLWithString:NSLocalizedString(@"wikipedia", @"")];
-    NSURLRequest *request = [NSURLRequest requestWithURL:wikipediaURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:self.openURL];
     [_webView loadRequest:request];
     
     _webView.userInteractionEnabled = NO;
