@@ -76,7 +76,6 @@
 		A66B6D6E17BBDD6E00C1BE46 /* forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A66B6D6A17BBDD6D00C1BE46 /* forward@2x.png */; };
 		A66B6D7017BBF41D00C1BE46 /* loading in Resources */ = {isa = PBXBuildFile; fileRef = A66B6D6F17BBF41D00C1BE46 /* loading */; };
 		A67AE65517BF44B100C9C3F4 /* USKPigeonRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AE65417BF44B100C9C3F4 /* USKPigeonRenderer.m */; };
-		A67AE65C17BF683600C9C3F4 /* PVRTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AE65B17BF683600C9C3F4 /* PVRTexture.m */; };
 		A67AE66117BF6D5100C9C3F4 /* background.pvrtc in Resources */ = {isa = PBXBuildFile; fileRef = A67AE65F17BF6D5100C9C3F4 /* background.pvrtc */; };
 		A67AE66217BF6D5100C9C3F4 /* pigeon.pvrtc in Resources */ = {isa = PBXBuildFile; fileRef = A67AE66017BF6D5100C9C3F4 /* pigeon.pvrtc */; };
 		A6AD92B317BCD9600063D133 /* USKPhialRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AD92B217BCD9600063D133 /* USKPhialRenderer.m */; };
@@ -205,8 +204,6 @@
 		A67AE65317BF44B100C9C3F4 /* USKPigeonRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPigeonRenderer.h; sourceTree = "<group>"; };
 		A67AE65417BF44B100C9C3F4 /* USKPigeonRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKPigeonRenderer.m; sourceTree = "<group>"; };
 		A67AE65617BF4DEF00C9C3F4 /* USKPigeonVertices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USKPigeonVertices.h; sourceTree = "<group>"; };
-		A67AE65A17BF683600C9C3F4 /* PVRTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTexture.h; sourceTree = "<group>"; };
-		A67AE65B17BF683600C9C3F4 /* PVRTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVRTexture.m; sourceTree = "<group>"; };
 		A67AE65F17BF6D5100C9C3F4 /* background.pvrtc */ = {isa = PBXFileReference; lastKnownFileType = file; path = background.pvrtc; sourceTree = "<group>"; };
 		A67AE66017BF6D5100C9C3F4 /* pigeon.pvrtc */ = {isa = PBXFileReference; lastKnownFileType = file; path = pigeon.pvrtc; sourceTree = "<group>"; };
 		A6AD92B017BCD8410063D133 /* USKPhialBodyVertices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USKPhialBodyVertices.h; sourceTree = "<group>"; };
@@ -400,7 +397,6 @@
 		A656BF7C17BB1C8600DFE175 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				A67AE65917BF682A00C9C3F4 /* apple */,
 				A656BF7D17BB1C8600DFE175 /* G */,
 				A656BF8F17BB1C8600DFE175 /* USKAddEffectGroup.h */,
 				A656BF9017BB1C8600DFE175 /* USKAddEffectGroup.m */,
@@ -477,15 +473,6 @@
 				A66B6D5917BBD88A00C1BE46 /* USKBrowserViewController.m */,
 			);
 			path = USKBrowser;
-			sourceTree = "<group>";
-		};
-		A67AE65917BF682A00C9C3F4 /* apple */ = {
-			isa = PBXGroup;
-			children = (
-				A67AE65A17BF683600C9C3F4 /* PVRTexture.h */,
-				A67AE65B17BF683600C9C3F4 /* PVRTexture.m */,
-			);
-			name = apple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -622,7 +609,6 @@
 				A6AD92B317BCD9600063D133 /* USKPhialRenderer.m in Sources */,
 				A657A96117BD099A00EF0147 /* GMSAAFbo.m in Sources */,
 				A67AE65517BF44B100C9C3F4 /* USKPigeonRenderer.m in Sources */,
-				A67AE65C17BF683600C9C3F4 /* PVRTexture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

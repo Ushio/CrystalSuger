@@ -17,11 +17,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="20" id="2bZ-99-3Qv">
+                                <rect key="frame" x="0.0" y="430" width="320" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="_baseScrollView" destination="MVT-lT-Ml1" id="Whg-K6-KQk"/>
+                        <outlet property="_pageControl" destination="2bZ-99-3Qv" id="8Vs-Y8-Vs9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -31,6 +36,10 @@
     <classes>
         <class className="USKViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/USKViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="_baseScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="_pageControl" candidateClass="UIPageControl"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -155,11 +155,18 @@ static UIImage *rmImage = nil;
                                                  selector:@selector(applicationWillResignActive:)
                                                      name:UIApplicationWillResignActiveNotification
                                                    object:nil];
+        
+        [self update];
     }
     return self;
 }
 - (void)dealloc
 {
+    if(_isRemoved == NO)
+    {
+        [self saveKompeito];
+    }
+    
     [_pagesContext.queue waitUntilAllOperationsAreFinished];
     for(USKKompeitoSphere *ksphere in _kompeitoSpheres)
     {
@@ -168,15 +175,7 @@ static UIImage *rmImage = nil;
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillResignActiveNotification object:nil];
 }
-//ちょっと後で
-- (void)setIsActivated:(BOOL)isActivated
-{
-    
-}
-- (BOOL)isActivated
-{
-    return NO;
-}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self closeKeyboard];
@@ -188,6 +187,8 @@ static UIImage *rmImage = nil;
     if(_isRemoved == NO)
     {
         [_page destroyInstance];
+        [_modelManager save];
+        
         _isRemoved = YES;
     }
 }
@@ -200,16 +201,23 @@ static UIImage *rmImage = nil;
 
 - (void)onTap:(UITapGestureRecognizer *)recognizer
 {
-    _count++;
-    [self updateCountLabel];
-    
-    USKKompeitoSphere *ksphere = [[USKKompeitoSphere alloc] init];
-    ksphere.position = GLKVector3Make(0.0f, 0.3f, 0.0f);
-    ksphere.color = USK_KOMPEITO_COLOR_WHITE;
-    
-    [_pagesContext.queue waitUntilAllOperationsAreFinished];
-    [_physicsWorld addPhysicsObject:ksphere];
-    [_kompeitoSpheres addObject:ksphere];
+    if(_count < kMaxKompeito)
+    {
+        _count++;
+        [self updateCountLabel];
+        
+        USKKompeitoSphere *ksphere = [[USKKompeitoSphere alloc] init];
+        ksphere.position = GLKVector3Make(0.0f, 0.3f, 0.0f);
+        ksphere.color = random_kompeito_selection();
+        
+        [_pagesContext.queue waitUntilAllOperationsAreFinished];
+        [_physicsWorld addPhysicsObject:ksphere];
+        [_kompeitoSpheres addObject:ksphere];
+    }
+    else
+    {
+        //一杯表示
+    }
 }
 - (void)onLongPress:(UILongPressGestureRecognizer *)recognizer
 {
@@ -313,8 +321,11 @@ static UIImage *rmImage = nil;
     _page.name = _nameField.text;
     [_modelManager save];
 }
-- (void)save
+- (void)saveKompeito
 {
+    //同期
+    [_pagesContext.queue waitUntilAllOperationsAreFinished];
+    
     //一度クリア
     for(USKKompeito *kompeito in _page.kompeitos)
     {
@@ -337,7 +348,7 @@ static UIImage *rmImage = nil;
 }
 - (void)applicationWillResignActive:(NSNotification *)notification
 {
-    [self save];
+    [self saveKompeito];
 }
 
 - (void)setDeviceAccelerate:(GLKVector3)accelerate

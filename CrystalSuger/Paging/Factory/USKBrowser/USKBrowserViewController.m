@@ -124,5 +124,9 @@
         _indicatorView.alpha = 0;
     }];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    NSString *message = NSLocalizedString(@"failed to connect network", @"");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [alert show];
 }
 @end

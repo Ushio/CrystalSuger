@@ -11,7 +11,7 @@
 #include "btBulletDynamicsCommon.h"
 
 static const btScalar kMass = 1.0f;
-static btSphereShape kSphereShape(0.07);
+static btSphereShape kSphereShape(0.075);
 
 @implementation USKPhysicsSphere
 - (id)init

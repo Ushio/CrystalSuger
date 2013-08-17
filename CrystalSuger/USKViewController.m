@@ -18,11 +18,13 @@
 @implementation USKViewController
 {
     IBOutlet UIScrollView *_baseScrollView;
+    IBOutlet UIPageControl *_pageControl;
     
     EAGLContext *_context;
     
     USKModelManager *_modelManager;
     
+    //if visible page is instanced, otherwise NSNull
     NSMutableArray *_pageViewControllers;
     USKFactoryPageViewController *_factoryPageViewController;
     
@@ -33,7 +35,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     
     CGSize blocksize = _baseScrollView.bounds.size;
     
@@ -65,6 +66,25 @@
     [_fetchedResultsController performFetch:&error];
     NSAssert(error == nil, @"");
     
+//    _pageViewControllers = [NSMutableArray array];
+//    NSArray *fetchedObjects = _fetchedResultsController.fetchedObjects;
+//    for(int i = 0 ; i < fetchedObjects.count ; ++i)
+//    {
+//        USKPage *page = fetchedObjects[i];
+//        //normalize order
+//        page.order = @(i);
+//        
+//        USKPageViewController *pageController = [[USKPageViewController alloc] initWithSize:blocksize
+//                                                                                  glcontext:_context
+//                                                                                       page:page
+//                                                                               modelManager:_modelManager
+//                                                                               pagesContext:_pagesContext];
+//        [_pageViewControllers addObject:pageController];
+//        pageController.view.frame = CGRectMake(blocksize.width * i, 0, blocksize.width, blocksize.height);
+//        [_baseScrollView addSubview:pageController.view];
+//    }
+//    [_modelManager save];
+    
     _pageViewControllers = [NSMutableArray array];
     NSArray *fetchedObjects = _fetchedResultsController.fetchedObjects;
     for(int i = 0 ; i < fetchedObjects.count ; ++i)
@@ -73,17 +93,11 @@
         //normalize order
         page.order = @(i);
         
-        USKPageViewController *pageController = [[USKPageViewController alloc] initWithSize:blocksize
-                                                                                  glcontext:_context
-                                                                                       page:page
-                                                                               modelManager:_modelManager
-                                                                               pagesContext:_pagesContext];
-        [_pageViewControllers addObject:pageController];
-        pageController.view.frame = CGRectMake(blocksize.width * i, 0, blocksize.width, blocksize.height);
-        [_baseScrollView addSubview:pageController.view];
+        //object add
+        [_pageViewControllers addObject:[NSNull null]];
     }
     [_modelManager save];
-    
+    _pageControl.numberOfPages = fetchedObjects.count + 1;
     
     //最後のページ
     _factoryPageViewController = [[USKFactoryPageViewController alloc] initWithSize:blocksize
@@ -97,7 +111,60 @@
     //加速度センサー
     [UIAccelerometer sharedAccelerometer].delegate = self;
     [UIAccelerometer sharedAccelerometer].updateInterval = 0.1;
+    
+    [self updateActivationPages];
 }
+- (void)updateActivationPages
+{
+    NSArray *fetchedObjects = _fetchedResultsController.fetchedObjects;
+    NSAssert(_pageViewControllers.count == fetchedObjects.count, @"");
+    
+    CGSize blocksize = _baseScrollView.bounds.size;
+    
+    CGRect visibleRect;
+    visibleRect.origin = _baseScrollView.contentOffset;
+    visibleRect.size = _baseScrollView.bounds.size;
+    
+    for(int i = 0 ; i < _pageViewControllers.count ; ++i)
+    {
+        CGRect thisRect = CGRectMake(blocksize.width * i, 0, blocksize.width, blocksize.height);
+        if(CGRectIntersectsRect(thisRect, visibleRect))
+        {
+            //visible
+            if(_pageViewControllers[i] != [NSNull null])
+            {
+                //NOP
+            }
+            else
+            {
+                USKPage *page = fetchedObjects[i];
+                USKPageViewController *pageController = [[USKPageViewController alloc] initWithSize:blocksize
+                                                                                          glcontext:_context
+                                                                                               page:page
+                                                                                       modelManager:_modelManager
+                                                                                       pagesContext:_pagesContext];
+                pageController.view.frame = thisRect;
+                [_baseScrollView addSubview:pageController.view];
+                _pageViewControllers[i] = pageController;
+            }
+        }
+        else
+        {
+            //invisible
+            if(_pageViewControllers[i] != [NSNull null])
+            {
+                USKPageViewController *removeTarget = _pageViewControllers[i];
+                [removeTarget.view removeFromSuperview];
+                _pageViewControllers[i] = [NSNull null];
+            }
+            else
+            {
+                //NOP
+            }
+        }
+    }
+}
+
 - (void)onUpdate:(CADisplayLink *)sender
 {
     //パフォーマンス上の事情で一番見えてるやつだけ
@@ -109,13 +176,16 @@
     USKPageViewController *maxVisiblyPageController = nil;
     for(int i = 0 ; i < _pageViewControllers.count ; ++i)
     {
-        USKPageViewController *pageController = _pageViewControllers[i];
-        CGRect visible = CGRectIntersection(visibleRect, pageController.view.frame);
-        
-        if(maxVisibly < visible.size.width)
+        if(_pageViewControllers[i] != [NSNull null])
         {
-            maxVisibly = visible.size.width;
-            maxVisiblyPageController = pageController;
+            USKPageViewController *pageController = _pageViewControllers[i];
+            CGRect visible = CGRectIntersection(visibleRect, pageController.view.frame);
+            
+            if(maxVisibly < visible.size.width)
+            {
+                maxVisibly = visible.size.width;
+                maxVisiblyPageController = pageController;
+            }
         }
     }
     
@@ -163,13 +233,24 @@
             [_baseScrollView sendSubviewToBack:rmPageController.view];
             [_pageViewControllers removeObjectAtIndex:rmIndex];
             
-            //右のやつはすべて再配置
+            //隣をアニメーション
+            USKPageViewController *rightPageController = nil;
+            if(rmIndex < _pageViewControllers.count)
+            {
+                //右ページが存在した
+                NSArray *fetchedObjects = _fetchedResultsController.fetchedObjects;
+                USKPage *page = fetchedObjects[rmIndex];
+                rightPageController = [[USKPageViewController alloc] initWithSize:blocksize
+                                                                        glcontext:_context
+                                                                             page:page
+                                                                     modelManager:_modelManager
+                                                                     pagesContext:_pagesContext];
+                rightPageController.view.frame = CGRectMake(blocksize.width * (rmIndex + 1), 0, blocksize.width, blocksize.height);
+                [_baseScrollView addSubview:rightPageController.view];
+                _pageViewControllers[rmIndex] = rightPageController;
+            }
             [UIView animateWithDuration:.5 animations:^{
-                for(int i = rmIndex ; i < _pageViewControllers.count ; ++i)
-                {
-                    USKPageViewController *replacePageController = _pageViewControllers[i];
-                    replacePageController.view.frame = CGRectMake(blocksize.width * i, 0, blocksize.width, blocksize.height);
-                }
+                rightPageController.view.frame = CGRectMake(blocksize.width * rmIndex, 0, blocksize.width, blocksize.height);
                 _factoryPageViewController.view.frame = CGRectMake(blocksize.width * _pageViewControllers.count, 0, blocksize.width, blocksize.height);
             } completion:^(BOOL finished) {
                 //移動が終わってから消す
@@ -186,19 +267,36 @@
             //not implement
             break;
     }
+    
+    _pageControl.numberOfPages = _pageViewControllers.count + 1;
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    for(USKPageViewController *pageController in _pageViewControllers)
+    for(id pageController in _pageViewControllers)
     {
-        [pageController closeKeyboard];
+        if(pageController != [NSNull null])
+        {
+            [pageController closeKeyboard];
+        }
     }
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self updateActivationPages];
+    
+    //update page control
+    CGSize blocksize = _baseScrollView.bounds.size;
+    int index = (int)floorf(MAX((_baseScrollView.contentOffset.x + blocksize.width * 0.5f), 0) / blocksize.width);
+    _pageControl.currentPage = index;
 }
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
-    for(USKPageViewController *pageController in _pageViewControllers)
+    for(id pageController in _pageViewControllers)
     {
-        [pageController setDeviceAccelerate:GLKVector3Make(acceleration.x, acceleration.y, acceleration.z)];
+        if(pageController != [NSNull null])
+        {
+            [pageController setDeviceAccelerate:GLKVector3Make(acceleration.x, acceleration.y, acceleration.z)];
+        }
     }
 }
 @end

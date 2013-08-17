@@ -49,6 +49,10 @@ static BOOL isExistDatabase()
         if(!isExist)
         {
             _root = [USKRoot createInstanceWithContext:_context];
+            
+            USKPage *newPage = [USKPage createInstanceWithContext:_context];
+            newPage.order = @0;
+            [_root addPagesObject:newPage];
             [self save];
         }
         else
@@ -106,6 +110,6 @@ static BOOL isExistDatabase()
 {
     NSError *error;
     [_context save:&error];
-    NSAssert(error == nil, @"");
+    NSAssert(error == nil, error.description);
 }
 @end
