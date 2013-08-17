@@ -17,6 +17,7 @@
 #import "USKUtility.h"
 
 #import "USKPhialBodyVertices.h"
+#import "USKPhialWingVertices.h"
 
 @implementation USKPhialBodyRenderer
 {
@@ -24,9 +25,13 @@
     GState *_backState;
     GState *_frontState;
     
-    GVao *_vao;
+    GVao *_bodyVao;
     GVbo *_bodyVertices;
     GVbo *_bodyIndices;
+    
+    GVao *_wingVao;
+    GVbo *_wingVertices;
+    GVbo *_wingIndices;
 }
 - (id)init
 {
@@ -85,11 +90,12 @@
         _shader = [[GShader alloc] initWithVertexShader:kVS fragmentShader:kFS error:&error];
         SHADER_ERROR_HANDLE(error);
         
+        //Body
         _bodyVertices = [[GVbo alloc] initWithBytes:kPhialBodyVertices size:sizeof(kPhialBodyVertices) type:GVBO_VERTEX];
         _bodyIndices = [[GVbo alloc] initWithBytes:kPhialBodyIndices size:sizeof(kPhialBodyIndices) type:GVBO_ELEMENT];
         
-        _vao = [GVao new];
-        [_vao bind:^{
+        _bodyVao = [[GVao alloc] init];
+        [_bodyVao bind:^{
             [_bodyVertices bind:^{
                 int a_position = [_shader attribLocationForKey:@"a_position"];
                 int a_normal = [_shader attribLocationForKey:@"a_normal"];
@@ -99,33 +105,77 @@
                 glEnableVertexAttribArray(a_normal);
             }];
         }];
+        
+        //Wing
+        _wingVertices = [[GVbo alloc] initWithBytes:kPhialWingVertices size:sizeof(kPhialWingVertices) type:GVBO_VERTEX];
+        _wingIndices = [[GVbo alloc] initWithBytes:kPhialWingIndices size:sizeof(kPhialWingIndices) type:GVBO_ELEMENT];
+        
+        _wingVao = [[GVao alloc] init];
+        [_wingVao bind:^{
+            [_wingVertices bind:^{
+                int a_position = [_shader attribLocationForKey:@"a_position"];
+                int a_normal = [_shader attribLocationForKey:@"a_normal"];
+                glVertexAttribPointer(a_position, 3, GL_FLOAT, GL_FALSE, sizeof(PhialWingVertex), (char *)0 + offsetof(PhialWingVertex, position));
+                glVertexAttribPointer(a_normal, 3, GL_FLOAT, GL_FALSE, sizeof(PhialWingVertex), (char *)0 + offsetof(PhialWingVertex, normal));
+                glEnableVertexAttribArray(a_position);
+                glEnableVertexAttribArray(a_normal);
+            }];
+        }];
     }
     return self;
 }
 - (void)renderWithCamera:(id<USKCameraProtocol>)camera sm:(GStateManager *)sm
 {
-    [_shader bind:^{
-        float scale = 1.5f;
-        GLKMatrix4 world = GLKMatrix4Identity;
-        world = GLKMatrix4Scale(world, scale, scale, scale);
-        world = GLKMatrix4Translate(world, 0, 0.11f, 0);
-        
+    const float SCALE = 0.3;
+    const float HEIGHT = 0.48f;
+    const GLKVector3 L_WING_POSITION = {-1.9, 1.85, 0.0};
+    const GLKVector3 R_WING_POSITION = {1.9, 1.85, 0.0};
+    
+    GLKMatrix4 rootWorld = GLKMatrix4Identity;
+    rootWorld = GLKMatrix4Scale(rootWorld, SCALE, SCALE, SCALE);
+    rootWorld = GLKMatrix4Translate(rootWorld, 0, HEIGHT, 0);
+    
+    GLKMatrix4 lWingWorld = rootWorld;
+    lWingWorld = GLKMatrix4Translate(lWingWorld, L_WING_POSITION.x, L_WING_POSITION.y, L_WING_POSITION.z);
+    lWingWorld = GLKMatrix4RotateY(lWingWorld, M_PI);
+    
+    GLKMatrix4 rWingWorld = rootWorld;
+    rWingWorld = GLKMatrix4Translate(rWingWorld, R_WING_POSITION.x, R_WING_POSITION.y, R_WING_POSITION.z);
+    
+    void (^render)(GVao *, GVbo *, int, GLKMatrix4) = ^(GVao *vao, GVbo *indices, int count, GLKMatrix4 world)
+    {
         GLKMatrix4 view_world = GLKMatrix4Multiply([camera view], world);
-        view_world = GLKMatrix4Scale(view_world, 0.2, 0.2, 0.2);
         [_shader setMatrix4:view_world forUniformKey:@"u_view_world"];
-        [_shader setMatrix4:[camera proj] forUniformKey:@"u_proj"];
         [_shader setMatrix3:GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(view_world), NULL) forUniformKey:@"u_normal"];
         
-        [_vao bind:^{
-            [_bodyIndices bind:^{
+        [vao bind:^{
+            [indices bind:^{
                 sm.currentState = _backState;
-                glDrawElements(GL_TRIANGLES, ARRAY_SIZE(kPhialBodyIndices), GL_UNSIGNED_SHORT, (void *)0);
-                
-                
+                glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_SHORT, (void *)0);
                 sm.currentState = _frontState;
-                glDrawElements(GL_TRIANGLES, ARRAY_SIZE(kPhialBodyIndices), GL_UNSIGNED_SHORT, (void *)0);
+                glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_SHORT, (void *)0);
             }];
         }];
+    };
+    
+    [_shader bind:^{
+        [_shader setMatrix4:[camera proj] forUniformKey:@"u_proj"];
+        
+        //simplest z sort
+        float ldistance = GLKVector3Distance([camera position] , L_WING_POSITION);
+        float rdistance = GLKVector3Distance([camera position] , R_WING_POSITION);
+        if(ldistance > rdistance)
+        {
+            render(_wingVao, _wingIndices, ARRAY_SIZE(kPhialWingIndices), lWingWorld);
+            render(_bodyVao, _bodyIndices, ARRAY_SIZE(kPhialBodyIndices), rootWorld);
+            render(_wingVao, _wingIndices, ARRAY_SIZE(kPhialWingIndices), rWingWorld);
+        }
+        else
+        {
+            render(_wingVao, _wingIndices, ARRAY_SIZE(kPhialWingIndices), rWingWorld);
+            render(_bodyVao, _bodyIndices, ARRAY_SIZE(kPhialBodyIndices), rootWorld);
+            render(_wingVao, _wingIndices, ARRAY_SIZE(kPhialWingIndices), lWingWorld);
+        }
     }];
 
 }

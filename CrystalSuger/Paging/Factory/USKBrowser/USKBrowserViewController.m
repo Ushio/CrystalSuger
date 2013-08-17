@@ -50,6 +50,8 @@
     [_webView loadRequest:request];
     
     _webView.userInteractionEnabled = NO;
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 - (void)dealloc
 {
@@ -100,6 +102,8 @@
 {
     _indicatorView.hidden = NO;
     _indicatorView.alpha = 1.0;
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 - (void)webViewDidFinishLoad:(UIWebView *)wv
 {
@@ -111,11 +115,14 @@
     _forwardButton.enabled = [_webView canGoForward];
     
     _webView.userInteractionEnabled = YES;
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 - (void)webView:(UIWebView *)wv didFailLoadWithError:(NSError *)error
 {
     [UIView animateWithDuration:0.5 animations:^{
         _indicatorView.alpha = 0;
     }];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 @end

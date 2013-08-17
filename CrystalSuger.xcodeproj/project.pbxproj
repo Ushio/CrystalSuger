@@ -93,6 +93,7 @@
 		A615A91217BB9258006114DC /* USKFactoryPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKFactoryPageViewController.h; sourceTree = "<group>"; };
 		A615A91317BB9258006114DC /* USKFactoryPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKFactoryPageViewController.m; sourceTree = "<group>"; };
 		A615A91517BB9295006114DC /* USKFactoryPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USKFactoryPage.xib; sourceTree = "<group>"; };
+		A622EA2D17BF380600E25C2C /* USKPhialWingVertices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USKPhialWingVertices.h; sourceTree = "<group>"; };
 		A656BF1A17BB188300DFE175 /* CrystalSuger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrystalSuger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A656BF1D17BB188300DFE175 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A656BF1F17BB188300DFE175 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -411,6 +412,7 @@
 				A656BFA117BB1C8600DFE175 /* USKStarRenderer.h */,
 				A656BFA217BB1C8600DFE175 /* USKStarRenderer.m */,
 				A6AD92B017BCD8410063D133 /* USKPhialBodyVertices.h */,
+				A622EA2D17BF380600E25C2C /* USKPhialWingVertices.h */,
 				A6AD92B117BCD9600063D133 /* USKPhialBodyRenderer.h */,
 				A6AD92B217BCD9600063D133 /* USKPhialBodyRenderer.m */,
 			);

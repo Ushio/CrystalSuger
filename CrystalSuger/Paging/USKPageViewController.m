@@ -267,11 +267,11 @@ static UIImage *rmImage = nil;
     _integralTime += delta;
     
     //カメラ
-    GLKVector3 p = GLKVector3Make(0, 1.3, 2.2);
+    GLKVector3 p = GLKVector3Make(0, 1.4, 2.4);
     GLKMatrix3 m = GLKMatrix3MakeYRotation(_integralTime * 0.1f);
     _camera.aspect = aspect;
     _camera.position = GLKMatrix3MultiplyVector3(m, p);
-    _camera.lookAt = GLKVector3Make(0, 0.3, 0);
+    _camera.lookAt = GLKVector3Make(0, 0.4, 0);
     
     //レンダリング
     glBindFramebuffer(GL_FRAMEBUFFER, _glview.framebuffer);
@@ -291,7 +291,7 @@ static UIImage *rmImage = nil;
         
         [_pagesContext.queue waitUntilAllOperationsAreFinished];
         {
-//            [_physicsWorld renderForDebug:sm camera:_camera];
+            [_physicsWorld renderForDebug:sm camera:_camera];
             [_pagesContext.kompeitoRenderer renderWithKompeitos:_kompeitoSpheres camera:_camera sm:sm];
         }
         
