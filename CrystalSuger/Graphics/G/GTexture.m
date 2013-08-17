@@ -25,6 +25,7 @@
         GLKTextureInfo *info = [GLKTextureLoader textureWithContentsOfFile:path
                                                                    options:nil
                                                                      error:&error];
+        NSAssert(error == nil, @"");
         _name = info.name;
         
         glBindTexture(GL_TEXTURE_2D, _name);

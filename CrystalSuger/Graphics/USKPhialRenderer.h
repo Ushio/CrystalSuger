@@ -11,6 +11,6 @@
 #import "GStateManager.h"
 #import "USKCameraProtocol.h"
 
-@interface USKPhialBodyRenderer : NSObject
+@interface USKPhialRenderer : NSObject
 - (void)renderWithCamera:(id<USKCameraProtocol>)camera sm:(GStateManager *)sm;
 @end

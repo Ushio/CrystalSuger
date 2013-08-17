@@ -32,6 +32,7 @@
 {
     if(self = [super init])
     {
+        //view space lighting
         NSError *error;
         NSString *const kVS = SHADER_STRING(
                                             uniform mat4 u_view_world;

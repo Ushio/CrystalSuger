@@ -12,7 +12,7 @@
 #import "USKBackgroundRenderer.h"
 #import "USKStarRenderer.h"
 #import "USKKompeitoRenderer.h"
-#import "USKPhialBodyRenderer.h"
+#import "USKPhialRenderer.h"
 #import "GFbo.h"
 #import "USKPostEffect.h"
 
@@ -22,7 +22,7 @@
 @property (strong, nonatomic, readonly) USKStarRenderer *starRenderer;
 @property (strong, nonatomic, readonly) USKKompeitoRenderer *kompeitoRenderer;
 
-@property (strong, nonatomic, readonly) USKPhialBodyRenderer *phialBodyRenderer;
+@property (strong, nonatomic, readonly) USKPhialRenderer *phialBodyRenderer;
 
 @property (strong, nonatomic, readonly) GFbo *postEffectFbo;
 @property (strong, nonatomic, readonly) USKPostEffect *postEffect;

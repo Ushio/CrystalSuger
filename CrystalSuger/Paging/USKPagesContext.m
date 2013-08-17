@@ -19,7 +19,7 @@
         _starRenderer = [[USKStarRenderer alloc] init];
         _kompeitoRenderer = [[USKKompeitoRenderer alloc] init];
         
-        _phialBodyRenderer = [[USKPhialBodyRenderer alloc] init];
+        _phialBodyRenderer = [[USKPhialRenderer alloc] init];
         
         _postEffectFbo = [[GMSAAFbo alloc] initWithWidth:size.width height:size.height];
         _postEffect = [[USKPostEffect alloc] init];

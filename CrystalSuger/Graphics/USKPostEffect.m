@@ -40,7 +40,7 @@
                                      uniform sampler2D u_image;
                                      varying highp vec2 v_uv;
                                      
-                                     const lowp float contrast = 1.2;
+                                     const lowp float contrast = 1.3;
                                      
                                      void main()
                                      {
