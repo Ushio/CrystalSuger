@@ -11,15 +11,16 @@
 #include "btBulletDynamicsCommon.h"
 
 static const btScalar kMass = 1.0f;
-static btSphereShape kSphereShape(0.075);
+static btSphereShape kSphereShape(0.0725);
 
 @implementation USKPhysicsSphere
-- (id)init
+- (id)initWithPosition:(GLKVector3)position
 {
     if(self = [super init])
     {
         btTransform defaultTransform;
         defaultTransform.setIdentity();
+        defaultTransform.setOrigin(btVector3(position.x, position.y, position.z));
         btMotionState *motionState = new btDefaultMotionState(defaultTransform);
         _motionState = motionState;
         
@@ -31,6 +32,10 @@ static btSphereShape kSphereShape(0.075);
         _body = body;
     }
     return self;
+}
+- (id)init
+{
+    return [self initWithPosition:GLKVector3Make(0, 0, 0)];
 }
 - (void)setPosition:(GLKVector3)position
 {

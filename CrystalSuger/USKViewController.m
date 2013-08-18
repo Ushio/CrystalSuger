@@ -66,25 +66,6 @@
     [_fetchedResultsController performFetch:&error];
     NSAssert(error == nil, @"");
     
-//    _pageViewControllers = [NSMutableArray array];
-//    NSArray *fetchedObjects = _fetchedResultsController.fetchedObjects;
-//    for(int i = 0 ; i < fetchedObjects.count ; ++i)
-//    {
-//        USKPage *page = fetchedObjects[i];
-//        //normalize order
-//        page.order = @(i);
-//        
-//        USKPageViewController *pageController = [[USKPageViewController alloc] initWithSize:blocksize
-//                                                                                  glcontext:_context
-//                                                                                       page:page
-//                                                                               modelManager:_modelManager
-//                                                                               pagesContext:_pagesContext];
-//        [_pageViewControllers addObject:pageController];
-//        pageController.view.frame = CGRectMake(blocksize.width * i, 0, blocksize.width, blocksize.height);
-//        [_baseScrollView addSubview:pageController.view];
-//    }
-//    [_modelManager save];
-    
     _pageViewControllers = [NSMutableArray array];
     NSArray *fetchedObjects = _fetchedResultsController.fetchedObjects;
     for(int i = 0 ; i < fetchedObjects.count ; ++i)

@@ -11,6 +11,4 @@
 @interface USKBrowserViewController : UIViewController<UIWebViewDelegate, UIActionSheetDelegate>
 @property (strong, nonatomic) NSURL *openURL;
 @property (strong, nonatomic) NSString *head;
-
-@property (nonatomic, copy) void (^onClosed)();
 @end

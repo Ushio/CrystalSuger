@@ -108,7 +108,7 @@
     GLKMatrix4 world = parent;
     world = GLKMatrix4Translate(world, 0, HEIGHT, 0);
     world = GLKMatrix4Scale(world, SCALE, SCALE, SCALE);
-    world = GLKMatrix4RotateY(world, GLKMathDegreesToRadians(90.0f));
+//    world = GLKMatrix4RotateY(world, GLKMathDegreesToRadians(90.0f));
     
     sm.activeTexture = GL_TEXTURE0;
     glBindTexture(GL_TEXTURE_2D, [_image name]);

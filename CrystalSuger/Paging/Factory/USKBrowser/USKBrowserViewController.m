@@ -9,6 +9,9 @@
 #import "USKBrowserViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+#import "USKPopupViewController.h"
+
+
 @implementation USKBrowserViewController
 {
     IBOutlet UINavigationItem *_titleItem;
@@ -17,6 +20,8 @@
     IBOutlet UIBarButtonItem *_forwardButton;
     
     UIImageView *_indicatorView;
+    
+    USKPopupViewController *_popup;
 }
 
 - (void)viewDidLoad
@@ -43,8 +48,6 @@
     [_indicatorView startAnimating];
     [self.view addSubview:_indicatorView];
     
-    
-    //webview
     _webView.delegate = self;
     NSURLRequest *request = [NSURLRequest requestWithURL:self.openURL];
     [_webView loadRequest:request];
@@ -57,14 +60,12 @@
 {
     _webView.delegate = nil;
 }
+
 - (IBAction)done:(id)sender
 {
     [_webView stopLoading];
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        if(self.onClosed)
-            self.onClosed();
-    }];
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 - (IBAction)back:(id)sender
 {
@@ -125,8 +126,9 @@
     }];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
-    NSString *message = NSLocalizedString(@"failed to connect network", @"");
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [alert show];
+    _popup = [[USKPopupViewController alloc] initWithMessage:NSLocalizedString(@"Failed to connect network", @"")];
+    [_popup showWithCompletionHandler:^{
+        _popup = nil;
+    }];
 }
 @end

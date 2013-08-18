@@ -13,4 +13,12 @@
 
 "Cancel" = "キャンセル";
 
-"failed to connect network" = "ネットワーク接続に失敗しました";
+"Failed to connect network" = "ネットワーク接続に\n失敗しました";
+
+"The phial is full of Kompeito." = "瓶は一杯です！";
+
+"Remove All" = "すべて消去";
+
+"Remove One" = "一つ消去";
+
+"Can't create no more pages." = "これ以上ページを\n作成することができません";

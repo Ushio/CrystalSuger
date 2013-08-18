@@ -26,6 +26,8 @@
 #import "USKKompeito.h"
 #import "USKKompeitoConstants.h"
 
+#import "USKPopupViewController.h"
+
 //TODO 最大数
 //http://iosfonts.com/
 
@@ -51,6 +53,8 @@ static UIImage *rmImage = nil;
     GLKVector3 _gravity;
     
     USKCamera *_camera;
+    
+    USKPopupViewController *_popup;
     
     NSDate *_beginTime;
     double _lastUpdateTime;
@@ -126,8 +130,7 @@ static UIImage *rmImage = nil;
         for(USKKompeito *kompeito in _page.kompeitos)
         {
             //物理エンジンに反映
-            USKKompeitoSphere *ksphere = [[USKKompeitoSphere alloc] init];
-            ksphere.position = GLKVector3Make(kompeito.x.floatValue, kompeito.y.floatValue, kompeito.z.floatValue);
+            USKKompeitoSphere *ksphere = [[USKKompeitoSphere alloc] initWithPosition:GLKVector3Make(kompeito.x.floatValue, kompeito.y.floatValue, kompeito.z.floatValue)];
             ksphere.color = kompeito.color.intValue;
             
             [_physicsWorld addPhysicsObject:ksphere];
@@ -200,7 +203,7 @@ static UIImage *rmImage = nil;
 }
 
 - (void)onTap:(UITapGestureRecognizer *)recognizer
-{
+{    
     if(_count < kMaxKompeito)
     {
         _count++;
@@ -216,7 +219,10 @@ static UIImage *rmImage = nil;
     }
     else
     {
-        //一杯表示
+        _popup = [[USKPopupViewController alloc] initWithMessage:NSLocalizedString(@"The phial is full of Kompeito.", @"")];
+        [_popup showWithCompletionHandler:^{
+            _popup = nil;
+        }];
     }
 }
 - (void)onLongPress:(UILongPressGestureRecognizer *)recognizer
@@ -227,9 +233,9 @@ static UIImage *rmImage = nil;
         {
             UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@""
                                                                      delegate:self
-                                                            cancelButtonTitle:@"キャンセル"
-                                                       destructiveButtonTitle:@"すべて削除"
-                                                            otherButtonTitles:@"１つ削除", nil];
+                                                            cancelButtonTitle:NSLocalizedString(@"Cancel", @"")
+                                                       destructiveButtonTitle:NSLocalizedString(@"Remove All", @"")
+                                                            otherButtonTitles:NSLocalizedString(@"Remove One", @""), nil];
             [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
         }
     }
@@ -275,11 +281,12 @@ static UIImage *rmImage = nil;
     _integralTime += delta;
     
     //カメラ
-    GLKVector3 p = GLKVector3Make(0, 1.4, 2.4);
+    GLKVector3 p = GLKVector3Make(0, 1.4, 2.5);
     GLKMatrix3 m = GLKMatrix3MakeYRotation(_integralTime * 0.1f);
     _camera.aspect = aspect;
     _camera.position = GLKMatrix3MultiplyVector3(m, p);
     _camera.lookAt = GLKVector3Make(0, 0.4, 0);
+    _camera.fieldOfView = [USKUtility isIphone5]? 53 : 45;
     
     //レンダリング
     glBindFramebuffer(GL_FRAMEBUFFER, _glview.framebuffer);
@@ -299,7 +306,7 @@ static UIImage *rmImage = nil;
         
         [_pagesContext.queue waitUntilAllOperationsAreFinished];
         {
-            [_physicsWorld renderForDebug:sm camera:_camera];
+            //[_physicsWorld renderForDebug:sm camera:_camera];
             [_pagesContext.kompeitoRenderer renderWithKompeitos:_kompeitoSpheres camera:_camera sm:sm];
         }
         

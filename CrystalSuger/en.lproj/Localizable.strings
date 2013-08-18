@@ -14,4 +14,12 @@
 
 "Cancel" = "Cancel";
 
-"failed to connect network" = "failed to connect network.";
+"Failed to connect network" = "Failed to connect network.";
+
+"The phial is full of Kompeito." = "The phial is full of Kompeito!";
+
+"Remove All" = "Remove All";
+
+"Remove One" = "Remove One";
+
+"Can't create no more pages." = "Can't create no more pages.";

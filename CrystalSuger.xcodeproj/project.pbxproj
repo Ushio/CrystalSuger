@@ -13,15 +13,20 @@
 		A615A90D17BB7E07006114DC /* USKKompeitoSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = A615A90C17BB7E07006114DC /* USKKompeitoSphere.m */; };
 		A615A91417BB9258006114DC /* USKFactoryPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A615A91317BB9258006114DC /* USKFactoryPageViewController.m */; };
 		A615A91617BB9295006114DC /* USKFactoryPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = A615A91517BB9295006114DC /* USKFactoryPage.xib */; };
+		A6497FA717BFCFDD00B40E7F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6497FA617BFCFDD00B40E7F /* Accelerate.framework */; };
+		A6497FAA17C068B000B40E7F /* USKPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6497FA917C068B000B40E7F /* USKPopup.xib */; };
+		A6497FAD17C06CCA00B40E7F /* USKPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6497FAC17C06CCA00B40E7F /* USKPopupViewController.m */; };
+		A6497FB117C07EA800B40E7F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6497FAE17C07EA800B40E7F /* Default-568h@2x.png */; };
+		A6497FB217C07EA800B40E7F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A6497FAF17C07EA800B40E7F /* Default.png */; };
+		A6497FB317C07EA800B40E7F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6497FB017C07EA800B40E7F /* Default@2x.png */; };
+		A6497FB517C09C5600B40E7F /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6497FB417C09C5600B40E7F /* iTunesArtwork@2x.png */; };
+		A6497FB717C09CE500B40E7F /* Particle.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A6497FB617C09CE500B40E7F /* Particle.pdf */; };
 		A656BF1E17BB188300DFE175 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF1D17BB188300DFE175 /* UIKit.framework */; };
 		A656BF2017BB188300DFE175 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF1F17BB188300DFE175 /* Foundation.framework */; };
 		A656BF2217BB188300DFE175 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF2117BB188300DFE175 /* CoreGraphics.framework */; };
 		A656BF2817BB188300DFE175 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A656BF2617BB188300DFE175 /* InfoPlist.strings */; };
 		A656BF2A17BB188400DFE175 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF2917BB188400DFE175 /* main.m */; };
 		A656BF2E17BB188400DFE175 /* USKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF2D17BB188400DFE175 /* USKAppDelegate.m */; };
-		A656BF3017BB188500DFE175 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A656BF2F17BB188500DFE175 /* Default.png */; };
-		A656BF3217BB188500DFE175 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A656BF3117BB188500DFE175 /* Default@2x.png */; };
-		A656BF3417BB188500DFE175 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A656BF3317BB188500DFE175 /* Default-568h@2x.png */; };
 		A656BF3717BB188600DFE175 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A656BF3517BB188600DFE175 /* MainStoryboard.storyboard */; };
 		A656BF3A17BB188600DFE175 /* USKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF3917BB188600DFE175 /* USKViewController.m */; };
 		A656BF4117BB18C600DFE175 /* libBulletPhysics-universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF4017BB18C600DFE175 /* libBulletPhysics-universal.a */; };
@@ -49,8 +54,6 @@
 		A656BFA817BB1C8600DFE175 /* GTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF8A17BB1C8600DFE175 /* GTexture.m */; };
 		A656BFA917BB1C8600DFE175 /* GVao.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF8C17BB1C8600DFE175 /* GVao.m */; };
 		A656BFAA17BB1C8600DFE175 /* GVbo.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF8E17BB1C8600DFE175 /* GVbo.m */; };
-		A656BFAB17BB1C8600DFE175 /* USKAddEffectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9017BB1C8600DFE175 /* USKAddEffectGroup.m */; };
-		A656BFAC17BB1C8600DFE175 /* USKAddEffectRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9217BB1C8600DFE175 /* USKAddEffectRenderer.m */; };
 		A656BFAD17BB1C8600DFE175 /* USKBackgroundRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9417BB1C8600DFE175 /* USKBackgroundRenderer.m */; };
 		A656BFAE17BB1C8600DFE175 /* USKCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9617BB1C8600DFE175 /* USKCamera.m */; };
 		A656BFAF17BB1C8600DFE175 /* USKKompeitoRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A656BF9917BB1C8600DFE175 /* USKKompeitoRenderer.m */; };
@@ -96,6 +99,15 @@
 		A615A91317BB9258006114DC /* USKFactoryPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKFactoryPageViewController.m; sourceTree = "<group>"; };
 		A615A91517BB9295006114DC /* USKFactoryPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USKFactoryPage.xib; sourceTree = "<group>"; };
 		A622EA2D17BF380600E25C2C /* USKPhialWingVertices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USKPhialWingVertices.h; sourceTree = "<group>"; };
+		A6497FA617BFCFDD00B40E7F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A6497FA917C068B000B40E7F /* USKPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USKPopup.xib; sourceTree = "<group>"; };
+		A6497FAB17C06CCA00B40E7F /* USKPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPopupViewController.h; sourceTree = "<group>"; };
+		A6497FAC17C06CCA00B40E7F /* USKPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKPopupViewController.m; sourceTree = "<group>"; };
+		A6497FAE17C07EA800B40E7F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A6497FAF17C07EA800B40E7F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A6497FB017C07EA800B40E7F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A6497FB417C09C5600B40E7F /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		A6497FB617C09CE500B40E7F /* Particle.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Particle.pdf; sourceTree = "<group>"; };
 		A656BF1A17BB188300DFE175 /* CrystalSuger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrystalSuger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A656BF1D17BB188300DFE175 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A656BF1F17BB188300DFE175 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,9 +118,6 @@
 		A656BF2B17BB188400DFE175 /* CrystalSuger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrystalSuger-Prefix.pch"; sourceTree = "<group>"; };
 		A656BF2C17BB188400DFE175 /* USKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USKAppDelegate.h; sourceTree = "<group>"; };
 		A656BF2D17BB188400DFE175 /* USKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USKAppDelegate.m; sourceTree = "<group>"; };
-		A656BF2F17BB188500DFE175 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		A656BF3117BB188500DFE175 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		A656BF3317BB188500DFE175 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A656BF3617BB188600DFE175 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A656BF3817BB188600DFE175 /* USKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USKViewController.h; sourceTree = "<group>"; };
 		A656BF3917BB188600DFE175 /* USKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USKViewController.m; sourceTree = "<group>"; };
@@ -157,10 +166,6 @@
 		A656BF8C17BB1C8600DFE175 /* GVao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVao.m; sourceTree = "<group>"; };
 		A656BF8D17BB1C8600DFE175 /* GVbo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVbo.h; sourceTree = "<group>"; };
 		A656BF8E17BB1C8600DFE175 /* GVbo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVbo.m; sourceTree = "<group>"; };
-		A656BF8F17BB1C8600DFE175 /* USKAddEffectGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKAddEffectGroup.h; sourceTree = "<group>"; };
-		A656BF9017BB1C8600DFE175 /* USKAddEffectGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKAddEffectGroup.m; sourceTree = "<group>"; };
-		A656BF9117BB1C8600DFE175 /* USKAddEffectRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKAddEffectRenderer.h; sourceTree = "<group>"; };
-		A656BF9217BB1C8600DFE175 /* USKAddEffectRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKAddEffectRenderer.m; sourceTree = "<group>"; };
 		A656BF9317BB1C8600DFE175 /* USKBackgroundRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKBackgroundRenderer.h; sourceTree = "<group>"; };
 		A656BF9417BB1C8600DFE175 /* USKBackgroundRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKBackgroundRenderer.m; sourceTree = "<group>"; };
 		A656BF9517BB1C8600DFE175 /* USKCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKCamera.h; sourceTree = "<group>"; };
@@ -217,6 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6497FA717BFCFDD00B40E7F /* Accelerate.framework in Frameworks */,
 				A656BF5D17BB1A9F00DFE175 /* GLKit.framework in Frameworks */,
 				A656BF5B17BB1A9800DFE175 /* OpenGLES.framework in Frameworks */,
 				A656BF5917BB1A9200DFE175 /* QuartzCore.framework in Frameworks */,
@@ -245,6 +251,7 @@
 		A656BF1117BB188200DFE175 = {
 			isa = PBXGroup;
 			children = (
+				A6497FA617BFCFDD00B40E7F /* Accelerate.framework */,
 				A656BF2317BB188300DFE175 /* CrystalSuger */,
 				A656BF1C17BB188300DFE175 /* Frameworks */,
 				A656BF1B17BB188300DFE175 /* Products */,
@@ -282,6 +289,7 @@
 				A656BF6B17BB1B1C00DFE175 /* Resource */,
 				A656BF5E17BB1AF000DFE175 /* Paging */,
 				A656BF4217BB19DA00DFE175 /* Model */,
+				A656BF5217BB1A1B00DFE175 /* Misc */,
 				A656BF2C17BB188400DFE175 /* USKAppDelegate.h */,
 				A656BF2D17BB188400DFE175 /* USKAppDelegate.m */,
 				A656BF3517BB188600DFE175 /* MainStoryboard.storyboard */,
@@ -300,9 +308,6 @@
 				A66B6D0917BBCEEB00C1BE46 /* Localizable.strings */,
 				A656BF2917BB188400DFE175 /* main.m */,
 				A656BF2B17BB188400DFE175 /* CrystalSuger-Prefix.pch */,
-				A656BF2F17BB188500DFE175 /* Default.png */,
-				A656BF3117BB188500DFE175 /* Default@2x.png */,
-				A656BF3317BB188500DFE175 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -332,9 +337,11 @@
 				A656BFB417BB1CA100DFE175 /* USKUtility.m */,
 				A656BF5317BB1A1B00DFE175 /* UIImage+PDF.h */,
 				A656BF5417BB1A1B00DFE175 /* UIImage+PDF.m */,
+				A6497FA917C068B000B40E7F /* USKPopup.xib */,
+				A6497FAB17C06CCA00B40E7F /* USKPopupViewController.h */,
+				A6497FAC17C06CCA00B40E7F /* USKPopupViewController.m */,
 			);
-			name = Misc;
-			path = ../Misc;
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		A656BF5E17BB1AF000DFE175 /* Paging */ = {
@@ -342,7 +349,6 @@
 			children = (
 				A615A91117BB9258006114DC /* Factory */,
 				A656BF6117BB1AF000DFE175 /* USKNameField.h */,
-				A656BF5217BB1A1B00DFE175 /* Misc */,
 				A656BF6217BB1AF000DFE175 /* USKNameField.m */,
 				A656BF6317BB1AF000DFE175 /* USKOpenGLView.h */,
 				A656BF6417BB1AF000DFE175 /* USKOpenGLView.m */,
@@ -370,10 +376,14 @@
 				A657A96417BD19CA00EF0147 /* Add.pdf */,
 				A657A96A17BD1A5200EF0147 /* Copyleft.pdf */,
 				A657A96B17BD1A5200EF0147 /* Wikipedia.pdf */,
+				A6497FB617C09CE500B40E7F /* Particle.pdf */,
 				A66B6D6717BBDD6C00C1BE46 /* back.png */,
 				A66B6D6817BBDD6C00C1BE46 /* back@2x.png */,
 				A66B6D6917BBDD6D00C1BE46 /* forward.png */,
 				A66B6D6A17BBDD6D00C1BE46 /* forward@2x.png */,
+				A6497FAF17C07EA800B40E7F /* Default.png */,
+				A6497FB017C07EA800B40E7F /* Default@2x.png */,
+				A6497FAE17C07EA800B40E7F /* Default-568h@2x.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -398,10 +408,6 @@
 			isa = PBXGroup;
 			children = (
 				A656BF7D17BB1C8600DFE175 /* G */,
-				A656BF8F17BB1C8600DFE175 /* USKAddEffectGroup.h */,
-				A656BF9017BB1C8600DFE175 /* USKAddEffectGroup.m */,
-				A656BF9117BB1C8600DFE175 /* USKAddEffectRenderer.h */,
-				A656BF9217BB1C8600DFE175 /* USKAddEffectRenderer.m */,
 				A656BF9317BB1C8600DFE175 /* USKBackgroundRenderer.h */,
 				A656BF9417BB1C8600DFE175 /* USKBackgroundRenderer.m */,
 				A656BF9517BB1C8600DFE175 /* USKCamera.h */,
@@ -461,6 +467,7 @@
 				A657A96F17BD1AD500EF0147 /* Icon.png */,
 				A657A97017BD1AD500EF0147 /* Icon@2x.png */,
 				A657A97117BD1AD500EF0147 /* iTunesArtwork.png */,
+				A6497FB417C09C5600B40E7F /* iTunesArtwork@2x.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -535,9 +542,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A656BF2817BB188300DFE175 /* InfoPlist.strings in Resources */,
-				A656BF3017BB188500DFE175 /* Default.png in Resources */,
-				A656BF3217BB188500DFE175 /* Default@2x.png in Resources */,
-				A656BF3417BB188500DFE175 /* Default-568h@2x.png in Resources */,
 				A656BF3717BB188600DFE175 /* MainStoryboard.storyboard in Resources */,
 				A656BF6D17BB1B1C00DFE175 /* RemoveIcon.pdf in Resources */,
 				A656BFC317BB263D00DFE175 /* star.png in Resources */,
@@ -558,6 +562,12 @@
 				A657A97417BD1AD500EF0147 /* iTunesArtwork.png in Resources */,
 				A67AE66117BF6D5100C9C3F4 /* background.pvrtc in Resources */,
 				A67AE66217BF6D5100C9C3F4 /* pigeon.pvrtc in Resources */,
+				A6497FAA17C068B000B40E7F /* USKPopup.xib in Resources */,
+				A6497FB117C07EA800B40E7F /* Default-568h@2x.png in Resources */,
+				A6497FB217C07EA800B40E7F /* Default.png in Resources */,
+				A6497FB317C07EA800B40E7F /* Default@2x.png in Resources */,
+				A6497FB517C09C5600B40E7F /* iTunesArtwork@2x.png in Resources */,
+				A6497FB717C09CE500B40E7F /* Particle.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,8 +600,6 @@
 				A656BFA817BB1C8600DFE175 /* GTexture.m in Sources */,
 				A656BFA917BB1C8600DFE175 /* GVao.m in Sources */,
 				A656BFAA17BB1C8600DFE175 /* GVbo.m in Sources */,
-				A656BFAB17BB1C8600DFE175 /* USKAddEffectGroup.m in Sources */,
-				A656BFAC17BB1C8600DFE175 /* USKAddEffectRenderer.m in Sources */,
 				A656BFAD17BB1C8600DFE175 /* USKBackgroundRenderer.m in Sources */,
 				A656BFAE17BB1C8600DFE175 /* USKCamera.m in Sources */,
 				A656BFAF17BB1C8600DFE175 /* USKKompeitoRenderer.m in Sources */,
@@ -609,6 +617,7 @@
 				A6AD92B317BCD9600063D133 /* USKPhialRenderer.m in Sources */,
 				A657A96117BD099A00EF0147 /* GMSAAFbo.m in Sources */,
 				A67AE65517BF44B100C9C3F4 /* USKPigeonRenderer.m in Sources */,
+				A6497FAD17C06CCA00B40E7F /* USKPopupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

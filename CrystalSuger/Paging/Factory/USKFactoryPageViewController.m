@@ -15,6 +15,7 @@
 #import "USKUtility.h"
 
 #import "USKBrowserViewController.h"
+#import "USKPopupViewController.h"
 
 @implementation USKFactoryPageViewController
 {
@@ -28,6 +29,8 @@
     CGSize _size;
     USKModelManager *_modelManager;
     NSDate *_lastCreate;
+    
+    USKPopupViewController *_popup;
 }
 - (id)initWithSize:(CGSize)size modelManager:(USKModelManager *)modelManager
 {
@@ -102,28 +105,26 @@
 {
     if([[NSDate date] timeIntervalSinceDate:_lastCreate] > 1.0)
     {
-        USKPage *newPage = [USKPage createInstanceWithContext:_modelManager.context];
-        NSNumber *max = [_modelManager.root.pages valueForKeyPath:@"@max.order"];
-        newPage.order = @(max.intValue + 1);
-        [_modelManager.root addPagesObject:newPage];
-        [_modelManager save];
-        
-        _lastCreate = [NSDate date];
+        if(_modelManager.root.pages.count < 20)
+        {
+            USKPage *newPage = [USKPage createInstanceWithContext:_modelManager.context];
+            NSNumber *max = [_modelManager.root.pages valueForKeyPath:@"@max.order"];
+            newPage.order = @(max.intValue + 1);
+            [_modelManager.root addPagesObject:newPage];
+            [_modelManager save];
+            
+            _lastCreate = [NSDate date];
+        }
+        else
+        {
+            _popup = [[USKPopupViewController alloc] initWithMessage:NSLocalizedString(@"Can't create no more pages.", @"")];
+            [_popup showWithCompletionHandler:^{
+                _popup = nil;
+            }];
+        }
     }
 }
 
-static UIScrollView *searchScrollView(UIView *seachView)
-{
-    if([seachView isKindOfClass:[UIScrollView class]])
-    {
-        return (UIScrollView *)seachView;
-    }
-    else if(seachView.superview)
-    {
-        return searchScrollView(seachView.superview);
-    }
-    return nil;
-}
 - (IBAction)onButtonWikipedia:(id)sender {
     NSString *wikpediaString = NSLocalizedString(@"wikipedia", @"");
     NSURL *wikipediaURL = [NSURL URLWithString:wikpediaString];
@@ -133,13 +134,8 @@ static UIScrollView *searchScrollView(UIView *seachView)
     browserViewController.openURL = wikipediaURL;
     browserViewController.head = @"wikipedia";
     
-    UIScrollView *scrollView = searchScrollView(self.view);
-    NSAssert(scrollView, @"");
-    scrollView.scrollEnabled = NO;
-    browserViewController.onClosed = ^{
-        scrollView.scrollEnabled = YES;
-    };
-    [self presentViewController:browserViewController animated:YES completion:^{}];
+    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [rootViewController presentViewController:browserViewController animated:YES completion:^{}];
 }
 - (IBAction)onButtonCopyleft:(id)sender {
     NSString *licencePath = [[NSBundle mainBundle] pathForResource:@"Licence.html" ofType:@""];
@@ -150,12 +146,7 @@ static UIScrollView *searchScrollView(UIView *seachView)
     browserViewController.openURL = licenceURL;
     browserViewController.head = @"Licence";
     
-    UIScrollView *scrollView = searchScrollView(self.view);
-    NSAssert(scrollView, @"");
-    scrollView.scrollEnabled = NO;
-    browserViewController.onClosed = ^{
-        scrollView.scrollEnabled = YES;
-    };
-    [self presentViewController:browserViewController animated:YES completion:^{}];
+    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [rootViewController presentViewController:browserViewController animated:YES completion:^{}];
 }
 @end
