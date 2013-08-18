@@ -276,6 +276,7 @@
     {
         if(pageController != [NSNull null])
         {
+            //[pageController setDeviceAccelerate:GLKVector3Make(acceleration.x, acceleration.y, acceleration.z)];
             [pageController setDeviceAccelerate:GLKVector3Make(acceleration.x, acceleration.y, acceleration.z)];
         }
     }

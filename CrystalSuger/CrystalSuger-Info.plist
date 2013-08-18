@@ -5,15 +5,26 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>CrystalSuger</string>
 	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
+	<string>CrystalSuger</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon@2x.png</string>
+				<string>Icon.png</string>
+			</array>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>com.ushio.CrystalSuger</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>CrystalSuger</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

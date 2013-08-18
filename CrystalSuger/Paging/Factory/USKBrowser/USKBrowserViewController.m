@@ -22,6 +22,7 @@
     UIImageView *_indicatorView;
     
     USKPopupViewController *_popup;
+    BOOL _closed;
 }
 
 - (void)viewDidLoad
@@ -63,9 +64,13 @@
 
 - (IBAction)done:(id)sender
 {
-    [_webView stopLoading];
-    
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    if(_closed == NO)
+    {
+        _closed = YES;
+        [_webView stopLoading];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        [self dismissViewControllerAnimated:YES completion:^{}];
+    }
 }
 - (IBAction)back:(id)sender
 {
@@ -121,14 +126,17 @@
 }
 - (void)webView:(UIWebView *)wv didFailLoadWithError:(NSError *)error
 {
-    [UIView animateWithDuration:0.5 animations:^{
-        _indicatorView.alpha = 0;
-    }];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    
-    _popup = [[USKPopupViewController alloc] initWithMessage:NSLocalizedString(@"Failed to connect network", @"")];
-    [_popup showWithCompletionHandler:^{
-        _popup = nil;
-    }];
+    if(_closed == NO)
+    {
+        [UIView animateWithDuration:0.5 animations:^{
+            _indicatorView.alpha = 0;
+        }];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+        _popup = [[USKPopupViewController alloc] initWithMessage:NSLocalizedString(@"Failed to connect network", @"")];
+        [_popup showWithCompletionHandler:^{
+            _popup = nil;
+        }];
+    }
 }
 @end

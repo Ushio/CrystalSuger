@@ -63,6 +63,8 @@ static UIImage *rmImage = nil;
     double _lastUpdateTime;
     double _integralTime;
     
+    NSDate *_lastAdded;
+    
     BOOL _isRemoved;
 }
 - (id)initWithSize:(CGSize)size
@@ -122,6 +124,7 @@ static UIImage *rmImage = nil;
         //物理エンジン
         _physicsWorld = [[USKPhysicsWorld alloc] init];
         _kompeitoSpheres = [NSMutableArray array];
+        _gravity = GLKVector3Make(0, -9.8, 0);
         
         //テスト瓶
         USKPhysicsStaticMesh *mesh = [[USKPhysicsStaticMesh alloc] initWithTriMesh:kPhialCollisionVertices numberOfVertices:ARRAY_SIZE(kPhialCollisionVertices)];
@@ -159,6 +162,8 @@ static UIImage *rmImage = nil;
         _beginTime = [NSDate date];
         _lastUpdateTime = 0.0;
         _integralTime = 0.0;
+        
+        _lastAdded = [NSDate date];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(applicationWillResignActive:)
@@ -212,20 +217,26 @@ static UIImage *rmImage = nil;
 {    
     if(_count < kMaxKompeito)
     {
-        _count++;
-        [self updateCountLabel];
-        
-        USKKompeitoSphere *ksphere = [[USKKompeitoSphere alloc] init];
-        ksphere.position = GLKVector3Make(0.0f, 0.45f, 0.0f);
-        ksphere.color = random_kompeito_selection();
-        
-        [_pagesContext.queue waitUntilAllOperationsAreFinished];
-        [_physicsWorld addPhysicsObject:ksphere];
-        [_kompeitoSpheres addObject:ksphere];
-        
-        GLKVector4 color4 = kKompeitoColorValues[ksphere.color];
-        GLKVector3 color = {color4.r, color4.g, color4.b};
-        [_addParticleSystem addWithPosition:ksphere.position color:color];
+        if([[NSDate date] timeIntervalSinceDate:_lastAdded] > 0.2f)
+        {
+            _count++;
+            [self updateCountLabel];
+            
+            USKKompeitoSphere *ksphere = [[USKKompeitoSphere alloc] init];
+            ksphere.position = GLKVector3Make(0.0f, 0.45f, 0.0f);
+            ksphere.color = random_kompeito_selection();
+            
+            [_pagesContext.queue waitUntilAllOperationsAreFinished];
+            [_physicsWorld addPhysicsObject:ksphere];
+            [_kompeitoSpheres addObject:ksphere];
+            
+            GLKVector4 color4 = kKompeitoColorValues[ksphere.color];
+            GLKVector3 color = {color4.r, color4.g, color4.b};
+            [_addParticleSystem addWithPosition:ksphere.position color:color];
+            
+            
+            _lastAdded = [NSDate date];
+        }
     }
     else
     {
@@ -291,13 +302,20 @@ static UIImage *rmImage = nil;
     _integralTime += delta;
     
     //カメラ
-    GLKVector3 p = GLKVector3Make(0, 1.4, 2.5);
+    float hOffset = sinf(_integralTime * 0.4f) * 0.05f;
+    
+    GLKVector3 p = GLKVector3Make(0, 1.4f + hOffset, 2.5f);
     GLKMatrix3 m = GLKMatrix3MakeYRotation(_integralTime * 0.1f);
     _camera.aspect = aspect;
     _camera.position = GLKMatrix3MultiplyVector3(m, p);
-    _camera.lookAt = GLKVector3Make(0, 0.4, 0);
+    _camera.lookAt = GLKVector3Make(0, 0.4f + hOffset, 0);
     _camera.fieldOfView = [USKUtility isIphone5]? 53 : 45;
     
+    GLKVector3 back = _camera.back;
+    GLKMatrix3 uprot = GLKMatrix3MakeRotation(sinf(_integralTime * 0.5f) * 0.07f, back.x, back.y, back.z);
+    GLKVector3 up = GLKMatrix3MultiplyVector3(uprot, GLKVector3Make(0, 1, 0));
+    _camera.up = up;
+
     //パーティクル
     [_addParticleSystem stepWithDelta:delta];
     

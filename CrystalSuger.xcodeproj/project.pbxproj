@@ -135,12 +135,15 @@
 		A6167A8D17C0BDE8003D69A7 /* btSerializer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A61679F817C0BDE7003D69A7 /* btSerializer.cpp */; settings = {COMPILER_FLAGS = "-ffast-math"; }; };
 		A6167A8E17C0BDE8003D69A7 /* btVector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A61679FD17C0BDE7003D69A7 /* btVector3.cpp */; settings = {COMPILER_FLAGS = "-ffast-math"; }; };
 		A6167A9017C0BF06003D69A7 /* Particle.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A6167A8F17C0BF06003D69A7 /* Particle.pdf */; };
+		A6167A9217C0C5C4003D69A7 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6167A9117C0C5C4003D69A7 /* Icon@2x.png */; };
+		A6167A9417C0C5C8003D69A7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A6167A9317C0C5C8003D69A7 /* Icon.png */; };
+		A6167A9717C0C5DE003D69A7 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A6167A9517C0C5DE003D69A7 /* iTunesArtwork.png */; };
+		A6167A9817C0C5DE003D69A7 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6167A9617C0C5DE003D69A7 /* iTunesArtwork@2x.png */; };
 		A6497FAA17C068B000B40E7F /* USKPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6497FA917C068B000B40E7F /* USKPopup.xib */; };
 		A6497FAD17C06CCA00B40E7F /* USKPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6497FAC17C06CCA00B40E7F /* USKPopupViewController.m */; };
 		A6497FB117C07EA800B40E7F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6497FAE17C07EA800B40E7F /* Default-568h@2x.png */; };
 		A6497FB217C07EA800B40E7F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A6497FAF17C07EA800B40E7F /* Default.png */; };
 		A6497FB317C07EA800B40E7F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6497FB017C07EA800B40E7F /* Default@2x.png */; };
-		A6497FB517C09C5600B40E7F /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6497FB417C09C5600B40E7F /* iTunesArtwork@2x.png */; };
 		A656BF1E17BB188300DFE175 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF1D17BB188300DFE175 /* UIKit.framework */; };
 		A656BF2017BB188300DFE175 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF1F17BB188300DFE175 /* Foundation.framework */; };
 		A656BF2217BB188300DFE175 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A656BF2117BB188300DFE175 /* CoreGraphics.framework */; };
@@ -186,9 +189,6 @@
 		A657A96717BD19CA00EF0147 /* Add.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A657A96417BD19CA00EF0147 /* Add.pdf */; };
 		A657A96C17BD1A5200EF0147 /* Copyleft.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A657A96A17BD1A5200EF0147 /* Copyleft.pdf */; };
 		A657A96D17BD1A5200EF0147 /* Wikipedia.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A657A96B17BD1A5200EF0147 /* Wikipedia.pdf */; };
-		A657A97217BD1AD500EF0147 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A657A96F17BD1AD500EF0147 /* Icon.png */; };
-		A657A97317BD1AD500EF0147 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A657A97017BD1AD500EF0147 /* Icon@2x.png */; };
-		A657A97417BD1AD500EF0147 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A657A97117BD1AD500EF0147 /* iTunesArtwork.png */; };
 		A66B6D0717BBCEEB00C1BE46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A66B6D0917BBCEEB00C1BE46 /* Localizable.strings */; };
 		A66B6D5A17BBD88A00C1BE46 /* USKBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66B6D5917BBD88A00C1BE46 /* USKBrowserViewController.m */; };
 		A66B6D5C17BBDA1900C1BE46 /* USKBrowser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66B6D5B17BBDA1900C1BE46 /* USKBrowser.storyboard */; };
@@ -539,6 +539,10 @@
 		A6167A1517C0BDE7003D69A7 /* vectormath_aos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vectormath_aos.h; sourceTree = "<group>"; };
 		A6167A1617C0BDE7003D69A7 /* vmInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmInclude.h; sourceTree = "<group>"; };
 		A6167A8F17C0BF06003D69A7 /* Particle.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Particle.pdf; sourceTree = "<group>"; };
+		A6167A9117C0C5C4003D69A7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		A6167A9317C0C5C8003D69A7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		A6167A9517C0C5DE003D69A7 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		A6167A9617C0C5DE003D69A7 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		A622EA2D17BF380600E25C2C /* USKPhialWingVertices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USKPhialWingVertices.h; sourceTree = "<group>"; };
 		A6497FA917C068B000B40E7F /* USKPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USKPopup.xib; sourceTree = "<group>"; };
 		A6497FAB17C06CCA00B40E7F /* USKPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKPopupViewController.h; sourceTree = "<group>"; };
@@ -546,7 +550,6 @@
 		A6497FAE17C07EA800B40E7F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A6497FAF17C07EA800B40E7F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A6497FB017C07EA800B40E7F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		A6497FB417C09C5600B40E7F /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		A656BF1A17BB188300DFE175 /* CrystalSuger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrystalSuger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A656BF1D17BB188300DFE175 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A656BF1F17BB188300DFE175 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -630,9 +633,6 @@
 		A657A96417BD19CA00EF0147 /* Add.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Add.pdf; sourceTree = "<group>"; };
 		A657A96A17BD1A5200EF0147 /* Copyleft.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Copyleft.pdf; sourceTree = "<group>"; };
 		A657A96B17BD1A5200EF0147 /* Wikipedia.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Wikipedia.pdf; sourceTree = "<group>"; };
-		A657A96F17BD1AD500EF0147 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		A657A97017BD1AD500EF0147 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		A657A97117BD1AD500EF0147 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		A66B6D0317BBCCDD00C1BE46 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A66B6D0817BBCEEB00C1BE46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A66B6D0A17BBCEEF00C1BE46 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1193,6 +1193,10 @@
 			isa = PBXGroup;
 			children = (
 				A656BF2517BB188300DFE175 /* CrystalSuger-Info.plist */,
+				A6167A9317C0C5C8003D69A7 /* Icon.png */,
+				A6167A9117C0C5C4003D69A7 /* Icon@2x.png */,
+				A6167A9517C0C5DE003D69A7 /* iTunesArtwork.png */,
+				A6167A9617C0C5DE003D69A7 /* iTunesArtwork@2x.png */,
 				A656BF2617BB188300DFE175 /* InfoPlist.strings */,
 				A66B6D0917BBCEEB00C1BE46 /* Localizable.strings */,
 				A656BF2917BB188400DFE175 /* main.m */,
@@ -1355,10 +1359,6 @@
 		A657A96E17BD1ACA00EF0147 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				A657A96F17BD1AD500EF0147 /* Icon.png */,
-				A657A97017BD1AD500EF0147 /* Icon@2x.png */,
-				A657A97117BD1AD500EF0147 /* iTunesArtwork.png */,
-				A6497FB417C09C5600B40E7F /* iTunesArtwork@2x.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -1448,17 +1448,17 @@
 				A657A96717BD19CA00EF0147 /* Add.pdf in Resources */,
 				A657A96C17BD1A5200EF0147 /* Copyleft.pdf in Resources */,
 				A657A96D17BD1A5200EF0147 /* Wikipedia.pdf in Resources */,
-				A657A97217BD1AD500EF0147 /* Icon.png in Resources */,
-				A657A97317BD1AD500EF0147 /* Icon@2x.png in Resources */,
-				A657A97417BD1AD500EF0147 /* iTunesArtwork.png in Resources */,
 				A67AE66117BF6D5100C9C3F4 /* background.pvrtc in Resources */,
 				A67AE66217BF6D5100C9C3F4 /* pigeon.pvrtc in Resources */,
 				A6497FAA17C068B000B40E7F /* USKPopup.xib in Resources */,
 				A6497FB117C07EA800B40E7F /* Default-568h@2x.png in Resources */,
 				A6497FB217C07EA800B40E7F /* Default.png in Resources */,
 				A6497FB317C07EA800B40E7F /* Default@2x.png in Resources */,
-				A6497FB517C09C5600B40E7F /* iTunesArtwork@2x.png in Resources */,
 				A6167A9017C0BF06003D69A7 /* Particle.pdf in Resources */,
+				A6167A9217C0C5C4003D69A7 /* Icon@2x.png in Resources */,
+				A6167A9417C0C5C8003D69A7 /* Icon.png in Resources */,
+				A6167A9717C0C5DE003D69A7 /* iTunesArtwork.png in Resources */,
+				A6167A9817C0C5DE003D69A7 /* iTunesArtwork@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1724,6 +1724,8 @@
 		A656BF3E17BB188600DFE175 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrystalSuger/CrystalSuger-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/bullet-src-2.81-rev2613";
@@ -1734,6 +1736,8 @@
 				);
 				LLVM_LTO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1741,6 +1745,8 @@
 		A656BF3F17BB188600DFE175 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrystalSuger/CrystalSuger-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/bullet-src-2.81-rev2613";
@@ -1751,6 +1757,8 @@
 				);
 				LLVM_LTO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
