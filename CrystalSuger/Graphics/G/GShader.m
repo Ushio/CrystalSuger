@@ -36,9 +36,13 @@
             glGetShaderiv(vsShader, GL_INFO_LOG_LENGTH, &logLength);
             message = malloc(logLength);
             glGetShaderInfoLog(vsShader, logLength, &logLength, message);
-            *error = [NSError errorWithDomain:[NSString stringWithUTF8String:message]
-                                         code:0
-                                     userInfo:nil];
+            if(error)
+            {
+                *error = [NSError errorWithDomain:[NSString stringWithUTF8String:message]
+                                             code:0
+                                         userInfo:nil];
+            }
+
             free(message);
         }
         
@@ -56,9 +60,12 @@
             message = malloc(logLength);
             glGetShaderInfoLog(fsShader, logLength, &logLength, message);
             
-            *error = [NSError errorWithDomain:[NSString stringWithUTF8String:message]
-                                         code:0
-                                     userInfo:nil];
+            if(error)
+            {
+                *error = [NSError errorWithDomain:[NSString stringWithUTF8String:message]
+                                             code:0
+                                         userInfo:nil];
+            }
             
             free(message);
         }

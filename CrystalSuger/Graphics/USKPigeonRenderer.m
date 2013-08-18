@@ -11,7 +11,7 @@
 #import "GMacros.h"
 #import "GShader.h"
 #import "GTexture.h"
-#import "GMutableVbo.h"
+#import "GVbo.h"
 #import "GVao.h"
 #import "USKUtility.h"
 

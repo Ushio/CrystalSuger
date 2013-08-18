@@ -13,6 +13,7 @@
 		A615A90D17BB7E07006114DC /* USKKompeitoSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = A615A90C17BB7E07006114DC /* USKKompeitoSphere.m */; };
 		A615A91417BB9258006114DC /* USKFactoryPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A615A91317BB9258006114DC /* USKFactoryPageViewController.m */; };
 		A615A91617BB9295006114DC /* USKFactoryPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = A615A91517BB9295006114DC /* USKFactoryPage.xib */; };
+		A61678C617C0A32B003D69A7 /* USKAddParticleSystem.mm in Sources */ = {isa = PBXBuildFile; fileRef = A61678C517C0A32B003D69A7 /* USKAddParticleSystem.mm */; };
 		A6497FA717BFCFDD00B40E7F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6497FA617BFCFDD00B40E7F /* Accelerate.framework */; };
 		A6497FAA17C068B000B40E7F /* USKPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6497FA917C068B000B40E7F /* USKPopup.xib */; };
 		A6497FAD17C06CCA00B40E7F /* USKPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6497FAC17C06CCA00B40E7F /* USKPopupViewController.m */; };
@@ -98,6 +99,8 @@
 		A615A91217BB9258006114DC /* USKFactoryPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKFactoryPageViewController.h; sourceTree = "<group>"; };
 		A615A91317BB9258006114DC /* USKFactoryPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USKFactoryPageViewController.m; sourceTree = "<group>"; };
 		A615A91517BB9295006114DC /* USKFactoryPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USKFactoryPage.xib; sourceTree = "<group>"; };
+		A61678C417C0A32B003D69A7 /* USKAddParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USKAddParticleSystem.h; sourceTree = "<group>"; };
+		A61678C517C0A32B003D69A7 /* USKAddParticleSystem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = USKAddParticleSystem.mm; sourceTree = "<group>"; };
 		A622EA2D17BF380600E25C2C /* USKPhialWingVertices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USKPhialWingVertices.h; sourceTree = "<group>"; };
 		A6497FA617BFCFDD00B40E7F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		A6497FA917C068B000B40E7F /* USKPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USKPopup.xib; sourceTree = "<group>"; };
@@ -431,6 +434,8 @@
 				A67AE65617BF4DEF00C9C3F4 /* USKPigeonVertices.h */,
 				A67AE65317BF44B100C9C3F4 /* USKPigeonRenderer.h */,
 				A67AE65417BF44B100C9C3F4 /* USKPigeonRenderer.m */,
+				A61678C417C0A32B003D69A7 /* USKAddParticleSystem.h */,
+				A61678C517C0A32B003D69A7 /* USKAddParticleSystem.mm */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 				A657A96117BD099A00EF0147 /* GMSAAFbo.m in Sources */,
 				A67AE65517BF44B100C9C3F4 /* USKPigeonRenderer.m in Sources */,
 				A6497FAD17C06CCA00B40E7F /* USKPopupViewController.m in Sources */,
+				A61678C617C0A32B003D69A7 /* USKAddParticleSystem.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

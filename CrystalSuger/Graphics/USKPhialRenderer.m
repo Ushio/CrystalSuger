@@ -12,7 +12,7 @@
 #import "GMacros.h"
 #import "GShader.h"
 #import "GTexture.h"
-#import "GMutableVbo.h"
+#import "GVbo.h"
 #import "GVao.h"
 #import "USKUtility.h"
 
@@ -96,9 +96,6 @@
                                             );
         _shader = [[GShader alloc] initWithVertexShader:kVS fragmentShader:kFS error:&error];
         SHADER_ERROR_HANDLE(error);
-        
-        GLKVector3 v = {0.39, 0.39, 0.83};
-        v = GLKVector3Normalize(v);
         
         //Body
         _bodyVertices = [[GVbo alloc] initWithBytes:kPhialBodyVertices size:sizeof(kPhialBodyVertices) type:GVBO_VERTEX];

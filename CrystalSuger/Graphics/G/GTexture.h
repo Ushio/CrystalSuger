@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface GTexture : NSObject
 - (id)initWithContentsOfFile:(NSString *)path
+               interpolation:(int)interpolation
+                        wrap:(int)wrap;
+- (id)initWithCGImage:(CGImageRef)image
                interpolation:(int)interpolation
                         wrap:(int)wrap;
 - (unsigned)name;

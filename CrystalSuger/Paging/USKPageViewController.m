@@ -22,6 +22,7 @@
 #import "USKPhialCollisionVertices.h"
 #import "USKUtility.h"
 #import "USKCamera.h"
+#import "USKAddParticleSystem.h"
 
 #import "USKKompeito.h"
 #import "USKKompeitoConstants.h"
@@ -51,6 +52,8 @@ static UIImage *rmImage = nil;
     USKPhysicsWorld *_physicsWorld;
     NSMutableArray *_kompeitoSpheres;
     GLKVector3 _gravity;
+    
+    USKAddParticleSystem *_addParticleSystem;
     
     USKCamera *_camera;
     
@@ -138,6 +141,9 @@ static UIImage *rmImage = nil;
         }
         _count = _page.kompeitos.count;
         
+        //パーティクル
+        _addParticleSystem = [[USKAddParticleSystem alloc] init];
+        
         //カメラ
         _camera = [[USKCamera alloc] init];
         
@@ -210,12 +216,16 @@ static UIImage *rmImage = nil;
         [self updateCountLabel];
         
         USKKompeitoSphere *ksphere = [[USKKompeitoSphere alloc] init];
-        ksphere.position = GLKVector3Make(0.0f, 0.3f, 0.0f);
+        ksphere.position = GLKVector3Make(0.0f, 0.45f, 0.0f);
         ksphere.color = random_kompeito_selection();
         
         [_pagesContext.queue waitUntilAllOperationsAreFinished];
         [_physicsWorld addPhysicsObject:ksphere];
         [_kompeitoSpheres addObject:ksphere];
+        
+        GLKVector4 color4 = kKompeitoColorValues[ksphere.color];
+        GLKVector3 color = {color4.r, color4.g, color4.b};
+        [_addParticleSystem addWithPosition:ksphere.position color:color];
     }
     else
     {
@@ -288,6 +298,9 @@ static UIImage *rmImage = nil;
     _camera.lookAt = GLKVector3Make(0, 0.4, 0);
     _camera.fieldOfView = [USKUtility isIphone5]? 53 : 45;
     
+    //パーティクル
+    [_addParticleSystem stepWithDelta:delta];
+    
     //レンダリング
     glBindFramebuffer(GL_FRAMEBUFFER, _glview.framebuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, _glview.colorRenderbuffer);
@@ -317,6 +330,8 @@ static UIImage *rmImage = nil;
         }];
         
         [_pagesContext.phialBodyRenderer renderWithCamera:_camera sm:sm];
+        
+        [_addParticleSystem renderWithCamera:_camera sm:sm];
     }];
 
     [_pagesContext.postEffect renderWithTexture:_pagesContext.postEffectFbo.texture sm:sm];

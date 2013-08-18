@@ -36,6 +36,27 @@
     }
     return self;
 }
+- (id)initWithCGImage:(CGImageRef)image
+        interpolation:(int)interpolation
+                 wrap:(int)wrap
+{
+    if(self = [super init])
+    {
+        NSError *error;
+        GLKTextureInfo *info = [GLKTextureLoader textureWithCGImage:image
+                                                            options:nil
+                                                              error:&error];
+        NSAssert(error == nil, @"");
+        _name = info.name;
+        
+        glBindTexture(GL_TEXTURE_2D, _name);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, interpolation);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, interpolation);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wrap);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrap);
+    }
+    return self;
+}
 - (void)dealloc
 {
     glDeleteTextures(1, &_name);
