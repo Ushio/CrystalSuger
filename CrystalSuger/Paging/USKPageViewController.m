@@ -1,10 +1,17 @@
-//
-//  USKLump.m
-//  BaseStudy
-//
-//  Created by ushiostarfish on 2013/08/11.
-//  Copyright (c) 2013年 Ushio. All rights reserved.
-//
+/*
+ Copyright (c) 2013 ushio
+ 
+ This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+ 
+ Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+ 
+ 1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+ 
+ 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+ 
+ 3. This notice may not be removed or altered from any source distribution.
+ */
+
 
 #import "USKPageViewController.h"
 
@@ -28,9 +35,6 @@
 #import "USKKompeitoConstants.h"
 
 #import "USKPopupViewController.h"
-
-//TODO 最大数
-//http://iosfonts.com/
 
 static const int HEADER_SIZE = 30;
 static UIImage *rmImage = nil;
@@ -86,20 +90,20 @@ static UIImage *rmImage = nil;
         NSAssert(modelManager, @"");
         NSAssert(pagesContext, @"");
         
-        //ベース
+        //base view
         self.view.frame = CGRectMake(0, 0, _size.width, _size.height);
         
         _glview = [[USKOpenGLView alloc] initWithFrame:self.view.bounds
                                                context:_glcontext];
         [self.view addSubview:_glview];
         
-        //テキスト
+        //text
         _nameField = [[USKNameField alloc] initWithFrame:CGRectMake(HEADER_SIZE, 0, _size.width - HEADER_SIZE, HEADER_SIZE)];
         _nameField.text = page.name;
         _nameField.delegate = self;
         [self.view addSubview:_nameField];
         
-        //ボタン
+        //button
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             NSString *rmImagePath = [[NSBundle mainBundle] pathForResource:@"RemoveIcon.pdf" ofType:@""];
@@ -112,7 +116,7 @@ static UIImage *rmImage = nil;
         [rmButton addTarget:self action:@selector(onRemoveButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:rmButton];
         
-        //カウンター
+        //count view
         _countLabel = [[UILabel alloc] init];
         _countLabel.backgroundColor = [UIColor clearColor];
         _countLabel.textColor = [UIColor whiteColor];
@@ -121,21 +125,20 @@ static UIImage *rmImage = nil;
         _countLabel.text = [NSString stringWithFormat:@"%d", _page.kompeitos.count];
         [self.view addSubview:_countLabel];
         
-        //物理エンジン
+        //physics engine
         _physicsWorld = [[USKPhysicsWorld alloc] init];
         _kompeitoSpheres = [NSMutableArray array];
         _gravity = GLKVector3Make(0, -9.8, 0);
         
-        //テスト瓶
+        //phial mesh
         USKPhysicsStaticMesh *mesh = [[USKPhysicsStaticMesh alloc] initWithTriMesh:kPhialCollisionVertices numberOfVertices:ARRAY_SIZE(kPhialCollisionVertices)];
         [_physicsWorld addPhysicsObject:mesh];
 //        GLKVector3 aabbMin, aabbMax;
 //        [mesh aabbMin:&aabbMin max:&aabbMax];
         
-        //リストア
+        //restore
         for(USKKompeito *kompeito in _page.kompeitos)
         {
-            //物理エンジンに反映
             USKKompeitoSphere *ksphere = [[USKKompeitoSphere alloc] initWithPosition:GLKVector3Make(kompeito.x.floatValue, kompeito.y.floatValue, kompeito.z.floatValue)];
             ksphere.color = kompeito.color.intValue;
             
@@ -144,17 +147,18 @@ static UIImage *rmImage = nil;
         }
         _count = _page.kompeitos.count;
         
-        //パーティクル
+        //particle
         _addParticleSystem = [[USKAddParticleSystem alloc] init];
         
-        //カメラ
+        //camera
         _camera = [[USKCamera alloc] init];
         
-        //タップ
+        //tap
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                                action:@selector(onTap:)];
         [_glview addGestureRecognizer:tapGestureRecognizer];
         
+        //long press
         UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                                                                                  action:@selector(onLongPress:)];
         [_glview addGestureRecognizer:longPressGestureRecognizer];
@@ -296,12 +300,12 @@ static UIImage *rmImage = nil;
     
     float aspect = _size.width / _size.height;
     
-    //時間が進みすぎないようにセーブする
+    //clamp
     delta = MIN(delta, 1.0 / 30.0);
     
     _integralTime += delta;
     
-    //カメラ
+    //camera update
     float hOffset = sinf(_integralTime * 0.4f) * 0.05f;
     
     GLKVector3 p = GLKVector3Make(0, 1.4f + hOffset, 2.5f);
@@ -316,10 +320,10 @@ static UIImage *rmImage = nil;
     GLKVector3 up = GLKMatrix3MultiplyVector3(uprot, GLKVector3Make(0, 1, 0));
     _camera.up = up;
 
-    //パーティクル
+    //particle
     [_addParticleSystem stepWithDelta:delta];
     
-    //レンダリング
+    //begin rendering
     glBindFramebuffer(GL_FRAMEBUFFER, _glview.framebuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, _glview.colorRenderbuffer);
     
@@ -363,16 +367,16 @@ static UIImage *rmImage = nil;
 }
 - (void)saveKompeito
 {
-    //同期
+    //synchronize
     [_pagesContext.queue waitUntilAllOperationsAreFinished];
     
-    //一度クリア
+    //clear
     for(USKKompeito *kompeito in _page.kompeitos)
     {
         [kompeito destroyInstance];
     }
     
-    //再構成
+    //re construct
     for(USKKompeitoSphere *ksphere in _kompeitoSpheres)
     {
         USKKompeito *kompeito = [USKKompeito createInstanceWithContext:_modelManager.context];

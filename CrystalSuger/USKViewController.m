@@ -1,10 +1,16 @@
-//
-//  USKViewController.m
-//  CrystalSuger
-//
-//  Created by ushiostarfish on 2013/08/14.
-//  Copyright (c) 2013年 Ushio. All rights reserved.
-//
+/*
+ Copyright (c) 2013 ushio
+ 
+ This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+ 
+ Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+ 
+ 1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+ 
+ 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+ 
+ 3. This notice may not be removed or altered from any source distribution.
+ */
 
 #import "USKViewController.h"
 
@@ -80,16 +86,16 @@
     [_modelManager save];
     _pageControl.numberOfPages = fetchedObjects.count + 1;
     
-    //最後のページ
+    //last page
     _factoryPageViewController = [[USKFactoryPageViewController alloc] initWithSize:blocksize
                                                                        modelManager:_modelManager];
     _factoryPageViewController.view.frame = CGRectMake(blocksize.width * _pageViewControllers.count, 0, blocksize.width, blocksize.height);
     [_baseScrollView addSubview:_factoryPageViewController.view];
     
-    //全体幅
+    //size of all
     _baseScrollView.contentSize = CGSizeMake(blocksize.width * (_pageViewControllers.count + 1), blocksize.height);
     
-    //加速度センサー
+    //accelerometer settings
     [UIAccelerometer sharedAccelerometer].delegate = self;
     [UIAccelerometer sharedAccelerometer].updateInterval = 0.1;
     
@@ -148,7 +154,7 @@
 
 - (void)onUpdate:(CADisplayLink *)sender
 {
-    //パフォーマンス上の事情で一番見えてるやつだけ
+    //optimize rendering 
     CGRect visibleRect;
     visibleRect.origin = _baseScrollView.contentOffset;
     visibleRect.size = _baseScrollView.bounds.size;
@@ -194,13 +200,12 @@
             pageController.view.frame = CGRectMake(blocksize.width * (_pageViewControllers.count - 1), 0, blocksize.width, blocksize.height);
             [_baseScrollView addSubview:pageController.view];
             
-            //常に最後だけずらせばいい
+            //offset last
             [UIView animateWithDuration:0.5 animations:^{
                 _factoryPageViewController.view.frame = CGRectMake(blocksize.width * _pageViewControllers.count, 0, blocksize.width, blocksize.height);
             }];
             _baseScrollView.contentSize = CGSizeMake(blocksize.width * (_pageViewControllers.count + 1), blocksize.height);
             
-            //これ必須？
             [_baseScrollView bringSubviewToFront:_factoryPageViewController.view];
             
             break;
@@ -209,16 +214,16 @@
         {
             int rmIndex = indexPath.row;
             
-            //先に表示オブジェクトを消す
+            //remove 
             USKPageViewController *rmPageController = _pageViewControllers[rmIndex];
             [_baseScrollView sendSubviewToBack:rmPageController.view];
             [_pageViewControllers removeObjectAtIndex:rmIndex];
             
-            //隣をアニメーション
+            //animation next
             USKPageViewController *rightPageController = nil;
             if(rmIndex < _pageViewControllers.count)
             {
-                //右ページが存在した
+                //exist right object
                 NSArray *fetchedObjects = _fetchedResultsController.fetchedObjects;
                 USKPage *page = fetchedObjects[rmIndex];
                 rightPageController = [[USKPageViewController alloc] initWithSize:blocksize
@@ -234,7 +239,6 @@
                 rightPageController.view.frame = CGRectMake(blocksize.width * rmIndex, 0, blocksize.width, blocksize.height);
                 _factoryPageViewController.view.frame = CGRectMake(blocksize.width * _pageViewControllers.count, 0, blocksize.width, blocksize.height);
             } completion:^(BOOL finished) {
-                //移動が終わってから消す
                 [rmPageController.view removeFromSuperview];
             }];
             _baseScrollView.contentSize = CGSizeMake(blocksize.width * (_pageViewControllers.count + 1), blocksize.height);

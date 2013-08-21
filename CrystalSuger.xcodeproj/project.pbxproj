@@ -1724,8 +1724,8 @@
 		A656BF3E17BB188600DFE175 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrystalSuger/CrystalSuger-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/bullet-src-2.81-rev2613";
@@ -1745,8 +1745,8 @@
 		A656BF3F17BB188600DFE175 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrystalSuger/CrystalSuger-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/bullet-src-2.81-rev2613";
