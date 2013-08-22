@@ -7,6 +7,9 @@ japanease:
 https://itunes.apple.com/jp/app/crystalsuger/id689723657?ls=1&mt=8
 
 
+Movie is here.
+http://www.flickr.com/photos/80124738@N05/9564307258/
+
 screen shot is coming soon.
 
 souce code comment will enrich soon.
